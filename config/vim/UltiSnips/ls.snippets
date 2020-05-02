@@ -1,0 +1,434 @@
+#####################
+#  My own snippets  #
+#####################
+
+snippet try "Try .. Catch" b
+try
+	$1
+catch ${2:error}
+	$3
+endsnippet
+
+snippet /#/ "In#terpolated Code" r
+#{$1}$0
+endsnippet
+
+snippet tt "$this" !
+$this
+endsnippet
+
+snippet tthis "$this = $(this)" !b
+$this = $(this)
+endsnippet
+
+snippet /\"\"\"/ "Commentaire" r
+"""
+  $0
+"""
+endsnippet
+
+# jquery
+snippet j "jquery" !
+$($1)$2
+endsnippet
+
+#mocha
+snippet it "it" !b
+itt "$1" ->
+  
+endsnippet
+snippet itn "it next" !b
+itt "$1" (next)->
+  
+endsnippet
+snippet d "destribe" !b
+describe "$1" ->
+  
+endsnippet
+
+
+# Express/nodejs
+snippet req "(req, res) ->" !
+(req, res) ->
+  $1
+endsnippet
+snippet ferr "(err, document) ->" !
+(err, ${1:document}) ->
+  $2
+endsnippet
+
+snippet e "module.exports" !b
+module.exports = $1
+endsnippet
+
+#grunt
+snippet lt "loadTask" !
+grunt.loadNpmTasks \grunt-contrib-$1
+endsnippet
+
+#underscore
+snippet isa "underscore: isArray"
+_.isArray(${1:object})
+endsnippet
+snippet isf "underscore: isFunction"
+_.isFunction(${1:object})
+endsnippet
+snippet iso "underscore: isObject"
+_.isObject(${1:object})
+endsnippet
+snippet isas "underscore: isArguments"
+_.isArguments(${1:object})
+endsnippet
+snippet iss "underscore: isString"
+_.isString(${1:object})
+endsnippet
+snippet isn "underscore: isNumber"
+_.isNumber(${1:object})
+endsnippet
+snippet isfi "underscore: isFinite"
+_.isFinite(${1:object})
+endsnippet
+snippet isb "underscore: isBoolean"
+_.isBoolean(${1:object})
+endsnippet
+snippet isd "underscore: isDate"
+_.isDate(${1:object})
+endsnippet
+snippet isr "underscore: isRegExp"
+_.isRegExp(${1:object})
+endsnippet
+snippet isn "underscore: isNaN"
+_.isNaN(${1:object})
+endsnippet
+snippet isnu "underscore: isNull"
+_.isNull(${1:object})
+endsnippet
+snippet isu "underscore: isUndefined"
+_.isUnderfined(${1:object})
+endsnippet
+
+snippet ti "underscore: time"
+_.times ${1:n}, ->
+  $0
+endsnippet
+snippet ext "underscore: extends" 
+_.extend ${1:object}
+endsnippet
+snippet si "underscore: size" 
+_.size(${1:object})
+endsnippet
+
+snippet find "underscore: find" !b
+_.find ${1:var}, (${2:value}${3:, ${4:key}}) ~>
+  $0
+endsnippet
+snippet each "underscore: each" !b
+_.each ${1:var}, (${2:value}${3:, ${4:key}}) ~>
+  $0
+endsnippet
+snippet map "underscore: map"
+_.map ${1:var}, (${2:value}${3:, ${4:key}}) ~>
+  $0
+endsnippet
+
+#auto add
+#snippet au "autoAdd node script" !b
+## -- autoadd before -- ${1:name}
+#endsnippet
+
+#mongoose
+snippet id "mongoose id"
+mongoose.Schema.Types.ObjectId
+endsnippet
+snippet typeid "mongoose id"
+type: mongoose.Schema.Types.ObjectId
+endsnippet
+snippet mm "Model"
+${1:model_name} = S.db.model \\$1
+endsnippet
+snippet m "Model"
+S.db.model '${1:model_name}'
+endsnippet
+snippet am "new model"
+${1:ModelName} = addModel "$1", new mongoose.Schema do
+  ${0:name: String}
+endsnippet
+snippet model "new model" !b
+mongoose = require 'mongoose'
+
+${1:ModelName} = new mongoose.Schema
+  ${0:#attributes
+  name: String}
+
+module.exports = (S) ->
+  S.db.model '$1', $1
+  S.models['$1'] =
+    schema: $1
+    autoRoute: true
+endsnippet
+
+snippet err- "Description" !b
+err$1 <- $2
+return next err if err
+endsnippet
+snippet nee "next err if err" !b
+next err if err
+endsnippet
+snippet cbe "cb err if err" !b
+next err if err
+endsnippet
+snippet tn "throw new Error" !b
+throw new Error
+endsnippet
+snippet tne "throw new Error err" !b
+throw new Error err if err
+endsnippet
+snippet error "Description" !b
+throw new Error $0
+endsnippet
+
+#lodash
+snippet _ "require lodash" !b
+_: lodash
+endsnippet
+
+# Backbone
+snippet B "GlobalCollection" !b
+  Bset(\\$1, $1, $1s)
+endsnippet
+snippet views "AutoViews" !b
+class ${1:Model}View extends GView
+  ${2:className: '${3:class}'}
+  initialize: ->
+    @model.on 'change', @render, this
+    @model.on 'remove', @remove, this
+    @render()
+  render: ->
+class $1sView extends GView
+  initialize: ->
+    @model.on 'add', @addOne, this
+    @model.on 'reset', @addAll, this
+
+  render: () ->
+    
+  addOne: (model) ->
+    view = new $1View model: model
+  addAll: ->
+    @render()
+    @model.each @addOne
+endsnippet
+snippet init "initialize" !b
+initialize: ->
+  $0
+endsnippet
+snippet ini "initialize" !b
+initialize: ->
+  $0
+endsnippet
+snippet gv "gview"
+class $1View extends GView
+  initialize: ->
+    @setTemplate '$2'
+    @render()
+  render: ->
+    @$el.html @template()
+$0
+endsnippet
+snippet bc "Backbone class" !b
+class ${1:ModelName} extends Model
+  url: -> '/$1'+(if @isNew() then '' else '/'+@get('_id'))
+class $1s extends Collection
+  model: $1
+  url: -> '/$1s'
+endsnippet
+snippet bb "Backbone models/view" !b
+class ${1:ModelName} extends Model
+  url: -> '/$1'+(if @isNew() then '' else '/'+@get('_id'))
+class $1s extends Collection
+  model: $1
+  url: -> '/$1s'
+
+class $1View extends GView
+  ${2:className: \\${3:class}}
+  initialize: ->
+    @model.on \change, @render, this
+    @model.on \remove, @remove, this
+
+    @template = Mustache.compile Templates[\/$1]
+    @render!
+
+  render: ->
+    @$el.html @template
+
+class $1sView extends View
+  tagName: 'div'
+  initialize: ->
+    @model.on 'add', @addOne, this
+    @model.on 'reset', @addAll, this
+
+  render: ->
+    @$el.html ''
+
+  addOne: (model) ~>
+    view = new $1View model: model
+    @$el.append view.el
+
+  addAll: ~>
+    @render!
+    @model.each @addOne
+endsnippet
+
+
+
+
+snippet ex "express" !
+express
+endsnippet
+
+snippet l "log" !
+console.log $1
+endsnippet
+snippet logg "log" !
+console.log "$1" $1
+endsnippet
+snippet log "log2" !
+console.log "${2:message}"$0
+endsnippet
+snippet re "require" !b
+require! {
+  $0
+}
+endsnippet
+
+snippet f "function" !
+($1) ~>
+  $0
+endsnippet
+snippet fj "function" !
+->
+  
+endsnippet
+
+
+#Polyfill
+snippet /^(polyreg|pr)/ "polyfill reg" !r
+RegExp.quote = (str) ->
+  (str + "").replace /([.?*+^$[\]\\(){}|-])/g, "\\\\\$1"
+
+endsnippet
+
+snippet /polyframe|pf/ "polyfill requestAnimFrame" !r
+window.requestAnimationFrame = (->
+  window.requestAnimationFrame or
+  window.webkitRequestAnimationFrame or
+  window.mozRequestAnimationFrame or
+  window.oRequestAnimationFrame or
+  window.msRequestAnimationFrame or
+  (callback) ->
+    console.log "browser not suport requestAnimationFrame"
+    window.setTimeout callback, 1000 / 60
+)()
+
+endsnippet
+
+#divers
+snippet gt  "getType" !
+Ty.t.$0
+endsnippet
+
+##
+## Angular
+##
+snippet mo "angular.module" !b
+angular.module '$1' []
+  
+endsnippet
+snippet mod "angular.module" !b
+angular.module '$1' <[
+    $2
+  ]>
+endsnippet
+snippet adc "angular directive compile" !b
+.directive '$1' $2->
+  restrict: 'EA'
+  ${3:transclusion: true}
+  compile: (cElem, cAttrs)->
+    link: (scope, elem, attrs)->
+      $3
+endsnippet
+snippet ad "angular directive" !b
+.directive '$1' $2->
+  restrict: 'EA'
+  ${3:transclusion: true}
+  link: (scope, elem, attrs)->
+    $4
+endsnippet
+snippet ac "angular controller" !b
+.controller '$1' (\$scope$2)->
+  $3
+endsnippet
+snippet aco "angular config" !b
+.config '$1' (\$scope$2)->
+  $3
+endsnippet
+
+snippet c "comments" !b
+/**
+  $1
+ */
+endsnippet
+
+snippet b "block" 
+#
+#
+### $1 world
+#
+#
+$0
+endsnippet
+
+##
+## doc
+##
+
+snippet @pa "@param" 
+@param {$1} $0
+endsnippet
+
+snippet @pu "@api public" 
+@api public
+endsnippet
+
+snippet @pr "@api private" 
+@api private
+endsnippet
+
+
+
+###temp
+snippet q "r.question"
+a <- r.question "$1"
+endsnippet
+snippet skil "Description" !b
+class Skill$1 extends Model
+  table-name: '$2'
+
+class Skill$1s extends Collection
+  model: $1
+endsnippet
+
+snippet blo "description" 
+######################################################
+# $1
+#
+$0
+endsnippet
+
+# meteor
+snippet help "description" 
+$1: -> Template.instance().$1.get()
+endsnippet
+
+snippet brv "description" 
+new Blaze.ReactiveVar $1
+endsnippet

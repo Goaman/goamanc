@@ -1,0 +1,250 @@
+
+snippet b "Backgroud"
+background: $1
+endsnippet
+snippet bau "Backgroud"
+background: url($1) ${2:no-repeat} ${3:left top} 
+endsnippet
+
+snippet bc "backgroud-color"
+background-color: $1
+endsnippet
+
+snippet c "color" 
+color: $1
+endsnippet
+
+
+# positions
+snippet hn "height"
+height: 
+endsnippet
+snippet wn "width"
+width: 
+endsnippet
+snippet h "height"
+height: $1px
+endsnippet
+snippet w "width"
+width: $1px
+endsnippet
+snippet t "top"
+top:
+endsnippet
+snippet l "left"
+left:
+endsnippet
+snippet r "right"
+right:
+endsnippet
+snippet bt "bt"
+bottom:
+endsnippet
+
+#borders
+snippet bo "border"
+border: $1
+endsnippet
+snippet bol "border-left"
+border-left: $1
+endsnippet
+snippet bot "border-top"
+border-top: $1
+endsnippet
+snippet bor "border-right"
+border-right: $1
+endsnippet
+snippet bob "border-bottom"
+border-bottom: $1
+endsnippet
+snippet bow "border-weight" 
+border-weight: 
+endsnippet
+
+snippet boss "border-style" !b
+border-style: $1
+endsnippet
+snippet bost "border-style" !b
+border-style: $1
+endsnippet
+snippet bosd "border-style dashed" !b
+border-style: dashed
+endsnippet
+
+snippet bora "border-radius"
+border-radius: $1
+endsnippet
+snippet boral "border-radius-left"
+border-radius-left: $1
+endsnippet
+snippet borar "border-radius-right"
+border-radius-right: $1
+endsnippet
+snippet borat "border-radius-top"
+border-radius-top: $1
+endsnippet
+snippet borab "border-radius-bottom"
+border-radius-bottom: $1
+endsnippet
+
+snippet bots "border test" !b
+border: 1px red solid
+endsnippet
+
+
+#margins/paddings
+snippet m "margin"
+margin: $1
+endsnippet
+snippet m0 "margin0"
+margin: 0
+endsnippet
+snippet ml "margin-left"
+margin-left: $1
+endsnippet
+snippet mr "margin-right"
+margin-right: $1
+endsnippet
+snippet mt "margin-top"
+margin-top: $1
+endsnippet
+snippet mb "margin-bottom"
+margin-bottom: $1
+endsnippet
+
+
+snippet p "padding"
+padding: $1
+endsnippet
+snippet p0 "padding0"
+padding: 0
+endsnippet
+snippet pl "padding-left"
+padding-left: $1
+endsnippet
+snippet pr "padding-right"
+padding-right: $1
+endsnippet
+snippet pt "padding-top"
+padding-top: $1
+endsnippet
+snippet pb "padding-bottom"
+padding-bottom: $1
+endsnippet
+
+#states(st)
+snippet sth "&:active" !b
+&:hover
+  
+endsnippet
+snippet sta "&:hover" !b
+&:active
+  
+endsnippet
+
+#other
+
+snippet f "float"
+float: $0
+endsnippet
+snippet fr "float: right"
+float: right
+endsnippet
+snippet fl "float: left"
+float: left
+endsnippet
+
+snippet ff "font-family" !b
+font-family: ${1:Arial}
+endsnippet
+snippet fs "font-size" !b
+font-size: $1${2:em}
+endsnippet
+snippet fw "font-weight" !b
+font-weight: $1
+endsnippet
+
+snippet d "display "
+display: 
+endsnippet
+snippet dn "display none"
+display: none
+endsnippet
+snippet df "display flex"
+display: flex
+endsnippet
+snippet db "display bloc"
+display: block
+endsnippet
+
+snippet cup "cursor pointer"
+cursor: pointer
+
+endsnippet
+snippet cud "cursor default"
+cursor: default
+
+endsnippet
+
+snippet td "text-decoration" !b
+text-decoration: 
+endsnippet
+snippet ta "text-align" !b
+text-align: 
+endsnippet
+snippet ts "text-shadow" !b
+text-shadow: ${1:0}px ${2:0}px ${3:0}px rgba(${4:${5:0}, ${6:0}, ${7:0}, ${8:0}})
+endsnippet
+snippet bs "box-shadow" !b
+box-shadow: ${1:0}px ${2:0}px ${3:0}px rgba(${4:${5:0}, ${6:0}, ${7:0}, ${8:0}})
+endsnippet
+
+snippet tr "transition" !b
+transistion: $1
+endsnippet
+snippet tra "transform" !b
+transform: $1
+endsnippet
+snippet key "keyframe" 
+@keyframes: ${1:name}
+  
+endsnippet
+
+snippet por "postition" !b
+position: relative
+endsnippet
+snippet poa "postition absolute" !b
+position: absolute
+endsnippet
+snippet pof "postition absolute" !b
+position: fixed
+endsnippet
+
+snippet ww "-webkit-"
+-webkit-
+endsnippet
+
+snippet n "NiNa" !b
+.NiNa-
+endsnippet
+
+snippet rgbaw "rgba white"
+rgba(255, 255, 255, $1)
+endsnippet
+
+snippet rgbab "rgba black"
+rgba(0, 0, 0, $1)
+endsnippet
+
+snippet boot "bootstrap"
+@import 'nib'
+
+global-reset()
+
+*, *:before, *::after
+  box-sizing border-box
+
+.clear
+  clearfix()
+
+endsnippet

@@ -1,0 +1,8 @@
+#!/bin/bash
+# screen2=DVI-I-1-1
+screen2=HDMI-2
+screen3=DP-1
+xrandr --output eDP1 --auto --output HDMI2 --off --output $screen2 --off --output $screen3 --off 1>/dev/null 2>&1
+# xrandr --output eDP-1 --auto --output HDMI-2 --off
+# xrandr --output eDP-1 --off --output HDMI-2 --off
+

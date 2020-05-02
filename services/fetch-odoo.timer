@@ -1,0 +1,7 @@
+[Unit]
+Description=Run date.service every 10 minutes
+
+[Timer]
+OnCalendar=*:0/10
+OnBootSec=10min
+OnUnitActiveSec=15min

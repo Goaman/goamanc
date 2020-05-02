@@ -1,0 +1,2 @@
+Got to that url to help with vim color:
+http://bytefluent.com/vivify/

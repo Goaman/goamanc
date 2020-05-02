@@ -1,0 +1,14 @@
+core
+core18
+crystal
+discord
+getenv
+gitkraken
+gnome-3-28-1804
+gtk-common-themes
+kde-frameworks-5-qt-5-14-core18
+kdenlive
+polybar-git
+skype
+snapd
+travis

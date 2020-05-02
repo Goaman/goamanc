@@ -1,0 +1,26 @@
+[Unit]
+Description=Goa Storage
+; After=network.target
+; Requires=
+; Wants=
+; StartLimitIntervalSec=0
+[Service]
+; Type=simple
+; RemainAfterExit=
+User=odoo
+Environment=FORCE_COLOR=true
+ExecStart=/home/odoo/goamanc/services/goastorage.zsh
+
+; ExecStart=ENV=$ENV:/home/odoo/.nvm/versions/node/v11.1.0/bin:/home/odoo/.yarn/bin:/home/odoo/.config/yarn/global/node_modules/.bin\
+;           /home/odoo/.nvm/versions/node/v11.1.0/bin/node\
+;           /home/odoo/.nvm/versions/node/v11.1.0/bin/nodemon\
+;           -w *.js src/index.js
+; Restart=always
+; RestartSec=1
+
+[Install]
+; Alias=
+; RequiredBy=
+; Also=
+; DefaultInstance=
+WantedBy=multi-user.target

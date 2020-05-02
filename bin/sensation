@@ -1,0 +1,3 @@
+#!/bin/bash
+sudo -E $HOME/anaconda3/bin/python3 ~/projects/self/programming/goa/goa-sensation/src/__main__.py $@
+

@@ -1,0 +1,9 @@
+node_modules/
+tmp/
+__pycache__
+*.log
+.DS_Store
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

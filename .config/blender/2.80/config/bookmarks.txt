@@ -1,0 +1,6 @@
+[Bookmarks]
+/home/odoo/projects/self/homes/
+[Recent]
+/home/odoo/projects/self/homes/
+/home/odoo/blender/
+/home/odoo/

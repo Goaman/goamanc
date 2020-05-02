@@ -1,0 +1,12 @@
+#!/bin/bash
+
+xrandoff
+xrandon
+#xrand_screen2
+
+feh --bg-scale $HOME/goamanc/desktop-background/orange-star.jpg
+
+setxkbmap us dvorak-intl
+
+synclient TouchpadOff=1
+easystroke enable 1>/dev/null 2>&1 &

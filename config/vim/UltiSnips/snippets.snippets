@@ -1,0 +1,15 @@
+snippet ss "testpy" !b
+`!p
+snip.c = 'top'`
+endsnippet
+
+
+snippet wow
+${1:Text}`!p snip.rv = (30-2*len(t[1]))*' '+t[1].upper()`
+endsnippet
+
+snippet s "snippet"
+snippet $1 "${2:description}" $3
+$4
+`!p snip.rv = "endsnippet"`
+endsnippet

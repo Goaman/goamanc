@@ -1,0 +1,7 @@
+#!/bin/bash
+startsession 1>/dev/null
+setxkbmap us
+
+
+
+

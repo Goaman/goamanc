@@ -1,0 +1,5 @@
+#!/bin/bash
+original_file=$HOME/.config/google-chrome/Default/Web\ Data
+tmpfile=/tmp/webdata
+cp $original_file $tmpfile
+sqlite3 -header -csv $tmpfile "select short_name,keyword,url,originating_url,usage_count,date_created,last_modified from keywords" | csvtojson

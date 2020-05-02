@@ -1,0 +1,2 @@
+/home/odoo/projects/self/homes/homes.blend
+/home/odoo/blender/untitled.blend

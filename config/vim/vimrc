@@ -1,0 +1,992 @@
+  " Startup {{{
+  "finish
+  " Source:
+  " if filereadable(expand("~/.vim/custom_vimrc"))
+  "   source ~/.vim/custom_vimrc
+  " endif
+
+  if has('vim_starting')
+    set runtimepath+=~/.vim/neobundle.vim/
+  endif
+
+  call neobundle#begin(expand('~/.vim/bundle/'))
+
+
+  " Let NeoBundle manage NeoBundle
+  NeoBundleFetch 'Shougo/neobundle.vim'
+  NeoBundle 'Shougo/vimproc', {
+        \ 'build' : {
+        \     'windows' : 'make -f make_mingw32.mak',
+        \     'cygwin' : 'make -f make_cygwin.mak',
+        \     'mac' : 'make -f make_mac.mak',
+        \     'unix' : 'make -f make_unix.mak',
+        \    },
+        \ }
+
+  " Vundle
+  "set runtimepath+=~/.vim/vundle.git
+  "call vundle#rc()
+  "}}}
+  " Bundles: {{{
+  "NeoBundle "vim-ruby/vim-ruby"
+  " NeoBundle "tpope/vim-fugitive"
+  NeoBundle "tpope/vim-git"
+  NeoBundle "tpope/vim-endwise"
+  "NeoBundle "tpope/vim-rake"
+  "NeoBundle "tpope/vim-rails"
+  NeoBundle "tpope/vim-surround"
+  " NeoBundle "tpope/vim-haml"
+  NeoBundle "tpope/vim-markdown"
+  NeoBundle "tpope/vim-commentary"
+  " NeoBundle "kchmck/vim-coffee-script"
+  NeoBundle "pangloss/vim-javascript"
+  " NeoBundle "ervandew/supertab"
+  " NeoBundle "tyru/current-func-info.vim"
+  " NeoBundle "cespare/vim-bclose"
+  " NeoBundle "ack.vim"
+  " NeoBundle "kien/ctrlp.vim"
+  "NeoBundle "wookiehangover/jshint.vim"
+  " NeoBundle 'cakebaker/scss-syntax.vim'
+  " NeoBundle 'mrtazz/molokai.vim'
+  " NeoBundle 'Lokaltog/vim-powerline'
+  NeoBundle 'Auto-Pairs'
+
+  " " NeoBundle 'CSApprox'
+  "
+   " NeoBundle 'Color-Sampler-Pack'      
+   " NeoBundle 'ScrollColors'            
+   " NeoBundle 'Smooth-Scroll'           
+   "NeoBundle 'The-NERD-Commenter'     
+   NeoBundle 'tComment'
+   NeoBundle 'The-NERD-tree'         
+   NeoBundle 'coffee.vim'              
+   NeoBundle 'vim-stylus'  
+   "NeoBundle 'snipMate'
+   " NeoBundle 'jade.vim'
+   " NeoBundle 'gkz/vim-ls'
+   " NeoBundle 'git://github.com/gkz/vim-ls.git'
+   NeoBundle 'wincent/command-t.git'
+   " NeoBundle 'LustyExplorer'
+   NeoBundle 'surround.vim'
+   " NeoBundle 'Tabular'
+   " NeoBundle 'Gist.vim'
+   " NeoBundle 'WebAPI.vim'
+   " NeoBundle 'yaml.vim'
+   " NeoBundle 'Gundo'
+  
+   " Theme solarised
+   NeoBundle 'https://github.com/altercation/vim-colors-solarized.git'
+  
+   " NeoBundle 'Indent-Guides'
+   " NeoBundle 'unite.vim'
+   NeoBundle 'hdima/python-syntax'
+   " NeoBundle 'godlygeek/tabular'
+   NeoBundle 'plasticboy/vim-markdown'
+   NeoBundle 'leafgarland/typescript-vim'
+   NeoBundle 'peitalin/vim-jsx-typescript'
+
+call neobundle#local("/Users/nicolasbayet/projects/vimplugins/", {}, ['goalang'])
+call neobundle#local("/Users/nicolasbayet/projects/vimplugins/", {}, ['goal', 'pegjs'])
+NeoBundle 'https://github.com/Shougo/neocomplete.vim'
+
+"Table mode
+NeoBundle 'https://github.com/dhruvasagar/vim-table-mode.git'
+
+" NeoBundle 'UltiSnips'
+"NeoBundle 'SearchComplete'
+NeoBundle 'Lokaltog/vim-easymotion'
+
+NeoBundle 'dag/vim-fish'
+
+
+
+" NeoBundle 'git://github.com/majutsushi/tagbar.git'
+
+" NeoBundle 'AutoComplPop'
+
+NeoBundle 'pathogen.vim'
+
+
+
+" NeoBundle 'vim-scripts/taglist.vim'
+" NeoBundle 'jaanauati/vim-wordfuzzycompletion-plugin'
+
+
+" NeoBundle 'vim-scripts/AutoComplPop'
+
+" NeoBundle 'Valloric/YouCompleteMe' , {
+"       \ 'build' : {
+"       \     'unix' : './install.sh',
+"       \    },
+"       \ } 
+
+" NeoBundle 'szw/vim-ctrlspace'
+" NeoBundle 'vim-scripts/FuzzyFinder'
+" NeoBundle 'Shougo/vimfiler.vim'
+" NeoBundle 'Shougo/vimshell.vim'
+" NeoBundle 'alunny/pegjs-vim'
+" NeoBundle 'Lokaltog/vim-easymotion'
+
+
+" vim
+" NeoBundle 'digitaltoad/vim-pug'
+
+
+NeoBundleCheck
+
+call neobundle#end()
+filetype plugin indent on
+
+" endbundle;
+
+" }}}
+" StatusBar {{{
+if has("statusline") && !&cp
+  set laststatus=2  " always show the status bar
+
+  " Start the status line
+  set statusline=%f\ %m\ %r
+
+  " Add fugitive
+  " set statusline+=%{fugitive#statusline()}\ 
+  " set statusline+=%{cfi#get_func_name()}\
+
+  " Finish the statusline
+  "set statusline+=Line:%l/%L\ [%p%%]
+  "set statusline+=\ Col:%v
+  "set statusline+=\ Buf:#%n
+  "set statusline+=\ [%b][0x%B]
+endif
+" }}}
+" General Settings: {{{
+scriptencoding utf-8                    " UTF8 All day, every day
+set directory=/tmp/                     " Set temporary directory (don't litter local dir with swp/tmp files)
+
+" set noeol
+" set binary
+
+" Set it to internal VIM Help
+set keywordprg=:help
+
+if v:version >= 703
+  " Set undofile.
+  set undofile
+  let &undodir=&directory
+endif
+
+" Enable filetype-specific indenting, syntax, and plugins
+set nocompatible
+syntax on
+
+set vb t_vb=                            " Disable visual bell
+set autoread                            " Set to auto read when a file is changed from the outside
+set nobackup                            " Do not create backup files when saving over existing files
+set nowritebackup                       " A little paranoid, but disable the writebackup function as well
+" set noswapfile                          " No swap files when editing please
+
+"back here
+filetype plugin on
+set ofu=syntaxcomplete#Complete
+set completeopt=menu
+"set completeopt=menuone,preview
+
+
+" Ignore case on insert completion
+set infercase
+
+" set matchpairs+=<:>                     " Also match angle brackets
+
+" Mouse: 
+
+set mousehide                           " Hide mouse pointer on insert mode.
+
+" Text:
+
+set whichwrap=h,l,~,[,]                 " Wrap with more keys
+set nowrap                              " Disable line wrapping
+
+" use indents of 2 spaces, and have them copied down lines:
+set expandtab
+" Round indent by a multiple of shiftwidth in indent mode
+set shiftround
+
+set number                              " Enable line numbers
+set numberwidth=3                       " Set line number column width 
+
+" WindowAndBufferManagement:
+
+set splitbelow                          " Open new horizontal split windows below current
+set splitright                          " Open new vertical split windows to the right
+"set switchbuf=useopen,usetab,split      " Don't change my current buffer on quickfix
+
+
+" WildMenuModeConfig:
+
+set wildmode=list:longest,full         " Better completion
+set wildignore=.svn,CVS,.git           " Ignore VCS files
+set wildignore+=*.o,*.a,*.so           " Ignore compiled binaries
+set wildignore+=*.jpg,*.png,*.gif      " Ignore images
+set wildignore+=*.pdf                  " Ignore PDF files
+set wildignore+=*.map                  " Ignore MAP files
+set wildignore+=*.html                  " Ignore html files
+set wildignore+=*.pyc,*.pyo            " Ignore compiled Python files
+set wildignore+=backup
+set wildignore+=public/js/vendor
+set wildignore+=build
+
+" Search:
+
+" show the `best match so far' as search strings are typed:
+set incsearch
+
+" Don't highlight search result.
+set nohlsearch
+
+" Searches wrap around the end of the file
+set wrapscan
+
+" assume the /g flag on :s substitutions to replace all matches in a line:
+set gdefault
+
+" Tags:
+
+" Show extra information when using tags in insert mode
+set showfulltag
+
+" Formatting:
+set fo-=o " Do not automatically insert the current comment leader after hitting 'o' or 'O' in Normal mode.
+set fo-=r " Do not automatically insert a comment leader after an enter
+set fo-=t " Do no auto-wrap text using textwidth (does not apply to comments)
+
+" We use all the colors, all 256 of the possible colors in the universe
+set t_Co=256
+
+set hidden
+" }}}
+"
+" Auto commands {{{
+
+autocmd BufRead,BufNewFile {Vagrantfile,Guardfile,Gemfile,Rakefile,Capfile,*.rake,config.ru}      set ft=ruby
+
+autocmd BufRead,BufNewFile {Vagrantfile,Guardfile,Gemfile,Rakefile,Capfile,*.rake,config.ru}      set ft=ruby
+autocmd BufRead,BufNewFile {*.md,*.mkd,*.markdown}                                                set ft=markdown
+autocmd BufRead,BufNewFile {COMMIT_EDITMSG}                                                       set ft=gitcommit
+autocmd BufRead,BufNewFile {*.clj,*.cljs}                                                         set ft=clojure
+autocmd BufRead,BufNewFile {*.json}                                                               set ft=javascript
+
+autocmd BufRead,BufNewFile {*.gyp}                                                               set ft=javascript
+
+" Clear trailing whitespace
+autocmd BufWritePre        {*.coffee,*.js,*.ls}                                 :%s/\s\+$//e
+""
+autocmd BufRead,BufNewFile,BufWritePre {*.iced} :set syntax=coffee
+
+"jade
+au BufWritePost *.jade silent !jade %
+autocmd FileType jade set commentstring=//%s
+
+au BufWritePost *.styl silent !stylus -u nib %
+
+au BufWritePost *.coffee silent make!
+
+" " "Comments
+" map <c-c> gcc
+" vmap <c-c> gc
+ 
+" livescript
+au BufWritePost *.ls silent LiveScriptMake!
+com! Slive LiveScriptCompile watch vertical 
+com! Snolive LiveScriptCompile unwatch
+
+
+au BufWritePost *.ls silent LiveScriptMake! -b | cwindow | redraw!
+noremap <space>lv :LiveScriptCompile watch vertical<cr>
+noremap <space>lu :LiveScriptCompile unwatch<cr>
+
+" Resize splits when the window is resized
+autocmd VimResized * exe "normal! \<c-w>="
+
+" Autosave forma when quit vim
+au BufWinLeave * silent! mkview
+au BufWinEnter * silent! loadview
+
+" Vimscript file settings
+augroup filetype_vim
+    autocmd!
+    autocmd FileType vim setlocal foldmethod=marker
+augroup END
+" }}}
+" Personnal settings {{{
+" com! Pa call pathogen#infect("~/projects/vimplugins")
+"call pathogen#infect("~/projects/vimplugins")
+
+set shell=bash\ -l
+
+" set the middle mouse to be able to scroll on my mac
+set mouse=nicr
+
+
+set ic
+set guifont=Menlo\ Regular:h10
+no <space>sf :set guifont=Menlo\ Regular:h10<cr>
+
+" KeyBinding
+let mapleader = ","
+
+" CtrlP
+nmap <leader>lf :CtrlP<CR>
+nmap <leader>lb :CtrlPBuffer<CR>
+nmap <leader>lt :CtrlPTag<CR>
+
+" Nerd tree
+noremap ,nt :NERDTreeToggle<CR>
+
+" ignore js
+" noremap ,ij :set wildignore+=*.js<CR>:CommandTFlush<CR>
+noremap ,ij :CommandTFlush<CR>
+noremap ,nij :set wildignore-=*.js<CR>
+
+"map for coffeesscript
+imap `' ')
+imap `" ")
+imap `` `
+
+" easy escape in insert mode
+imap <c-l> <esc>
+
+" save in insert mode
+imap <D-s> <Esc><c-s>a
+
+"
+com! Tohtml execute "%s/>/>\r/ |%s/[^>]<\\//\\r<\\// | normal gg=G | let @/ = ''"
+" noremap ,to :Tohtml<cr>
+
+"alt f: clear search
+noremap ƒ :let @/ = ""<cr>
+"alt s: Save current document and source vimrc
+noremap ß :w<CR>:Sv<CR>
+
+"CommandTFlush
+noremap ,cf :CommandTFlush<CR>
+
+" UltiSnipsEdit
+noremap ,ue :UltiSnipsEdit<cr>
+com! Ue UltiSnipsEdit
+
+" edit vim faster
+nno ,ev :Ev<cr>
+nno ,sv :w ~/.vim/vimrc<cr>:Sv<cr> 
+
+" Easy vim source
+noremap ,so :w<cr>:so %<cr>
+
+" Fast seacher
+noremap ,/f /^[^#]*log<cr>
+
+
+" Edit some file faster
+com! Ev :vsplit ~/.vim/vimrc | exec "normal <c-w>L"
+com! Sv :source ~/.vimrc
+com! SS :source ~/.vimrc
+" com! Evd :e ~/.vim/dvorakrc
+" com! Egv :e ~/.vim/gvimrc
+com! Ep :e ~/.bash_profile
+com! Es :e ~/.zshrc
+
+" Source this
+"if !exists("*SourceVim")
+  "fu! SourceVim()
+    "source ~/.vim/vimrc
+  "endfun
+  "com! Sv call SourceVim()
+"endif
+"map ß :Sv<CR>
+
+" Fast moove tabs
+
+" doesn"t work, why ? :/
+"if has("autocmd")
+  "" source the .vimrc file on save to apply all changes immediately
+  "autocmd! bufwritepost .vimrc source ~/.vimrc
+"endif
+
+let mapleader=','
+
+
+" Touche TAB améliorée
+"vnoremap <tab> >gv
+"vnoremap <S-tab> <gv
+
+"reload snippet
+fun! ReloadSnippets(snippets_dir, ft)
+	call ResetSnippets()
+	call GetSnippets(a:snippets_dir, a:ft)
+endfun
+
+
+"redo
+no U <C-r>
+
+"search/replace current word
+no ,f ƒ
+
+"comment
+" no <C-c> ,cc
+" no <C-x> ,cu
+
+set hlsearch
+
+" some window mapping
+noremap ,w<space> :vertical res<cr>:res<cr>
+noremap ,we <c-w>=
+
+
+" Navigate into splited view
+" map <C-h> <C-w>h
+" map <C-j> <C-w>j
+" map <C-k> <C-w>k
+" map <C-l> <C-w>l
+" map <m-h> <C-w>h
+" map <m-j> <C-w>j
+" map <m-k> <C-w>k
+" map <m-l> <C-w>l
+
+" Navigate faster
+map <S-h> b
+map <S-l> e
+map <S-j> 5j
+map <S-k> 5k
+
+" syntax clear
+noremap ,sc :syntax clear<cr>
+
+" Configure table-mode
+let g:table_mode_map_prefix = '<Leader>d'
+
+
+" Configure nerdtree
+
+" don't use this rigth now
+"map ,gg :let NERDTreeIgnore=['.DS_Store', '.*\.html', '.*\.js', '.nide']<CR>
+"map ,gf :let NERDTreeIgnore=['.DS_Store']<CR>
+
+
+" An awesome plugin :D
+" map ,r :read! nodegen rest 
+map ,rr :edit!<cr>
+map ,rs :w<cr>
+
+" Unmap for command-t
+" map ,te a
+" unmap ,te
+" map ,tn a
+" unmap ,tn
+" map ,tp a
+" unmap ,tp
+
+com! Chdir cd %:p:h
+com! Lchdir lchdir %:p:h
+com! Lcd lchdir %:p:h
+com! Go cd %:p:h
+com! Gol lcd %:p:h
+com! Eb edit ~/.vim/vundle.vim
+
+" Fast chdir
+com! Self cd ~/projects/self
+com! Gos Self
+no ,gos :Gos<cr>
+com! Magic cd ~/projects/self/magic-reload/magic-reload
+com! Mw cd ~/projects/self/mwatch
+com! Brain cd ~/projects/self/brain
+com! Brain2 cd ~/projects/self/brain
+com! Goa cd ~/projects/self/goa
+com! IO cd ~/projects/self/goaIO
+com! FAdd cd ~/projects/self/autoFileAdd
+com! CI cd ~/projects/self/unsecureChromeInterface
+com! Gotest cd ~/projects/self/tests
+com! Potion cd ~/projects/self/tests/potion
+com! Starve cd ~/projects/self/starvemod
+com! Scrapper cd ~/projects/archive/scrapper
+com! Kim cd ~/projects/self/kim/
+com! Coh cd ~/projects/self/kim/coherence/www
+com! Ui cd ~/projects/self/goaUI
+com! Gotap cd ~/projects/self/tap
+com! Got Gotap
+com! Gov cd /Users/nicolasbayet/projects/vimplugins
+no ,gov :Gov<cr>
+com! God cd /Users/nicolasbayet/projects/self/draw
+no ,god :God<cr>
+com! Gou cd /Users/nicolasbayet/projects/vimplugins/unite.vim
+no ,gou :Gou<cr>
+
+com! CC cd ~/projects/self/cconf
+com! F cd ~/projects/self/cconf
+
+
+map ,cdc :Chdir<CR>
+map ,cdm :Magic<CR>
+map ,cdb :Brain<CR>
+map ,cdg :Goa<CR>
+map ,cdi :IO<CR>
+map ,cds :Self<CR>
+map ,cdt :Tests<CR>
+map ,cui :CI<CR>
+
+" Fast read compiled coffee file for debuging
+"com! Ejs e substitute(expand(%:p:h), 'coffee', 'js', '')
+fu! EditJS()
+  let jsfile = substitute(expand('%:p'), '.ls$', '.js', '')
+  echo jsfile
+  exe "e ".jsfile
+endfun
+com! Ejs call EditJS()
+"com! Ec echo expand('%:p:h')
+noremap ,ejs :Ejs<CR>
+fu! EditJS2()
+  let jsfile = substitute(expand('%:p'), '.ls$', '.js', '')
+  echo jsfile
+  exe "e ".jsfile
+endfun
+com! Ej call EditJS2()
+"com! Ec echo expand('%:p:h')
+noremap ,ej2 :Ej<CR>
+
+" Set colorsheme
+if has('gui') && $TERM=="dump"
+  colorscheme solarized
+  set background=light
+endif
+"com! Tw colorscheme twilight
+
+" ColorScheme
+" if !has("gui")
+  " colorscheme lucius
+" endif
+
+
+
+" tabularize
+if exists(":Tabularize")
+  nmap <Leader>a= :Tabularize /=<CR>
+  vmap <Leader>a= :Tabularize /=<CR>
+  nmap <Leader>a: :Tabularize /:\zs<CR>
+  vmap <Leader>a: :Tabularize /:\zs<CR>
+  nmap <Leader>a, :Tabularize /,\zs<CR>
+  vmap <Leader>a, :Tabularize /,\zs<CR>
+endif
+inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+ 
+function! s:align()
+  let p = '^\s*|\s.*\s|\s*$'
+  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
+    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
+    Tabularize/|/l1
+    normal! 0
+    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+  endif
+endfunction
+
+
+" Configure livescript
+hi link lsSpaceError NONE
+
+" Delete hidden buffers
+function DeleteHiddenBuffers()
+    let tpbl=[]
+    call map(range(1, tabpagenr('$')), 'extend(tpbl, tabpagebuflist(v:val))')
+    for buf in filter(range(1, bufnr('$')), 'bufexists(v:val) && index(tpbl, v:val)==-1')
+        silent execute 'bwipeout' buf
+    endfor
+endfunction
+command! DeleteHiddenBuffers call DeleteHiddenBuffers()
+
+" ignore for command-t
+set wildignore+=node_modules/**
+set wildignore+=*.css
+set wildignore+=*.js
+set wildignore+=*bower*
+" set wildignore+=*.json
+com! Wildjs set wildignore-=*.js
+com! Js Wildjs
+com! Wildnojs set wildignore+=*.js
+com! Nojs Wildnojs
+com! Wildjson set wildignore-=*.json
+com! Wildnojson set wildignore+=*.json
+com! Html set wildignore-=*.html
+com! Nohtml set wildignore+=*.html
+com! Wildhtml Html
+com! Wildnohtml Nohtml
+com! Wildcss set wildignore-=*.css
+com! Wildnocss set wildignore+=*.css
+com! Css Wildcss
+com! Nocss Wildnocss
+
+com! H exe "exe 'Css' | exe 'Html' | exe 'Js'"
+com! Noh exe "exe 'Nocss' | exe 'Nohtml' | exe 'Nojs'"
+
+noremap ,wj :Wildjs<cr>
+noremap ,wc :Wildcss<cr>
+noremap ,wnj :Wildnojs<cr>
+noremap ,wnc :Wildnocss<cr>
+
+
+" Gist
+let g:gist_clip_command = 'pbcopy'
+let g:gist_detect_filetype = 1
+let g:gist_open_browser_after_post = 1
+let g:gist_browser_command = 'open %URL% &'
+
+
+
+" UltiSnipsEdit
+let g:UltiSnipsExpandTrigger="<D-u>"
+let g:UltiSnipsJumpForwardTrigger="<D-u>"
+let g:UltiSnipsJumpBackwardTrigger="<D-e>"
+let g:UltiSnipsEditSplit="vertical"
+
+
+
+" command map for easy up/down/left/right
+cno <d-k> <Up>
+cno <d-j> <Down>
+cno <c-h> <s-Left>
+cno <c-l> <s-Right>
+cno ˙ <Left>
+cno ¬ <Right>
+
+" execute this line into command line
+no ,qq Yq:p<cr>
+
+
+" Escape visual mode faster
+vmap ,j <esc>
+
+" escape insert mode faster
+" ino ij <esc>
+" ino kj <esc>
+" ino jk <esc>
+" ino jj <esc>
+" ino kk <esc>
+
+inoremap zj <esc>
+
+"
+"ino <esc> <Nop>
+"
+"ino <BS> <Nop>
+
+
+"better keyboard
+
+"ino ;a '
+"ino ;s "
+
+"ino ;d (
+"ino ;f )
+"ino ;q [
+"ino ;w ]
+"ino ;e {
+"ino ;r }
+
+"ino ;g :
+"ino ;; ;
+
+"ino ;jq !
+"ino ;jw @
+"ino ;je #
+"ino ;jr $
+"ino ;jt %
+
+"ino ;ja =
+"ino ;jf _
+"ino ;jd -
+"ino ;js +
+"ino ;jy ^
+"ino ;ju &
+"ino ;ji *
+
+"ino ;u _
+"ino ;l -
+"ino ;n =
+"ino ;m +
+
+"ino ;1 !
+"ino ;2 @
+"ino ;3 #
+"ino ;4 $
+"ino ;5 %
+"ino ;6 ^
+"ino ;7 &
+"ino ;8 *
+"ino ;9 (
+"ino ;0 )
+
+""ino [ <BS>
+
+"ino ;jm <Return>
+"ino ;i <Return>
+"ino ;x <BS>
+
+
+ino `, <
+ino `. >
+
+" escape visual mode faster
+vnoremap ij <esc>
+" vnoremap < <gv
+" vnoremap > >gv
+
+
+" faster access to ':'
+" no ; :
+" no : ;
+" no q; q:
+
+" Faster access to esc
+"vn § <esc>
+"ino § <esc>
+"cm § <esc>
+
+"
+noremap <space>lo /^\s*[^#]*console.log/<cr>
+
+" CommandT
+noremap <space>t :CommandT<cr>
+noremap ,t :CommandT<cr>
+
+"Tab plugin
+nnoremap ,a: :Tabularize /:\zs<CR>
+vnoremap ,a: :Tabularize /:\zs<CR>
+nnoremap ,a= :Tabularize /=<CR>
+vnoremap ,a= :Tabularize /=<CR>
+
+
+" NERDTree Config
+let NERDTreeWinSize=20
+
+
+" Js2Coffee
+function! VisualSelection()
+  try
+    let a_save = @a
+    normal! gv"ay
+    return @a
+  finally
+    let @a = a_save
+  endtry
+endfunction
+
+fun! Js2Coffee(line1, line2)
+  silent exe "normal! ".(a:line2 - a:line1 + 1)."dd"
+  silent exe "read! echo ".(shellescape(@"))." | js2coffee"
+endf
+fun! Coffee2Js(line1, line2)
+  silent exe "normal! ".(a:line2 - a:line1 + 1)."dd"
+  silent exe "read! echo ".(shellescape(@"))." | coffee -scb"
+endf
+
+com! -range Js2Coffee call Js2Coffee(<line1>, <line2>)
+com! -range Coffee2Js call Coffee2Js(<line1>, <line2>)
+
+" split
+noremap vv :vs<cr>
+noremap vd :sp<cr>
+
+"TODO test livereload
+
+" unclasified
+" map ,g ,tninicom<cr>
+
+com! NTT NERDTreeToggle
+com! NT NERDTree
+com! NT NERDTree
+com! CTF CommandTFlush
+
+com! Gf edit Gruntfile.ls
+
+"colorscheme twilight
+" let g:solarized_termcolors=256
+" colorscheme solarized
+" set background=light
+" colorscheme desert
+
+
+cnoremap § <cr>
+noremap <space>s :wa<cr>:!g++ -o main main.cpp;./main<cr>
+noremap <space>s :wa<cr>:!make<cr>
+
+function! SwitchSourceHeader()
+  "update!
+  if (expand ("%:e") == "cpp")
+    find %:t:r.hpp
+  else
+    find %:t:r.cpp
+  endif
+endfunction
+
+noremap ,' :call SwitchSourceHeader()<CR>
+
+function s:MkNonExDir(file, buf)
+    if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
+        let dir=fnamemodify(a:file, ':h')
+        if !isdirectory(dir)
+            call mkdir(dir, 'p')
+        endif
+    endif
+endfunction
+augroup BWCCreateDir
+    autocmd!
+    autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
+augroup END
+
+
+noremap ,tmp :e /tmp/
+
+"ultisnip
+" unite#filters#matcher_default#use(['matcher_fuzzy'])
+" call unite#filters#sorter_default#use(['sorter_rank'])
+noremap ,ul :Unite 
+noremap ,uc :Unite command 
+
+
+no <space>s :w<cr>:source %<cr>
+no <space>p :w<cr>:source %<cr>
+
+" set relativenumber
+" no ,wo :
+
+" golang
+" filetype off
+" filetype plugin indent off
+" set runtimepath+=$GOROOT/misc/vim
+" filetype plugin indent on
+" syntax on
+
+
+no <space>p :w<cr>:!export PYTHONPATH=/Users/nicolasbayet/projects/self/cours/python/test1/python2014/Bases/src; python3 %<cr>
+" no <space>p :w<cr>:!export PYTHONPATH=/Users/nicolasbayet/projects/self/cours/python/test1/python2014/Bases/src; python3 %<cr>
+"
+com! Etoday execute 'edit' "~/notes/days/".system('ls ~/notes/days/ | sort | tail -n1')
+
+set clipboard=unnamed
+autocmd VimLeave * call system("xsel -ib", getreg('+'))
+ 
+
+autocmd BufNewFile,BufRead *.fish set wrap
+"endpersonal
+" source ~/.vim/dvorakrc
+" }}}
+" other {{{
+" if has("gui_running") 
+"   " General settings 
+"   " Font: Choose font and enable anti-aliasing
+"   "set guifont=Monaco:h12
+"   "set guifont=Source\ Code\ Pro\ Light:h12
+"   set antialias
+"
+"   " Maximize: Vert and Horiz by default
+"   set fuoptions=maxvert,maxhorz
+"
+"   " Hide toolbar and menus.
+"   set guioptions-=T
+"   set guioptions-=m
+"
+"   " Scrollbar is always off.
+"   "set guioptions-=rL
+"
+"   " Native style tab labels (this ones for you larry)
+"   set guioptions+=e
+"
+"   " Don't flick cursor.
+"   set guicursor=a:blinkon0
+"
+"
+"   " OSX: Specific keybindings 
+"   if has("mac")
+"     
+"     " TABS: safari style tab navigation
+"     nmap <D-[> :tabprevious<CR>
+"     nmap <D-]> :tabnext<CR>
+"     map <D-[> :tabprevious<CR>
+"     imap <D-]> <C-O>:tabnext<CR>
+"
+"     " TABS: Firefox style, open tabs with command-<tab number>
+"     noremap <silent> <D-1> :tabn 1<CR>
+"     noremap <silent> <D-2> :tabn 2<CR>
+"     noremap <silent> <D-3> :tabn 3<CR>
+"     noremap <silent> <D-4> :tabn 4<CR>
+"     noremap <silent> <D-5> :tabn 5<CR>
+"     noremap <silent> <D-6> :tabn 6<CR>
+"     noremap <silent> <D-7> :tabn 7<CR>
+"     noremap <silent> <D-8> :tabn 8<CR>
+"     noremap <silent> <D-9> :tabn 9<CR>
+"
+"     noremap <space>1 :tabn 1<CR>
+"     noremap <space>2 :tabn 2<CR>
+"     noremap <space>3 :tabn 3<CR>
+"     noremap <space>4 :tabn 4<CR>
+"     noremap <space>5 :tabn 5<CR>
+"     noremap <space>6 :tabn 6<CR>
+"     noremap <space>7 :tabn 7<CR>
+"     noremap <space>8 :tabn 8<CR>
+"     noremap <space>9 :tabn 9<CR>
+"     
+"     " TextMateLikeIndent: bind command-] to shift right
+"     nmap <D-]> >>
+"     vmap <D-]> >>
+"     imap <D-]> <C-O>>>
+"
+"     " TextMateLikeDeindent: bind command-[ to shift left
+"     nmap <D-[> <<
+"     vmap <D-[> <<
+"     imap <D-[> <C-O><<
+"
+"     " Unmap Apple+T so we can...
+"     macmenu &File.New\ Tab key=<nop>
+"
+"     " Change Apple+T to TextMate Like Fuzzy Finder
+"     nnoremap <D-t> :FufCoverageFile<CR>
+"
+"     " Unmap Apple+Shift+T so we can...
+"     macmenu &File.Open\ Tab\.\.\. key=<nop>
+"
+"     " CommandShiftT: Fuzzy Find by Tag
+"     nnoremap <D-T> :FufTag!<CR>
+"
+"     " Unmap Apple+b so we can...
+"     macmenu &Tools.Make key=<nop>
+"
+"     " Change Apple+b to Emacseque buffer browser
+"     map <D-b> :FufBuffer!<CR>
+"     imap <D-b> :FufBuffer!<CR>
+"
+"     " Unmap Apple+S to remap to Esc, then :w<CR>
+"     macmenu &File.Save key=<nop>
+"     imap <D-s> <Esc>:w<CR>
+"     map <D-s> :w<CR>
+"
+"     " bind command-/ to toggle comment
+"     " requires NERD Commenter to be installed: http://www.vim.org/scripts/script.php?script_id=1218
+"     nmap <D-/> ,c<Space>
+"     vmap <D-/> ,c<Space>
+"     imap <D-/> <C-O>,c<Space>
+"
+"     " LeaveInsertMode: Alternate Key mappings
+"     inoremap <D-i> <Esc>
+"     nnoremap <D-i> <Esc>
+"   endif
+"   " 
+"   " 
+" endif 
+" " Mapping for tests 
+" noremap ∂ :w<cr>:!bash % a b c<cr>
+" 
+" "
+"
+" noremap .s :w<cr>
+" }}}
+"
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2

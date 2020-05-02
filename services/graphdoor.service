@@ -1,0 +1,20 @@
+[Unit]
+Description=Graphdoor
+; After=network.target
+; Requires=
+; Wants=
+; StartLimitIntervalSec=0
+[Service]
+; Type=simple
+; RemainAfterExit=
+User=odoo
+ExecStart=/home/odoo/goamanc/services/graphdoor.zsh
+
+
+
+[Install]
+; Alias=
+; RequiredBy=
+; Also=
+; DefaultInstance=
+WantedBy=multi-user.target

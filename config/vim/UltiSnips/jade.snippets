@@ -1,0 +1,66 @@
+snippet js "script tag" !b
+script(src='js/$1.js')$0
+endsnippet
+
+snippet jsv "script tag vendor" !b
+script(src='js/vendor/$1.js')$0
+endsnippet
+
+snippet jsl "script tag lib" !b
+script(src='js/lib/$1.js')$0
+endsnippet
+
+snippet bw "script tag bower" !b
+script(src='bower_components/$1/$1.js')
+endsnippet
+
+snippet css "css" 
+link(type='text/css' rel='stylesheet' href='${4:css/styles.css}')
+endsnippet
+
+snippet mb "Mini bootstrap" !b
+doctype html
+html
+	head
+		meta(charset='utf8')
+	body
+		script(src='boot.js')
+endsnippet
+snippet b "bootstrap" !b
+doctype html
+html(${1:ng-app="$2"})
+	head
+		meta(charset='utf8')
+		title ${3:Your title}
+		link(type='text/css' rel='stylesheet' href='css/styles.css')
+		
+	body
+		$0
+
+		script(src='js/vendor/jquery.js')
+		script(src='js/vendor/lodash.js')
+		script(src='js/boot.js')
+endsnippet
+
+
+snippet itext "Description" !b
+input$1(type='text'$2)
+endsnippet
+
+# jade
+snippet blo "description" 
+#{$1}
+endsnippet
+
+# libs
+
+snippet lib "lib script" 
+script(src='http://localhost:8093/$1/src/${2:$1}.js')
+endsnippet
+snippet libv "lib vendor script" 
+script(src='http://localhost:8093/vendor/$1/src/${2:$1}.js')
+endsnippet
+
+snippet tween "tween script"
+script(src='http://localhost:8093/vendor/greensock-v12-js/src/uncompressed/TweenMax.js')
+endsnippet

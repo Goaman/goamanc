@@ -1,0 +1,22 @@
+#!/usr/bin/zsh
+zman_commands='
+zsh
+zshroadmap
+zshmisc
+zshexpn
+zshparam
+zshoptions
+zshbuiltins
+zshzle
+zshcompwid
+zshcompsys
+zshcompctl
+zshmodules
+zshcalsys
+zshtcpsys
+zshzftpsys
+zshcontrib
+zshall
+'
+
+echo $zman_commands | fzf --bind="enter:execute(man {})"

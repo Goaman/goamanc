@@ -1,0 +1,61 @@
+#!/bin/bash
+
+################################################################################
+# Set folder variables
+################################################################################
+config_dir=$HOME/goamanc
+dot_config_folder=$config_dir/.config
+config_folder=$HOME/.config
+
+################################################################################
+# Link vim
+################################################################################
+rm $HOME/.vim 2>/dev/null
+ln -s $config_dir/config/vim $HOME/.vim
+rm $HOME/.vimrc 2>/dev/null
+ln -s $config_dir/config/vimrc $HOME/.vimrc
+
+################################################################################
+# Link xmobarrc
+################################################################################
+rm $HOME/.xmobarrc
+ln -s $config_dir/config/xmobar.config $HOME/.xmobarrc
+
+################################################################################
+# Rename all .config in ~/.config with the suffix _bakup that are in
+# goamanc/.config to link the folder of $config_dir/goamanc/.config
+################################################################################
+for filename in `ls $dot_config_folder`
+do
+  config_path=$config_folder/$filename
+  if [[ ! -L "$config_path" ]]
+  then
+      mv $config_path "${config_path}_bakup" 2>/dev/null
+  fi
+  if [[ "$config_path" ]]
+  then
+      rm -rf $config_path 2>/dev/null
+  fi
+  ln -s "$dot_config_folder/$filename" $config_path
+done
+
+################################################################################
+# Install packages
+################################################################################
+sudo apt-get install terminator\
+                     fish\
+                     curl\
+                     vim\
+                     fzf
+
+################################################################################
+# Install fisher and extentions
+################################################################################
+# The nvm path is bound through a fish function in my fish config.
+fish -c "nvm install node"
+
+################################################################################
+# Install nvm
+################################################################################
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+

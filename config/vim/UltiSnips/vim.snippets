@@ -1,0 +1,29 @@
+snippet s "New syntax" !b
+if exists("b:current_syntax")
+    finish
+endif
+
+${2:Your syntax code here.}
+
+let b:current_syntax = "${1:syntax_name}"
+endsnippet
+
+snippet f "fun! ()..."  !
+fun! ${1:function_name}($2)
+  ${0:" code}
+endf
+endsnippet
+
+snippet ,f "Fold comments" !b
+" ${1:Your comment} {{{
+$0
+" }}}
+endsnippet
+
+snippet ,fn "Fold comments"
+{{{
+endsnippet
+
+snippet ,fc "Fold comments"
+" }}}
+endsnippet

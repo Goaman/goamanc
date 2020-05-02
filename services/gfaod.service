@@ -1,0 +1,22 @@
+[Unit]
+Description=Odoo Goa tools
+; After=network.target
+; Requires=
+; Wants=
+; StartLimitIntervalSec=0
+[Service]
+; Type=simple
+; RemainAfterExit=
+; Restart=always
+User=odoo
+ExecStart=/usr/bin/fish\
+          -c 'source /home/odoo/goamanc/fishc/aliases/odoo;\
+          ssh-add;\
+          gfaod'
+
+[Install]
+; Alias=
+; RequiredBy=
+; Also=
+; DefaultInstance=
+WantedBy=multi-user.target

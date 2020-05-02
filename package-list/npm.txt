@@ -1,0 +1,7 @@
+checksum
+mkdirp
+nodemon
+npm
+open-in-editor-connect
+yarn
+

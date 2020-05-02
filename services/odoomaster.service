@@ -1,0 +1,22 @@
+[Unit]
+Description=Odoo Goa tools
+; After=network.target
+; Requires=
+; Wants=
+; StartLimitIntervalSec=0
+[Service]
+; Type=simple
+; RemainAfterExit=
+Restart=always
+User=odoo
+ExecStart=/usr/bin/fish\
+          -c '/home/odoo/anaconda3/envs/py365/bin/python\
+          /home/odoo/projects/self/odoo-click/odoo-click.py\
+          start -p 8090'
+
+[Install]
+; Alias=
+; RequiredBy=
+; Also=
+; DefaultInstance=
+WantedBy=multi-user.target

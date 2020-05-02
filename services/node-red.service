@@ -1,0 +1,21 @@
+[Unit]
+Description=Nodered service
+; After=network.target
+; Requires=
+; Wants=
+; StartLimitIntervalSec=0
+[Service]
+; Type=simple
+; RemainAfterExit=
+Environment="PATH=/home/odoo/.nvm/versions/node/v11.1.0/bin:/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin"
+User=odoo
+ExecStart=/home/odoo/.nvm/versions/node/v11.1.0/bin/node-red
+
+
+
+[Install]
+; Alias=
+; RequiredBy=
+; Also=
+; DefaultInstance=
+WantedBy=multi-user.target

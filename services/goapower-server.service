@@ -1,0 +1,21 @@
+[Unit]
+Description=Goa Storage
+; After=network.target
+; Requires=
+; Wants=
+; StartLimitIntervalSec=0
+[Service]
+; Type=simple
+; RemainAfterExit=
+User=odoo
+Environment=FORCE_COLOR=true
+ExecStart=/home/odoo/goamanc/services/goapower-server.zsh
+
+
+
+[Install]
+; Alias=
+; RequiredBy=
+; Also=
+; DefaultInstance=
+WantedBy=multi-user.target

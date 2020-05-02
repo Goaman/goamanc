@@ -1,0 +1,312 @@
+
+snippet r "return" !w
+return ${1};
+endsnippet
+
+snippet I "return" !w
+import I from 'immutable'
+endsnippet
+
+snippet _ "return" !w
+import _ from 'lodash'
+endsnippet
+
+snippet arg "arguments" !w
+arguments${1}
+endsnippet
+
+snippet p "Promise" !w
+new Promise((resolve, reject) => {
+${1}
+});
+endsnippet
+
+snippet ss "style={styles.}" !w
+style={styles.${1}}
+endsnippet
+
+snippet cn "className={css(styles.${1})}" !w
+className={css(styles.${1})}
+endsnippet
+
+snippet rp "style={styles.}" !w
+React.PropTypes.${1}.isRequired,
+endsnippet
+
+
+snippet jp "JSON.parse()" !w
+JSON.parse(${1})
+endsnippet
+
+snippet js "JSON.stringify()" !w
+JSON.stringify(${1})
+endsnippet
+
+snippet bp "break point" !w
+debugger; // epelinocommit
+endsnippet
+
+snippet a "Arrow function" !w
+($1) => {
+	$0
+}
+endsnippet
+snippet a, "Arrow function with comma" !w
+($1) => {
+	$0
+},
+endsnippet
+snippet a; "Arrow function with semicolon" !w
+($1) => {
+	$0
+};
+endsnippet
+
+snippet f "Basic function" !w
+function($1) {
+	$2
+}
+endsnippet
+snippet f, "Basic function with comma" !w
+function($1) {
+	$2
+},
+endsnippet
+snippet f; "Basic function with semicolon" !w
+function($1) {
+	$2
+};
+endsnippet
+
+snippet c "Callback" !w
+function(${1:err}) {
+	${2}
+})
+endsnippet
+
+snippet c; "Callback with semicolon" !w
+function(${1:err}) {
+	${2}
+});
+endsnippet
+
+snippet iferr "if error" !b
+if (err) {
+	${1}
+}
+endsnippet
+
+snippet rerr "return if error" !b
+if (err) return ${1:cb}(err);
+endsnippet
+
+snippet d "console.log()" !b
+debug(${1});
+endsnippet
+
+snippet log "console.log('x', x)" !b
+console.log("$1", $1);
+endsnippet
+snippet l "console.log()" !b
+console.log(${1});
+endsnippet
+snippet ls "console.log('same', same)" !b
+console.log('$1', $1);
+endsnippet
+
+snippet ci "console.info()" !b
+console.info(${1});
+endsnippet
+
+snippet w "console.warn()" !b
+console.warn(${1});
+endsnippet
+
+snippet e "console.error()" !b
+console.error(${1});
+endsnippet
+
+snippet b "require(bluebird)" !b
+var Promise = require("bluebird");
+endsnippet
+
+snippet mex "module.exports" !b
+module.exports = $1;
+endsnippet
+
+snippet expd "module.exports" !b
+export default $0
+endsnippet
+
+snippet exp "module.exports" !b
+export $0
+endsnippet
+
+snippet i "import" !bw
+import ${1} from "${2:${1/(.*)/$1/}}";
+endsnippet
+
+snippet desc "Mocha describe" !b
+describe("${1}", function() {
+${2}
+});
+endsnippet
+
+snippet mocha "Mocha globals" !b
+/*global it, describe, before, beforeEach, after, afterEach */
+endsnippet
+
+
+snippet exit "process.exit(0);" !b
+process.exit(${1:0});
+endsnippet
+
+
+# /**
+#  * @namespace components
+#  * @class ${1/(.*)/$1/}
+#  * @constructor
+#  * @param {Object} props
+#  */
+snippet react "Create React Component" 
+class $1 extends React.Component {
+	constructor(props) {
+		super(props);
+		// this.state = {};
+	}
+
+	componentDidMount() {
+
+	}
+
+	componentWillUnmount() {
+
+	}
+
+	render() {
+		return (
+			<div>
+				$2
+			</div>
+		);
+	}
+}
+endsnippet
+snippet rcomp "description" 
+const $1 = React.createClass({
+	render: () => {
+
+	}
+});
+endsnippet
+
+snippet med "Create method with docstring" !b
+/**
+ * ${2:TODO}
+ *
+ * @method ${1/(.*)/$1/}
+ */
+${1:method}: function(){
+	${3}
+},
+endsnippet
+
+snippet me "Create method" !b
+${1:method}: function(){
+	${3}
+},
+endsnippet
+
+snippet ifnew "Create new instances without new" !b
+if (!(this instanceof ${1:Klass})) return new ${1/(.*)/$1/}(${2:opts});
+endsnippet
+
+snippet use "use strict" !b
+"use strict";
+endsnippet
+
+snippet re "require(module)" !b
+var ${1:React} = require("$2${1/(.*)/$1/}");
+endsnippet
+
+snippet remove "Remove element from array" !b
+var ${3:i} = ${1:array}.indexOf(${2:value});
+if (${3/(.*)/$1/} > -1) ${1/(.*)/$1/}.splice(${3/(.*)/$1/}, 1);
+endsnippet
+
+
+snippet ** "yuidoc comment" !b
+/**
+ * @${2}
+ */
+endsnippet
+
+snippet t "then after a promise" !w
+.then((${1:val}) => {
+${2}
+})${3}
+endsnippet
+
+snippet { "{}" !i
+{
+	$0
+}
+endsnippet
+snippet [ "[]" !i
+[
+	$0
+]
+endsnippet
+snippet {; "{};" !i
+{
+	$0
+};
+endsnippet
+snippet [; "[]" !i
+[
+	$0
+];
+endsnippet
+
+snippet {t "translation" !i
+{t("${1}")}
+endsnippet
+
+# react
+snippet case "case statement" !b
+case '$1':
+	return $0;
+};
+endsnippet
+snippet red "create a reducer" !b
+const $1 = (state$2, action) => {
+  switch (action.type) {
+    case '$4':
+			return $5;
+		default:
+			return state;
+  }
+};
+endsnippet
+
+#immutable
+snippet list "Immutable List" 
+I.List($1)
+endsnippet
+snippet map "Immutable Map" 
+I.Map($1)
+endsnippet
+snippet rec "Immutable Record"
+I.Record($1)
+endsnippet
+snippet hot "Accept hot module" 
+if (module.hot) {
+  module.hot.accept();
+}
+endsnippet
+snippet ireact "import react" 
+import React from "react"
+endsnippet
+snippet ireactd "import reactDOM" 
+import ReactDOM from "react-dom"
+endsnippet

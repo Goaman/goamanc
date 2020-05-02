@@ -1,0 +1,23 @@
+[Unit]
+Description=Goapower
+; After=network.target
+; Requires=
+; Wants=
+; StartLimitIntervalSec=0
+[Service]
+; Type=simple
+; RemainAfterExit=
+User=odoo
+;Environment=TERM=xterm-256color
+;Environment=COLORTERM=truecolor
+Environment=FORCE_COLOR=true
+ExecStart=/home/odoo/goamanc/services/goapower.zsh
+
+
+
+[Install]
+; Alias=
+; RequiredBy=
+; Also=
+; DefaultInstance=
+WantedBy=multi-user.target
