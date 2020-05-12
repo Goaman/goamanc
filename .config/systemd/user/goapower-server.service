@@ -7,8 +7,9 @@ Description=Goa Storage
 [Service]
 ; Type=simple
 ; RemainAfterExit=
-User=odoo
-ExecStart=/home/odoo/services/events/events.sh
+
+Environment=FORCE_COLOR=true
+ExecStart=/home/odoo/goamanc/.config/systemd/user/goapower-server.fish
 
 
 

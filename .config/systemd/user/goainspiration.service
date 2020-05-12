@@ -1,5 +1,5 @@
 [Unit]
-Description=Graphdoor
+Description=Goa Inspiration
 ; After=network.target
 ; Requires=
 ; Wants=
@@ -7,8 +7,9 @@ Description=Graphdoor
 [Service]
 ; Type=simple
 ; RemainAfterExit=
-User=odoo
-ExecStart=/home/odoo/goamanc/services/graphdoor.zsh
+
+Environment=FORCE_COLOR=true
+ExecStart=/home/odoo/goamanc/.config/systemd/user/goainspiration.zsh
 
 
 

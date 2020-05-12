@@ -8,11 +8,11 @@ Description=Odoo Goa tools
 ; Type=simple
 ; RemainAfterExit=
 Restart=always
-User=odoo
+
 ExecStart=/usr/bin/fish\
           -c '/home/odoo/anaconda3/envs/py365/bin/python\
           /home/odoo/projects/self/odoo-click/odoo-click.py\
-          start master-goaman-utils-nby -p 8878'
+          start -p 9010 master-goaman-utils-nby'
 
 [Install]
 ; Alias=

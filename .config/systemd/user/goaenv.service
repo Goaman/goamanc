@@ -1,5 +1,5 @@
 [Unit]
-Description=fetch odoo
+Description=Goa Storage
 ; After=network.target
 ; Requires=
 ; Wants=
@@ -7,8 +7,8 @@ Description=fetch odoo
 [Service]
 ; Type=simple
 ; RemainAfterExit=
-User=odoo
-ExecStart=/home/odoo/goamanc/services/fetch-odoo.sh
+
+ExecStart=/home/odoo/goamanc/.config/systemd/user/goaenv.zsh
 
 
 

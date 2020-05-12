@@ -8,7 +8,7 @@ Description=Nodered service
 ; Type=simple
 ; RemainAfterExit=
 Environment="PATH=/home/odoo/.nvm/versions/node/v11.1.0/bin:/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin"
-User=odoo
+
 ExecStart=/home/odoo/.nvm/versions/node/v11.1.0/bin/node-red
 
 

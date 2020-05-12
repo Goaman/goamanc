@@ -5,8 +5,6 @@
 set -x TERM "xterm-256color"
 set -x EDITOR "vim"
 
-set -x PATH $PATH ~/goamanc/bin/
-set -x PATH $PATH ~/.local/bin
 
 ####################################################
 # Snap
@@ -43,6 +41,13 @@ set -x PATH $HOME/anaconda3/envs/py365/bin $PATH
 # Libsass
 ####################################################
 set -x SASS_LIBSASS_PATH "/usr/local/lib/libsass"
+
+####################################################
+# Additionnal paths
+####################################################
+
+set -x PATH $PATH ~/goamanc/bin/
+set -x PATH $PATH ~/.local/bin
 
 ####################################################
 # To organise

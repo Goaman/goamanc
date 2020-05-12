@@ -1,5 +1,5 @@
 [Unit]
-Description=Goa Storage
+Description=Goapower
 ; After=network.target
 ; Requires=
 ; Wants=
@@ -7,9 +7,11 @@ Description=Goa Storage
 [Service]
 ; Type=simple
 ; RemainAfterExit=
-User=odoo
+
+;Environment=TERM=xterm-256color
+;Environment=COLORTERM=truecolor
 Environment=FORCE_COLOR=true
-ExecStart=/home/odoo/goamanc/services/goapower-server.zsh
+ExecStart=/home/odoo/goamanc/.config/systemd/user/goapower.fish
 
 
 

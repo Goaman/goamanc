@@ -1,5 +1,5 @@
 [Unit]
-Description=Goa Storage
+Description=Graphdoor
 ; After=network.target
 ; Requires=
 ; Wants=
@@ -7,8 +7,8 @@ Description=Goa Storage
 [Service]
 ; Type=simple
 ; RemainAfterExit=
-User=odoo
-ExecStart=/home/odoo/goamanc/services/goaenv.zsh
+
+ExecStart=/home/odoo/goamanc/.config/systemd/user/graphdoor.zsh
 
 
 

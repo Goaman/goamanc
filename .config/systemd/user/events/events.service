@@ -1,5 +1,5 @@
 [Unit]
-Description=Odoo Goa tools
+Description=Goa Storage
 ; After=network.target
 ; Requires=
 ; Wants=
@@ -7,12 +7,10 @@ Description=Odoo Goa tools
 [Service]
 ; Type=simple
 ; RemainAfterExit=
-; Restart=always
-User=odoo
-ExecStart=/usr/bin/fish\
-          -c 'source /home/odoo/goamanc/fishc/aliases/odoo;\
-          ssh-add;\
-          gfaod'
+
+ExecStart=/home/odoo/services/events/events.sh
+
+
 
 [Install]
 ; Alias=

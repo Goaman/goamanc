@@ -140,9 +140,9 @@ main_mode = [
     [["KEY_6", "KEY_SLASH"], [">su - odoo -c 'flameshot gui &'"]], #
     [[mod_1, "KEY_LEFTBRACE"], [">sudo -u odoo -E -b gpick -p"]], #
 
-    [["KEY_6", 'KEY_M'], [">su - odoo -c '/home/odoo/goamanc/bin/perso/xrandoff &'"]], #
-    [["KEY_6", 'KEY_COMMA'], [">su - odoo -c '/home/odoo/goamanc/bin/perso/xrandon &'"]], #
-    [["KEY_6", 'KEY_DOT'], [">su - odoo -c '/home/odoo/goamanc/bin/perso/xrand_screen2 &'"]], #
+    [["KEY_6", 'KEY_M'], [">su - odoo -c '/home/odoo/goamanc/bin/xrandoff &'"]], #
+    [["KEY_6", 'KEY_COMMA'], [">su - odoo -c '/home/odoo/goamanc/bin/xrandon &'"]], #
+    [["KEY_6", 'KEY_DOT'], [">su - odoo -c '/home/odoo/goamanc/bin/xrand_screen2 &'"]], #
 
     [["KEY_6", "KEY_SEMICOLON"], [">su - odoo -c 'xdg-open /home/odoo/Downloads/agents.jpg'"]], #
     # [["KEY_6", "KEY_E"], [">su - odoo -c google-chrome"]], #

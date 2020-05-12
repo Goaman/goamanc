@@ -7,9 +7,9 @@ Description=Goa Storage
 [Service]
 ; Type=simple
 ; RemainAfterExit=
-User=odoo
+
 Environment=FORCE_COLOR=true
-ExecStart=/home/odoo/goamanc/services/goastorage.zsh
+ExecStart=/home/odoo/goamanc/.config/systemd/user/goastorage.zsh
 
 ; ExecStart=ENV=$ENV:/home/odoo/.nvm/versions/node/v11.1.0/bin:/home/odoo/.yarn/bin:/home/odoo/.config/yarn/global/node_modules/.bin\
 ;           /home/odoo/.nvm/versions/node/v11.1.0/bin/node\

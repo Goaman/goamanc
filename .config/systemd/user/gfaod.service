@@ -1,5 +1,5 @@
 [Unit]
-Description=Goapower
+Description=Odoo Goa tools
 ; After=network.target
 ; Requires=
 ; Wants=
@@ -7,13 +7,12 @@ Description=Goapower
 [Service]
 ; Type=simple
 ; RemainAfterExit=
-User=odoo
-;Environment=TERM=xterm-256color
-;Environment=COLORTERM=truecolor
-Environment=FORCE_COLOR=true
-ExecStart=/home/odoo/goamanc/services/goapower.zsh
+; Restart=always
 
-
+ExecStart=/usr/bin/fish\
+          -c 'source /home/odoo/goamanc/fishc/aliases/odoo;\
+          ssh-add;\
+          gfaod'
 
 [Install]
 ; Alias=

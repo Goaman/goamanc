@@ -1,5 +1,5 @@
 [Unit]
-Description=Goapower
+Description=fetch odoo
 ; After=network.target
 ; Requires=
 ; Wants=
@@ -7,11 +7,8 @@ Description=Goapower
 [Service]
 ; Type=simple
 ; RemainAfterExit=
-User=odoo
-;Environment=TERM=xterm-256color
-;Environment=COLORTERM=truecolor
-Environment=FORCE_COLOR=true
-ExecStart=/home/odoo/goamanc/services/jabberwock.zsh
+
+ExecStart=/home/odoo/goamanc/.config/systemd/user/fetch-odoo.sh
 
 
 
