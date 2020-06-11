@@ -20,17 +20,17 @@ set -x PATH $PATH /home/odoo/.cargo/bin/
 # Fish
 ####################################################
 source $HOME/.config/fish/alias/main.fish
-source $HOME/.config/fish/alias/odoo.fish
+# source $HOME/.config/fish/alias/odoo.fish
 
 set -x PATH $PATH $HOME/.fzf/bin/
 
 ####################################################
 # Node: n / nvm
 ####################################################
-function nvm
-    bass source ~/.nvm/nvm.sh --no-use ';' nvm $argv
-end
-nvm use default 1>/dev/null
+# function nvm
+#     bass source ~/.nvm/nvm.sh --no-use ';' nvm $argv
+# end
+# nvm use default 1>/dev/null
 
 ####################################################
 # Conda
@@ -53,3 +53,26 @@ set -x PATH $PATH ~/.local/bin
 # To organise
 ####################################################
 set -x _JAVA_AWT_WM_NONREPARENTING 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

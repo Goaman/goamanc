@@ -8,14 +8,14 @@ abbr a ls -l
 #gotoproject
 #abbr .. 'cd ..'
 # alias go='cd'
-abbr en "e /Users/nico/projects/self/notes/main_notes"
-abbr goenv 'cd ~/projects/self/programming/big/goa-env'
-abbr god 'cd ~/Downloads'
-abbr godc 'cd ~/Downloads/chrome'
-abbr godt 'cd ~/Downloads/torrent'
-abbr got 'cd ~/projects/tests'
-abbr gogit 'cd ~/projects/external/github'
-abbr gonotes 'cd ~/notes'
+# abbr en "e /Users/nico/projects/self/notes/main_notes"
+# abbr goenv 'cd ~/projects/self/programming/big/goa-env'
+# abbr god 'cd ~/Downloads'
+# abbr godc 'cd ~/Downloads/chrome'
+# abbr godt 'cd ~/Downloads/torrent'
+# abbr got 'cd ~/projects/tests'
+abbr gog cd ~/projects/external/github
+# abbr gonotes 'cd ~/notes'
 abbr goj '~/projects/external/odoo/jabberwock'
 # go jabberwock code
 abbr gojc '~/projects/self/jabberwock-code/'
@@ -115,7 +115,7 @@ abbr l "ls"
 abbr a "ls -l"
 abbr k "kill"
 
-abbr c code 
+abbr c code
 abbr cn code -n
 #abbr c "cordova"
 #abbr crun "c run"
@@ -876,7 +876,7 @@ function removeAggridLicenceFile
   grep -vF $pattern $tempfile > $file
   #cp $tempfile $file
 end
-function removeAggridLicence 
+function removeAggridLicence
   set file $argv[1]
   removeAggridLicenceFile $file "console.error('****************************************************************************************************************');"
   removeAggridLicenceFile $file "console.error('***************************************** ag-Grid Enterprise License *******************************************');"
@@ -924,6 +924,41 @@ end
 
 abbr j "journalctl -o cat -f -u"
 abbr jpo "journalctl -o cat -f -u goapower"
+abbr ju "journalctl --user -o cat -f -u"
+function ggrep 
+  git diff-index -U -G $argv HEAD
+end
+function ggreps
+  git diff-index -U --cached -G $argv HEAD
+end
+
+####################################################################################################
+# Pulse audio
+####################################################################################################
+
+function sink-list-id
+  pactl list short sink-inputs | onespace | cuts -f 1
+end
+
+set sink_analog alsa_output.pci-0000_00_1f.3.analog-stereo
+# set sink_bluetooth bluez_sink.28_11_A5_77_FE_D2.a2dp_sink
+function get-bluetooth-sink
+  pactl list short sinks | grep module-bluez5-device.c | onespace | cuts -f2
+end
+# set sink_bluetooth module-bluez5-device.c
+
+function sink-to-analog
+  for sink in (sink-list-id ); pactl move-sink-input $sink $sink_analog; end
+end
+function sink-to-bluetooth
+  for sink in (sink-list-id ); pactl move-sink-input $sink (get-bluetooth-sink); end
+end
+abbr pata sink-to-analog
+abbr patb sink-to-bluetooth
+
+####################################################################################################
+# Bluetooth
+####################################################################################################
 
 set bt_marshal 00:12:6F:57:B8:9C
 set bt_bose 28:11:A5:77:FE:D2
@@ -931,17 +966,62 @@ set bt_bose 28:11:A5:77:FE:D2
 function btbose
   echo disconnect $bt_marshal\nexit\n | bluetoothctl
   echo connect $bt_bose| bluetoothctl
+  sink-to-bluetooth
+  sleep 1
+  sink-to-bluetooth
+  sleep 5
+  sink-to-bluetooth
+  sleep 5
+  sink-to-bluetooth
 end
 # bluetooth marshal
 function btmarshal
   echo disconnect $bt_bose\nexit\n | bluetoothctl
   echo connect $bt_marshal | bluetoothctl
+  sink-to-bluetooth
+  sleep 1
+  sink-to-bluetooth
+  sleep 5
+  sink-to-bluetooth
+  sleep 5
+  sink-to-bluetooth
 end
 function btdisconnect
   echo disconnect $bt_marshal\nexit\n | bluetoothctl
   echo disconnect $bt_bose\nexit\n | bluetoothctl
+  sink-to-analog
+  sleep 5
+  sink-to-analog
 end
 
 abbr btb btbose
 abbr btm btmarshal
 abbr btd btdisconnect
+
+abbr cpb cp /home/odoo/projects/external/odoo/jabberwock/build/odoo/odoo-integration-dev.js  ~/src/master-implement-jabberwock-nby/odoo/addons/web_editor/static/lib/jabberwock/jabberwock.js
+abbr cpd cp /home/odoo/projects/external/odoo/jabberwock/dev/odoo-integration-dev.js   ~/src/master-implement-jabberwock-nby/odoo/addons/web_editor/static/lib/jabberwock/jabberwock.js
+
+
+function build_jabberwock_odoo
+  set original_dir (pwd)
+
+  cd /home/odoo/projects/external/odoo/jabberwock
+  npm run build-odoo
+
+  cd ~/src/master-jabberwock-build-age-dmo-chm-nby/odoo
+  git reset --hard master-jabberwock-age-dmo-chm-nby
+  cp /home/odoo/projects/external/odoo/jabberwock/build/odoo/odoo-integration.js /home/odoo/src/master-jabberwock-build-age-dmo-chm-nby/odoo/addons/web_editor/static/lib/jabberwock/jabberwock.js
+  git add .
+  git commit -m "add build"
+  git push odoo-dev HEAD -f
+
+  cd ../enterprise
+  git reset --hard master-jabberwock-age-dmo-chm-nby
+  git commit --allow-empty -m "update runbot"
+  git commit -m "add build"
+  git push odoo-dev HEAD -f
+
+  cd $original_dir
+end
+
+abbr bjo build_jabberwock_odoo

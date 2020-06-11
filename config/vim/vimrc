@@ -96,7 +96,7 @@ NeoBundle 'https://github.com/dhruvasagar/vim-table-mode.git'
 "NeoBundle 'SearchComplete'
 NeoBundle 'Lokaltog/vim-easymotion'
 
-NeoBundle 'dag/vim-fish'
+" NeoBundle 'dag/vim-fish'
 
 
 
