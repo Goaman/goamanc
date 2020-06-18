@@ -1,0 +1,20 @@
+[Unit]
+Description=CopyQ
+; After=network.target
+; Requires=
+; Wants=
+; StartLimitIntervalSec=0
+[Service]
+; Type=simple
+; RemainAfterExit=
+
+ExecStart=/usr/bin/copyq
+
+
+
+[Install]
+; Alias=
+; RequiredBy=
+; Also=
+; DefaultInstance=
+WantedBy=multi-user.target

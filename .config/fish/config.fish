@@ -20,7 +20,7 @@ set -x PATH $PATH /home/odoo/.cargo/bin/
 # Fish
 ####################################################
 source $HOME/.config/fish/alias/main.fish
-# source $HOME/.config/fish/alias/odoo.fish
+source $HOME/.config/fish/alias/odoo.fish
 
 set -x PATH $PATH $HOME/.fzf/bin/
 

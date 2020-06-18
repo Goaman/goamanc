@@ -131,6 +131,7 @@ main_mode = [
     [["KEY_6", "KEY_A"], [">su - odoo -m -c '/home/odoo/app/blender-2.80/blender &'"]], #
     [["KEY_6", "KEY_S"], [">su - odoo -m -c '/home/odoo/bin/godot &'"]], #
     [["KEY_6", "KEY_D"], [">su - odoo -m -c '/usr/bin/inkscape &'"]], #
+    [["KEY_3", "KEY_T"], [">su - odoo -m -c '/usr/bin/copyq toggle &'"]], #
     [["KEY_6", "KEY_E"], [">su -m - odoo -c 'code -n --disable-gpu /home/odoo &'"]], #
     [["KEY_6", "KEY_K"], [">su -m - odoo -c 'kazam &'"]], #
     # [["KEY_6", "KEY_R"], [">su - odoo -c 'xdg-open $HOME &'"]], #
