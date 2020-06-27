@@ -23,16 +23,18 @@ abbr gojc '~/projects/self/jabberwock-code/'
 # #abbr x sh $HOME/.xmonad/xmonad-session-rc
 
 
-# function listport
-#     #lsof -i tcp:$1 | sed -n 2p | grep -Eo '[0-9]+' | head -1
-#     lsof -i tcp:$1
-# end
-# function killport
-#     #lsof -i tcp:$1 | sed -n 2p | grep -Eo '[0-9]+' | head -1 | xargs kill -9
-#     echo $argv[1]
-#     listport | grep $argv[1]
-#     listport | grep $argv[1] | onespace | cuts -f 2 | xargs kill -9
-# end
+function listport
+    #lsof -i tcp:$1 | sed -n 2p | grep -Eo '[0-9]+' | head -1
+    lsof -i tcp:$argv[1]
+    #lsof -P -n -i :$argv[1]
+end
+function killport
+    #lsof -i tcp:$1 | sed -n 2p | grep -Eo '[0-9]+' | head -1 | xargs kill -9
+    echo port: $argv[1]
+    set pythonProcess (listport $argv[1] | grep python | head -n1 | onespace | cuts -f 2)
+    echo first python process: $pythonProcess
+    kill -9 $pythonProcess
+end
 # abbr kp "killport"
 # #
 # #launchd
@@ -832,6 +834,7 @@ abbr gap 'git add .'
 # git commit reuse
 abbr gcor 'git commit --reuse-message=ORIG_HEAD'
 abbr gp 'git pull'
+abbr gpu 'git push'
 
 abbr an "2>/dev/null"
 
@@ -999,8 +1002,10 @@ abbr btb btbose
 abbr btm btmarshal
 abbr btd btdisconnect
 
-abbr cpb cp /home/odoo/projects/external/odoo/jabberwock/build/odoo/odoo-integration-dev.js  ~/src/master-implement-jabberwock-nby/odoo/addons/web_editor/static/lib/jabberwock/jabberwock.js
-abbr cpd cp /home/odoo/projects/external/odoo/jabberwock/dev/odoo-integration-dev.js   ~/src/master-implement-jabberwock-nby/odoo/addons/web_editor/static/lib/jabberwock/jabberwock.js
+abbr cpb cp /home/odoo/projects/external/odoo/jabberwock/build/odoo/odoo-integration-dev.js ~/src/master-implement-jabberwock-nby/odoo/addons/web_editor/static/lib/jabberwock/jabberwock.js
+abbr cpd cp /home/odoo/projects/external/odoo/jabberwock/dev/odoo-integration-dev.js ~/src/master-implement-jabberwock-nby/odoo/addons/web_editor/static/lib/jabberwock/jabberwock.js
+abbr lnd 'set file /home/odoo/src/master-jabberwock-nby/odoo/addons/web_editor/static/lib/jabberwock/jabberwock.js; rm $file; ln -s /home/odoo/projects/external/odoo/jabberwock/build/odoo/odoo-integration.js $file'
+
 
 
 function build_jabberwock_odoo
@@ -1016,13 +1021,52 @@ function build_jabberwock_odoo
   git commit -m "add build"
   git push odoo-dev HEAD -f
 
-  cd ../enterprise
-  git reset --hard master-jabberwock-age-dmo-chm-nby
-  git commit --allow-empty -m "update runbot"
-  git commit -m "add build"
-  git push odoo-dev HEAD -f
+  #cd ../enterprise
+  #git reset --hard master-jabberwock-age-dmo-chm-nby
+  #git commit --allow-empty -m "update runbot"
+  #git commit -m "add build"
+  #git push odoo-dev HEAD -f
 
   cd $original_dir
 end
 
 abbr bjo build_jabberwock_odoo
+
+function build_jabberwock
+  set original_dir (pwd)
+
+  cd /home/odoo/projects/external/odoo/jabberwock
+  npm run build-odoo
+  cd $original_dir
+end
+
+function reset_test_odoo
+  set original_dir (pwd)
+  
+
+  cd ~/src/master-jabberwock-age-dmo-chm-nby-test/odoo
+  git reset --hard master-jabberwock-age-dmo-chm-nby
+  cp /home/odoo/projects/external/odoo/jabberwock/build/odoo/odoo-integration.js /home/odoo/src/master-jabberwock-age-dmo-chm-nby-test/odoo/addons/web_editor/static/lib/jabberwock/jabberwock.js
+
+  #cd ../enterprise
+
+  # run
+
+  cd $original_dir
+end
+
+function test_odoo_lint
+  set original_dir (pwd)
+
+  cd ~/src/master-jabberwock-age-dmo-chm-nby-test/odoo
+  git reset --hard master-jabberwock-age-dmo-chm-nby
+  cp /home/odoo/projects/external/odoo/jabberwock/build/odoo/odoo-integration.js /home/odoo/src/master-jabberwock-age-dmo-chm-nby-test/odoo/addons/web_editor/static/lib/jabberwock/jabberwock.js
+
+  #cd ../enterprise
+
+  # run
+  dropdb master-jabberwock-age-dmo-chm-nby-test
+  odo start master-jabberwock-age-dmo-chm-nby-test -i test_lint -p 9874 -a "--test-enable --test-tags /test_lint --stop-after-init --log-level=test --max-cron-threads=0"
+
+  cd $original_dir
+end

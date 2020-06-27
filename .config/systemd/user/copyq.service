@@ -17,4 +17,4 @@ ExecStart=/usr/bin/copyq
 ; RequiredBy=
 ; Also=
 ; DefaultInstance=
-WantedBy=multi-user.target
+WantedBy=graphical.target

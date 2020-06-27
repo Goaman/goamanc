@@ -7,6 +7,7 @@ stalonetray -t 1>/dev/null 2>&1 &
 nm-applet 1>/dev/null 2>&1 &
 blueberry-tray 1>/dev/null 2>&1 &
 blueman-applet 1>/dev/null 2>&1 &
+systemctl --user restart copyq 1>/dev/null 2>&1 &
 
 # sensation --debug --config /home/odoo/goamanc/goa_sensation_config.py 4
 
