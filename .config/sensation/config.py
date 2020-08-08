@@ -123,7 +123,8 @@ main_mode = [
 
 
 
-    [["KEY_6", "KEY_Q"], [">su - odoo -m -c 'google-chrome --remote-debugging-port=9222 &'"]], #
+    # [["KEY_6", "KEY_Q"], [">su - odoo -m -c 'google-chrome --remote-debugging-port=9222 &'"]], #
+    [["KEY_6", "KEY_Q"], [">su - odoo -m -c 'google-chrome &'"]], #
     [["KEY_6", "KEY_W"], [">su - odoo -c 'firefox &'"]], #
     [["KEY_6", "KEY_U"], [">su - odoo -c 'spotify &'"]], #
     [["KEY_6", "KEY_G"], [">su - odoo -c '/snap/bin/discord &'"]], #

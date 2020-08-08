@@ -1002,8 +1002,8 @@ abbr btb btbose
 abbr btm btmarshal
 abbr btd btdisconnect
 
-abbr cpb cp /home/odoo/projects/external/odoo/jabberwock/build/odoo/odoo-integration-dev.js ~/src/master-implement-jabberwock-nby/odoo/addons/web_editor/static/lib/jabberwock/jabberwock.js
-abbr cpd cp /home/odoo/projects/external/odoo/jabberwock/dev/odoo-integration-dev.js ~/src/master-implement-jabberwock-nby/odoo/addons/web_editor/static/lib/jabberwock/jabberwock.js
+abbr cpb cp /home/odoo/projects/external/odoo/jabberwock/build/odoo/odoo-integration.js ~/src/master-jabberwock-nby/odoo/addons/web_editor/static/lib/jabberwock/jabberwock.js
+abbr cpd cp /home/odoo/projects/external/odoo/jabberwock/dev/odoo-integration-dev.js ~/src/master-jabberwock-nby/odoo/addons/web_editor/static/lib/jabberwock/jabberwock.js
 abbr lnd 'set file /home/odoo/src/master-jabberwock-nby/odoo/addons/web_editor/static/lib/jabberwock/jabberwock.js; rm $file; ln -s /home/odoo/projects/external/odoo/jabberwock/build/odoo/odoo-integration.js $file'
 
 
@@ -1069,4 +1069,13 @@ function test_odoo_lint
   odo start master-jabberwock-age-dmo-chm-nby-test -i test_lint -p 9874 -a "--test-enable --test-tags /test_lint --stop-after-init --log-level=test --max-cron-threads=0"
 
   cd $original_dir
+end
+
+function sl
+  while true 
+    sleep 1
+    xdotool mousemove 500 500
+    sleep 1
+    xdotool mousemove 500 501
+  end
 end
