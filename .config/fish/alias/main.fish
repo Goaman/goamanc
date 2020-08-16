@@ -818,7 +818,7 @@ function reserve_npm_name
 end
 
 # add temp and push
-abbr gri 'git rebase -i HEAD~5'
+abbr gri 'git rebase -i HEAD~10'
 abbr gra 'git rebase --abort'
 abbr gri10 'git rebase -i HEAD~10'
 abbr gat 'git add .; git commit -m "temp"'
@@ -1078,4 +1078,21 @@ function sl
     sleep 1
     xdotool mousemove 500 501
   end
+end
+
+function showPerf
+  ls -lh /home/odoo/projects/external/odoo/jabberwock/build/odoo/odoo-integration.js
+
+  rm /home/odoo/projects/external/odoo/jabberwock/build/odoo/odoo-integration-gzip.js
+  gzip --best /home/odoo/projects/external/odoo/jabberwock/build/odoo/odoo-integration.js -c > /home/odoo/projects/external/odoo/jabberwock/build/odoo/odoo-integration-gzip.js
+  ls -lh /home/odoo/projects/external/odoo/jabberwock/build/odoo/odoo-integration-gzip.js
+
+  rm /home/odoo/projects/external/odoo/jabberwock/build/odoo/odoo-integration-brotli.js
+  brotli /home/odoo/projects/external/odoo/jabberwock/build/odoo/odoo-integration.js -o /home/odoo/projects/external/odoo/jabberwock/build/odoo/odoo-integration-brotli.js
+  ls -lh /home/odoo/projects/external/odoo/jabberwock/build/odoo/odoo-integration-brotli.js
+end
+
+function perfbuild
+  cat /tmp/perfodoo | grep "| " | grep KiB| onespace | sort -g -k4,4 -t ' ' | tac
+  cat /tmp/perfodoo | grep "| " | grep bytes| onespace | sort -g -k4,4 -t ' ' | tac
 end
