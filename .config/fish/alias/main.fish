@@ -1096,3 +1096,5 @@ function perfbuild
   cat /tmp/perfodoo | grep "| " | grep KiB| onespace | sort -g -k4,4 -t ' ' | tac
   cat /tmp/perfodoo | grep "| " | grep bytes| onespace | sort -g -k4,4 -t ' ' | tac
 end
+
+abbr rj systemctl --user restart jabberwock
