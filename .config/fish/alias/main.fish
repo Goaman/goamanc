@@ -202,11 +202,18 @@ function touchnow
   echo "Amazing, you just begin a new day!!!"
   echo "May the force be with you."
   echo "Here is your file:"
-  echo (date +"%s-%d-%m-%Y").md
+  set date (date +"%s-%d-%m-%Y" $argv[2])
+  echo $date.md
 
-  touch $folder/(date +"%s-%d-%m-%Y").md
+  touch $folder/$date.md
 end
-abbr newday "touchnow ~/notes/days/"
+#abbr newday "touchnow ~/notes/days/"
+abbr newday 'touchnow ~/notes/days/ --date="1 day"'
+function lastday 
+  cd ~/notes/days/
+  echo (ls | sort | tail -n1)
+  cd -
+end
 abbr etoday 'cd ~/notes/days/; vim (ls | sort | tail -n1); cd -'
 
 # getprojects() {
@@ -966,10 +973,23 @@ abbr patb sink-to-bluetooth
 
 set bt_marshal 00:12:6F:57:B8:9C
 set bt_bose 28:11:A5:77:FE:D2
+set bt_room FC:58:FA:C0:03:B9
 # bluetooth bose
 function btbose
   echo disconnect $bt_marshal\nexit\n | bluetoothctl
+  echo disconnect $bt_room\nexit\n | bluetoothctl
   echo connect $bt_bose| bluetoothctl
+  sink-to-bluetooth
+  sleep 1
+  sink-to-bluetooth
+  sleep 5
+  sink-to-bluetooth
+  sleep 5
+  sink-to-bluetooth
+end
+function btroom
+  #echo disconnect $bt_marshal\nexit\n | bluetoothctl
+  echo connect $bt_room| bluetoothctl
   sink-to-bluetooth
   sleep 1
   sink-to-bluetooth
@@ -993,6 +1013,7 @@ end
 function btdisconnect
   echo disconnect $bt_marshal\nexit\n | bluetoothctl
   echo disconnect $bt_bose\nexit\n | bluetoothctl
+  echo disconnect $bt_room\nexit\n | bluetoothctl
   sink-to-analog
   sleep 5
   sink-to-analog
@@ -1000,11 +1021,12 @@ end
 
 abbr btb btbose
 abbr btm btmarshal
+abbr btr btroom
 abbr btd btdisconnect
 
 abbr cpb cp /home/odoo/projects/external/odoo/jabberwock/build/odoo/odoo-integration.js ~/src/master-jabberwock-nby/odoo/addons/web_editor/static/lib/jabberwock/jabberwock.js
 abbr cpd cp /home/odoo/projects/external/odoo/jabberwock/dev/odoo-integration-dev.js ~/src/master-jabberwock-nby/odoo/addons/web_editor/static/lib/jabberwock/jabberwock.js
-abbr lnd 'set file /home/odoo/src/master-jabberwock-nby/odoo/addons/web_editor/static/lib/jabberwock/jabberwock.js; rm $file; ln -s /home/odoo/projects/external/odoo/jabberwock/build/odoo/odoo-integration.js $file'
+abbr lnd 'set file /home/odoo/src/saas-13.5-jabberwock-nby/odoo/addons/web_editor/static/lib/jabberwock/jabberwock.js; rm $file; ln -s /home/odoo/projects/external/odoo/jabberwock/build/odoo/odoo-integration.js $file'
 
 
 
@@ -1012,17 +1034,23 @@ function build_jabberwock_odoo
   set original_dir (pwd)
 
   cd /home/odoo/projects/external/odoo/jabberwock
-  npm run build-odoo
+  npm run build:odoo
 
-  cd ~/src/master-jabberwock-build-age-dmo-chm-nby/odoo
-  git reset --hard master-jabberwock-age-dmo-chm-nby
-  cp /home/odoo/projects/external/odoo/jabberwock/build/odoo/odoo-integration.js /home/odoo/src/master-jabberwock-build-age-dmo-chm-nby/odoo/addons/web_editor/static/lib/jabberwock/jabberwock.js
+  #cd ~/src/saas-13.5-jabberwock-age-dmo-chm-nby/odoo
+  #git pull
+  cd ~/src/saas-13.5-jabberwock-build-age-dmo-chm-nby/odoo
+  git pull --rebase odoo-dev saas-13.5-jabberwock-age-dmo-chm-nby
+  #git reset --hard saas-13.5-jabberwock-age-dmo-chm-nby
+  git rebase -i saas-13.5-jabberwock-age-dmo-chm-nby
+  cp /home/odoo/projects/external/odoo/jabberwock/build/odoo/odoo-integration.js /home/odoo/src/saas-13.5-jabberwock-build-age-dmo-chm-nby/odoo/addons/web_editor/static/lib/jabberwock/jabberwock.js
+  cp /home/odoo/projects/external/odoo/jabberwock/build/odoo/jabberwock.css /home/odoo/src/saas-13.5-jabberwock-build-age-dmo-chm-nby/odoo/addons/web_editor/static/lib/jabberwock/jabberwock.css
   git add .
-  git commit -m "add build"
+  #git commit -m "add build"
+  git commit --amend
   git push odoo-dev HEAD -f
 
   #cd ../enterprise
-  #git reset --hard master-jabberwock-age-dmo-chm-nby
+  #git reset --hard saas-13.5-jabberwock-age-dmo-chm-nby
   #git commit --allow-empty -m "update runbot"
   #git commit -m "add build"
   #git push odoo-dev HEAD -f
