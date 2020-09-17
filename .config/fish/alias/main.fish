@@ -1032,21 +1032,25 @@ abbr lnd 'set file /home/odoo/src/saas-13.5-jabberwock-nby/odoo/addons/web_edito
 
 function build_jabberwock_odoo
   set original_dir (pwd)
+  set jabberwock_path /home/odoo/projects/external/odoo/jabberwock-worktree/master-build
 
-  cd /home/odoo/projects/external/odoo/jabberwock
+  cd $jabberwock_path
+  git fetch origin master
+  git reset --hard origin/master
+
   npm run build:odoo
 
   #cd ~/src/saas-13.5-jabberwock-age-dmo-chm-nby/odoo
   #git pull
   cd ~/src/saas-13.5-jabberwock-build-age-dmo-chm-nby/odoo
-  git pull --rebase odoo-dev saas-13.5-jabberwock-age-dmo-chm-nby
+  #git pull --rebase odoo-dev saas-13.5-jabberwock-age-dmo-chm-nby
   #git reset --hard saas-13.5-jabberwock-age-dmo-chm-nby
   git rebase -i saas-13.5-jabberwock-age-dmo-chm-nby
-  cp /home/odoo/projects/external/odoo/jabberwock/build/odoo/odoo-integration.js /home/odoo/src/saas-13.5-jabberwock-build-age-dmo-chm-nby/odoo/addons/web_editor/static/lib/jabberwock/jabberwock.js
-  cp /home/odoo/projects/external/odoo/jabberwock/build/odoo/jabberwock.css /home/odoo/src/saas-13.5-jabberwock-build-age-dmo-chm-nby/odoo/addons/web_editor/static/lib/jabberwock/jabberwock.css
+  cp $jabberwock_path/build/odoo/odoo-integration.js /home/odoo/src/saas-13.5-jabberwock-build-age-dmo-chm-nby/odoo/addons/web_editor/static/lib/jabberwock/jabberwock.js
+  cp $jabberwock_path/build/odoo/jabberwock.css /home/odoo/src/saas-13.5-jabberwock-build-age-dmo-chm-nby/odoo/addons/web_editor/static/lib/jabberwock/jabberwock.css
   git add .
   #git commit -m "add build"
-  git commit --amend
+  git commit --amend --no-edit
   git push odoo-dev HEAD -f
 
   #cd ../enterprise
@@ -1126,3 +1130,27 @@ function perfbuild
 end
 
 abbr rj systemctl --user restart jabberwock
+
+function build_odoo_test
+  set path (pwd)
+  set odooTmpPath /tmp/build-odoo-test
+  set now (date +"%s")
+
+  rm -rf $odooTmpPath
+  mkdir $odooTmpPath
+
+  cd ~/projects/external/odoo/jabberwock 
+  for i in 1 2 3 4
+    echo --------------------------
+    echo ------- build $i ----------
+    echo --------------------------
+    rm -rf build/odoo
+    npm run build:odoo
+    cp build/odoo/odoo-integration.css $odooTmpPath/odoo-integration-$i.css
+    cp build/odoo/odoo-integration.js $odooTmpPath/odoo-integration-$i.js
+  end
+
+  cd $path
+end
+
+
