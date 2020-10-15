@@ -1024,15 +1024,22 @@ abbr btm btmarshal
 abbr btr btroom
 abbr btd btdisconnect
 
-abbr cpb cp /home/odoo/projects/external/odoo/jabberwock/build/odoo/odoo-integration.js ~/src/master-jabberwock-nby/odoo/addons/web_editor/static/lib/jabberwock/jabberwock.js
-abbr cpd cp /home/odoo/projects/external/odoo/jabberwock/dev/odoo-integration-dev.js ~/src/master-jabberwock-nby/odoo/addons/web_editor/static/lib/jabberwock/jabberwock.js
+function cpb
+  set from /home/odoo/projects/external/odoo/jabberwock/build/odoo
+  set to ~/src/master-jabberwock-build-sge-age-dmo-chm-nby/odoo/addons/web_editor/static/lib/jabberwock
+  cp $from/odoo-integration.js $to/jabberwock.js
+  cp $from/odoo-integration.css $to/jabberwock.css
+end
+abbr cpd cp /home/odoo/projects/external/odoo/jabberwock/dev/odoo-integration-dev.js ~/src/master-jabberwock-build-sge-age-dmo-chm-nby/odoo/addons/web_editor/static/lib/jabberwock/jabberwock.js
 abbr lnd 'set file /home/odoo/src/saas-13.5-jabberwock-nby/odoo/addons/web_editor/static/lib/jabberwock/jabberwock.js; rm $file; ln -s /home/odoo/projects/external/odoo/jabberwock/build/odoo/odoo-integration.js $file'
 
 
 
 function build_jabberwock_odoo
   set original_dir (pwd)
-  set jabberwock_path /home/odoo/projects/external/odoo/jabberwock-worktree/master-build
+  #set jabberwock_path /home/odoo/projects/external/odoo/jabberwock-worktree/master-build
+  set jabberwock_path /home/odoo/projects/external/odoo/jabberwock
+  set build_path /home/odoo/src/14.0-jabberwock-build-sge-age-dmo-chm-nby
 
   cd $jabberwock_path
   git fetch origin master
@@ -1040,21 +1047,22 @@ function build_jabberwock_odoo
 
   npm run build:odoo
 
-  #cd ~/src/saas-13.5-jabberwock-age-dmo-chm-nby/odoo
+  #cd ~/src/saas-13.5-jabberwock-sge-age-dmo-chm-nby/odoo
   #git pull
-  cd ~/src/saas-13.5-jabberwock-build-age-dmo-chm-nby/odoo
-  #git pull --rebase odoo-dev saas-13.5-jabberwock-age-dmo-chm-nby
-  #git reset --hard saas-13.5-jabberwock-age-dmo-chm-nby
-  git rebase -i saas-13.5-jabberwock-age-dmo-chm-nby
-  cp $jabberwock_path/build/odoo/odoo-integration.js /home/odoo/src/saas-13.5-jabberwock-build-age-dmo-chm-nby/odoo/addons/web_editor/static/lib/jabberwock/jabberwock.js
-  cp $jabberwock_path/build/odoo/jabberwock.css /home/odoo/src/saas-13.5-jabberwock-build-age-dmo-chm-nby/odoo/addons/web_editor/static/lib/jabberwock/jabberwock.css
+  cd ~/src/14.0-jabberwock-build-sge-age-dmo-chm-nby/odoo
+  #git pull --rebase odoo-dev 14.0-jabberwock-sge-age-dmo-chm-nby
+  #git reset --hard 14.0-jabberwock-sge-age-dmo-chm-nby
+  git rebase -i 14.0-jabberwock-sge-age-dmo-chm-nby
+  cp $jabberwock_path/build/odoo/odoo-integration.js $build_path/odoo/addons/web_editor/static/lib/jabberwock/jabberwock.js
+  cp $jabberwock_path/build/odoo/odoo-integration.css $build_path/odoo/addons/web_editor/static/lib/jabberwock/jabberwock.css
   git add .
   #git commit -m "add build"
   git commit --amend --no-edit
+  #git commit --amend 
   git push odoo-dev HEAD -f
 
   #cd ../enterprise
-  #git reset --hard saas-13.5-jabberwock-age-dmo-chm-nby
+  #git reset --hard 14.0-jabberwock-sge-age-dmo-chm-nby
   #git commit --allow-empty -m "update runbot"
   #git commit -m "add build"
   #git push odoo-dev HEAD -f
@@ -1154,3 +1162,4 @@ function build_odoo_test
 end
 
 
+abbr kdis "ps aux | grep -v grep | grep discord | onespace | head -n1 | cuts -f2 | xargs kill -9"

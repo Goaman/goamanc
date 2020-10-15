@@ -27,10 +27,10 @@ set -x PATH $PATH $HOME/.fzf/bin/
 ####################################################
 # Node: n / nvm
 ####################################################
-# function nvm
-#     bass source ~/.nvm/nvm.sh --no-use ';' nvm $argv
-# end
-# nvm use default 1>/dev/null
+function nvm
+    bass source ~/.nvm/nvm.sh --no-use ';' nvm $argv
+end
+#nvm use default 1>/dev/null
 
 ####################################################
 # Conda
