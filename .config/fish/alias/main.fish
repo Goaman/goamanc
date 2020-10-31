@@ -357,7 +357,8 @@ abbr us "setxkbmap us"
 abbr dv "setxkbmap us dvorak-intl"
 abbr dvc "sudo loadkeys dvorak"
 
-abbr se "sensation --debug --config $HOME/goamanc/.config/sensation/config.py 4"
+#abbr se "sensation --debug --config $HOME/goamanc/.config/sensation/config.py 4"
+abbr se "sudo systemctl restart sensation"
 #function sensation
 #  sudo -E $HOME/anaconda3/bin/python3 ~/projects/self/programming/goa/goa-sensation/src/__main__.py $argv
 #end
@@ -678,7 +679,7 @@ abbr goser cd $HOME/goamanc/.config/systemd/user
 function copyservices
   sudo cp $HOME/goamanc/services/*.service /etc/systemd/system
   sudo cp $HOME/goamanc/services/*.timer /etc/systemd/system
-  sudo systemctl daemon-reload 
+  sudo systemctl daemon-reload
 end
 
 abbr st sudo systemctl
@@ -947,6 +948,14 @@ end
 # Pulse audio
 ####################################################################################################
 
+# Pulse audio has a module to restore the an application in a previous sink
+# which is pretty annoying. To remove that behavion, change line
+# `load-module module-stream-restore restore_device=false`
+# in `/etc/pulse/default.pa`
+# See https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/#index28h3
+# and https://www.reddit.com/r/linuxaudio/comments/939wwz/how_correctly_to_switch_pulseaudios_default_sink/
+# load-module module-stream-restore restore_device=false
+
 function sink-list-id
   pactl list short sink-inputs | onespace | cuts -f 1
 end
@@ -979,6 +988,7 @@ function btbose
   echo disconnect $bt_marshal\nexit\n | bluetoothctl
   echo disconnect $bt_room\nexit\n | bluetoothctl
   echo connect $bt_bose| bluetoothctl
+  pactl set-default-sink (get-bluetooth-sink)
   sink-to-bluetooth
   sleep 1
   sink-to-bluetooth
@@ -986,10 +996,12 @@ function btbose
   sink-to-bluetooth
   sleep 5
   sink-to-bluetooth
+  pactl set-default-sink (get-bluetooth-sink)
 end
 function btroom
   #echo disconnect $bt_marshal\nexit\n | bluetoothctl
   echo connect $bt_room| bluetoothctl
+  pactl set-default-sink (get-bluetooth-sink)
   sink-to-bluetooth
   sleep 1
   sink-to-bluetooth
@@ -997,9 +1009,11 @@ function btroom
   sink-to-bluetooth
   sleep 5
   sink-to-bluetooth
+  pactl set-default-sink (get-bluetooth-sink)
 end
 # bluetooth marshal
 function btmarshal
+  pactl set-default-sink (get-bluetooth-sink)
   echo disconnect $bt_bose\nexit\n | bluetoothctl
   echo connect $bt_marshal | bluetoothctl
   sink-to-bluetooth
@@ -1009,6 +1023,7 @@ function btmarshal
   sink-to-bluetooth
   sleep 5
   sink-to-bluetooth
+  pactl set-default-sink (get-bluetooth-sink)
 end
 function btdisconnect
   echo disconnect $bt_marshal\nexit\n | bluetoothctl
@@ -1017,6 +1032,7 @@ function btdisconnect
   sink-to-analog
   sleep 5
   sink-to-analog
+  pactl set-default-sink $sink_analog
 end
 
 abbr btb btbose
@@ -1141,22 +1157,44 @@ abbr rj systemctl --user restart jabberwock
 
 function build_odoo_test
   set path (pwd)
-  set odooTmpPath /tmp/build-odoo-test
-  set now (date +"%s")
+  set jabberwock_path ~/projects/external/odoo/jabberwock
+  set repo $argv[1]
+  set strategy $argv[2]
+  set odoo_tmp_path /tmp/build-odoo-test/$repo
 
-  rm -rf $odooTmpPath
-  mkdir $odooTmpPath
+  # set now (date +"%s")
 
-  cd ~/projects/external/odoo/jabberwock 
-  for i in 1 2 3 4
+  rm -rf $odoo_tmp_path
+  mkdir -p $odoo_tmp_path
+  cd $odoo_tmp_path
+  git init .
+
+
+  cd $jabberwock_path
+  for i in 7 6 5 4 3 2 1 0
     echo --------------------------
     echo ------- build $i ----------
     echo --------------------------
+    cd $jabberwock_path
+    git checkout master
+    echo strategy: $strategy
+    if test $strategy -eq 1
+      git checkout HEAD~$i
+    end
     rm -rf build/odoo
     npm run build:odoo
-    cp build/odoo/odoo-integration.css $odooTmpPath/odoo-integration-$i.css
-    cp build/odoo/odoo-integration.js $odooTmpPath/odoo-integration-$i.js
+    cp build/odoo/odoo-integration.css $odoo_tmp_path/odoo-integration.css
+    cp build/odoo/odoo-integration.js $odoo_tmp_path/odoo-integration.js
+
+    cd $odoo_tmp_path
+    git add .
+    git commit -am "commit $i"
   end
+  git checkout master -f
+
+  cd $odoo_tmp_path
+  git remote add origin git@github.com:Goaman/$repo.git
+  git push origin master -f
 
   cd $path
 end
