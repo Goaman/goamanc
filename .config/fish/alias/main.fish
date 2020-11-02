@@ -357,8 +357,13 @@ abbr us "setxkbmap us"
 abbr dv "setxkbmap us dvorak-intl"
 abbr dvc "sudo loadkeys dvorak"
 
-#abbr se "sensation --debug --config $HOME/goamanc/.config/sensation/config.py 4"
-abbr se "sudo systemctl restart sensation"
+abbr se "sensation --debug --config $HOME/goamanc/.config/sensation/config.py 4"
+# function se 
+#   sed -i "/Environment=DISPLAY=:./c\Environment=DISPLAY=$DISPLAY" /home/odoo/goamanc/.config/systemd/user/sensation.service
+#   sudo cp /home/odoo/goamanc/.config/systemd/user/sensation.service /etc/systemd/system/sensation.service
+#   sudo systemctl daemon-reload
+#   sudo systemctl restart sensation
+# end
 #function sensation
 #  sudo -E $HOME/anaconda3/bin/python3 ~/projects/self/programming/goa/goa-sensation/src/__main__.py $argv
 #end
@@ -948,13 +953,20 @@ end
 # Pulse audio
 ####################################################################################################
 
-# Pulse audio has a module to restore the an application in a previous sink
+## Pulse audio has a module to restore the an application in a previous sink
 # which is pretty annoying. To remove that behavion, change line
 # `load-module module-stream-restore restore_device=false`
 # in `/etc/pulse/default.pa`
 # See https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/#index28h3
 # and https://www.reddit.com/r/linuxaudio/comments/939wwz/how_correctly_to_switch_pulseaudios_default_sink/
 # load-module module-stream-restore restore_device=false
+#
+## Bluetooth audio HSP mode is awefull.
+# source: https://askubuntu.com/questions/1205749/how-permanently-remove-or-disable-hsp-hfp-bluetooth-profile 
+# Open (sudo) /etc/pulse/default.pa and add auto_switch=false like this:
+# ```
+# load-module module-bluetooth-policy auto_switch=false  # <---- !
+# ```
 
 function sink-list-id
   pactl list short sink-inputs | onespace | cuts -f 1
@@ -1046,7 +1058,7 @@ function cpb
   cp $from/odoo-integration.js $to/jabberwock.js
   cp $from/odoo-integration.css $to/jabberwock.css
 end
-abbr cpd cp /home/odoo/projects/external/odoo/jabberwock/dev/odoo-integration-dev.js ~/src/master-jabberwock-build-sge-age-dmo-chm-nby/odoo/addons/web_editor/static/lib/jabberwock/jabberwock.js
+abbr cpd cp /home/odoo/projects/external/odoo/jabberwock/dev/odoo-integration-dev.js ~/src/master-jabberwock-nby/odoo/addons/web_editor/static/lib/jabberwock/jabberwock.js
 abbr lnd 'set file /home/odoo/src/saas-13.5-jabberwock-nby/odoo/addons/web_editor/static/lib/jabberwock/jabberwock.js; rm $file; ln -s /home/odoo/projects/external/odoo/jabberwock/build/odoo/odoo-integration.js $file'
 
 

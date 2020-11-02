@@ -1,0 +1,59 @@
+[Unit]
+Description=sensation
+[Service]
+; Environment=CINNAMON_VERSION=3.8.9
+; Environment=COLORTERM=truecolor
+
+; Environment=EDITOR=vim
+; Environment=GIO_LAUNCHED_DESKTOP_FILE=/usr/share/applications/terminator.desktop
+; Environment=GIO_LAUNCHED_DESKTOP_FILE_PID=19334
+; Environment=GJS_DEBUG_OUTPUT=stderr
+; Environment=GJS_DEBUG_TOPICS=JS ERROR;JS LOG
+
+; Environment=HUSHLOGIN=FALSE
+; Environment=INVOCATION_ID=014533e99ede4473824f2b8531130a2f
+; Environment=JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+; Environment=JOURNAL_STREAM=9:50026
+; Environment=JRE_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre
+
+; Environment=LANG=en_US.UTF-8
+; Environment=LC_ADDRESS=de_BE.UTF-8
+; Environment=LC_IDENTIFICATION=de_BE.UTF-8
+; Environment=LC_MEASUREMENT=de_BE.UTF-8
+; Environment=LC_MONETARY=de_BE.UTF-8
+; Environment=LC_NAME=de_BE.UTF-8
+; Environment=LC_NUMERIC=de_BE.UTF-8
+; Environment=LC_PAPER=de_BE.UTF-8
+; Environment=LC_TELEPHONE=de_BE.UTF-8
+
+; Environment=LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+; Environment=MAIL=/var/mail/odoo
+; Environment=PATH=/home/odoo/anaconda3/envs/py365/bin:/home/odoo/anaconda3/envs/py365/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/odoo/.nvm/versions/node/v13.11.0/bin:/snap/bin:/home/odoo/.cargo/bin/:/home/odoo/.fzf/bin/:/home/odoo/goamanc/bin/:/home/odoo/.local/bin:/snap/bin:/home/odoo/.cargo/bin/:/home/odoo/.fzf/bin/:/home/odoo/goamanc/bin/:/home/odoo/.local/bin
+; Environment=PWD=/home/odoo/goamanc/.config/systemd/user
+; Environment=SASS_LIBSASS_PATH=/usr/local/lib/libsass
+; Environment=SHELL=/usr/bin/fish
+; Environment=SHLVL=2
+; Environment=TERM=xterm-256color
+; Environment=TERMINATOR_DBUS_NAME=net.tenshu.Terminator20x1a6021154d881e
+; Environment=TERMINATOR_DBUS_PATH=/net/tenshu/Terminator2
+; Environment=TERMINATOR_UUID=urn:uuid:b02a34e7-32d3-48d7-a89c-da4f1bce0722
+; Environment=VIRTUAL_ENV_DISABLE_PROMPT=1
+; Environment=VTE_VERSION=5202
+
+; Environment=XDG_RUNTIME_DIR=/run/user/1000
+; Environment=XDG_SEAT=seat0
+; Environment=XDG_SESSION_ID=9
+; Environment=XDG_VTNR=2
+; Environment=_JAVA_AWT_WM_NONREPARENTING=1
+
+; Environment=WINDOWPATH=2
+Environment=DISPLAY=:2
+Environment=HOME=/home/odoo
+Environment=USER=odoo
+Environment=LOGNAME=odoo
+Environment=XAUTHORITY=/home/odoo/.Xauthority
+
+
+ExecStart=/home/odoo/goamanc/bin/sensation --debug --config /home/odoo/goamanc/.config/sensation/config.py 4
+[Install]
+WantedBy=multi-user.target
