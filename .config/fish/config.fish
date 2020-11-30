@@ -30,11 +30,13 @@ set -x PATH $PATH $HOME/.fzf/bin/
 function nvm
     bass source ~/.nvm/nvm.sh --no-use ';' nvm $argv
 end
-nvm use default 1>/dev/null
+set -x PATH $HOME/.nvm/versions/node/v15.3.0/bin $PATH
+# nvm use default 1>/dev/null
 
 ####################################################
 # Conda
 ####################################################
+set -x PATH $HOME/anaconda3/bin $PATH
 set -x PATH $HOME/anaconda3/envs/py365/bin $PATH
 
 ####################################################

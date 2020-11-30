@@ -51,7 +51,7 @@ end
 #   listport 8569
 # }
 
-abbr oes 'python3 /home/odoo/projects/support-tools/oe-support.py'
+abbr oes "python3 $HOME/projects/support-tools/oe-support.py"
 
 # oes-grepmodules () {
 #   #grep "odoo.modules.graph" | grep -oE "module\s([^:]*)" | grep -oE " .*" | trim
@@ -74,7 +74,7 @@ abbr oes 'python3 /home/odoo/projects/support-tools/oe-support.py'
 #   #oes info $1 2>/dev/null | grep "Root login:" | cut -d':' -f2 | trim | xclip -selection clipboard
 #   echo copying $1
 
-#   #mail=$(/home/odoo/projects/support-tools/oe-support.py info $1 2> /dev/null | grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} "Root login:" | cut -d':' -f2 | trim)
+#   #mail=$($HOME/projects/support-tools/oe-support.py info $1 2> /dev/null | grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} "Root login:" | cut -d':' -f2 | trim)
 #   mail=$(psql -d oe_support_$1 -c "select login from res_users where active='t' order by id limit 1;" | head -n3 | tail -n1 | trim) 
 #   echo mail: $mail
 #   echo $mail | xclip -selection clipboard
@@ -274,8 +274,8 @@ abbr oes 'python3 /home/odoo/projects/support-tools/oe-support.py'
 # #   which launch-odoo
 # #   python3 \
 # #     -m ptvsd --host localhost --port 5678\
-# #     /home/odoo/src2/odoo/odoo-bin -d openerp --xmlrpc-port=8169 \
-# #     --addons-path=/home/odoo/projects/internal/test,/home/odoo/projects/internal/default,/home/odoo/projects/internal/private,/home/odoo/src2/enterprise,/home/odoo/src2/design-themes,/home/odoo/src2/odoo/addons
+# #     $HOME/src2/odoo/odoo-bin -d openerp --xmlrpc-port=8169 \
+# #     --addons-path=$HOME/projects/internal/test,$HOME/projects/internal/default,$HOME/projects/internal/private,$HOME/src2/enterprise,$HOME/src2/design-themes,$HOME/src2/odoo/addons
 # #       --without-demo=all\
 # #       --load=saas_worker,web 
 # # }
@@ -291,11 +291,11 @@ abbr oes 'python3 /home/odoo/projects/support-tools/oe-support.py'
 # #   fi
 # #   python3 \
 # #     -m ptvsd --host localhost --port 5678\
-# #     /home/odoo/src2/odoo/odoo-bin\
+# #     $HOME/src2/odoo/odoo-bin\
 # #     $shell\
 # #     $port\
 # #     -d openerp\
-# #     --addons-path=/home/odoo/projects/internal/test,/home/odoo/projects/internal/default,/home/odoo/projects/internal/private,/home/odoo/src2/enterprise,/home/odoo/src2/design-themes,/home/odoo/src2/odoo/addons
+# #     --addons-path=$HOME/projects/internal/test,$HOME/projects/internal/default,$HOME/projects/internal/private,$HOME/src2/enterprise,$HOME/src2/design-themes,$HOME/src2/odoo/addons
 # #     --without-demo=all\
 # #     --load=saas_worker,web\
 # #     -u openerp_enterprise
@@ -316,7 +316,7 @@ function new-odoo-worktree
   cd ~/main_odoo/odoo; git worktree add ~/src/$version/odoo $version
   cd ~/main_odoo/enterprise; git worktree add ~/src/$version/enterprise $version
   cd ~/main_odoo/design-themes; git worktree add ~/src/$version/design-themes $version
-  odoo-default-workspace.js $version > /home/odoo/projects/vsc-workspace/odoo-$version.code-workspace
+  odoo-default-workspace.js $version > $HOME/projects/vsc-workspace/odoo-$version.code-workspace
 end
 
 set compta_db comptapocalypse
@@ -324,23 +324,23 @@ set compta_branch master-acc-pocalypse-nby
 function compta
   set database $compta_db
   set branch $compta_branch
-  python3 /home/odoo/src/master-acc-pocalypse-las/odoo/odoo-bin -d $database --xmlrpc-port=8169 \
-    --addons-path=/home/odoo/src/$branch/enterprise,/home/odoo/src/$branch/odoo/addons,/home/odoo/main_odoo/design-themes $argv
+  python3 $HOME/src/master-acc-pocalypse-las/odoo/odoo-bin -d $database --xmlrpc-port=8169 \
+    --addons-path=$HOME/src/$branch/enterprise,$HOME/src/$branch/odoo/addons,$HOME/main_odoo/design-themes $argv
 end
 function compta-test
   set database$compta_db
   set branch$compta_branch
-  python3 /home/odoo/src/master-acc-pocalypse-las/odoo/odoo-bin -d $database --xmlrpc-port=8869 \
-    --addons-path=/home/odoo/src/$branch/enterprise,/home/odoo/src/$branch/odoo/addons,/home/odoo/main_odoo/design-themes\
+  python3 $HOME/src/master-acc-pocalypse-las/odoo/odoo-bin -d $database --xmlrpc-port=8869 \
+    --addons-path=$HOME/src/$branch/enterprise,$HOME/src/$branch/odoo/addons,$HOME/main_odoo/design-themes\
     --test-enable $argv
 end
 
 # pocalypse push
 function pocpush
   set dir (pwd)
-  cd /home/odoo/src/master-acc-pocalypse-nby/odoo
+  cd $HOME/src/master-acc-pocalypse-nby/odoo
   git push -f odoo-dev master-acc-pocalypse-nby
-  cd /home/odoo/src/master-acc-pocalypse-nby/enterprise
+  cd $HOME/src/master-acc-pocalypse-nby/enterprise
   git push -f enterprise-dev master-acc-pocalypse-nby
   cd $dir
 end
@@ -356,9 +356,9 @@ function pocpulle
   git pull --rebase enterprise-dev master-acc-pocalypse-las
 end
 
-abbr eod vim /home/odoo/projects/self/programming/odoo/odoo-click/odoo-click.py
+abbr eod vim $HOME/projects/self/programming/odoo/odoo-click/odoo-click.py
 function odo
-  python /home/odoo/projects/self/programming/odoo/odoo-click/odoo-click.py $argv
+  python $HOME/projects/self/programming/odoo/odoo-click/odoo-click.py $argv
 end
 
 function delete_invoices

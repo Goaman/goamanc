@@ -40,7 +40,7 @@ end
 # #launchd
 
 # # git
-# abbr gcl "git clone"
+abbr gcl "git clone"
 # abbr ggcl "gogit;git clone"
 # abbr gh "git help"
 # abbr gact 'git add .; git commit -m "temp"'

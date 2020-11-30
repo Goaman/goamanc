@@ -1,4 +1,4 @@
-set --global pure_version 2.5.2 # used for bug report
+set --global pure_version 3.0.0 # used for bug report
 
 # Base colors
 _pure_set_default pure_color_primary blue
@@ -40,6 +40,10 @@ _pure_set_default pure_color_ssh_user_root pure_color_light
 _pure_set_default pure_show_jobs false
 _pure_set_default pure_color_jobs pure_color_normal
 
+# Show system time
+_pure_set_default pure_show_system_time false
+_pure_set_default pure_color_system_time pure_color_mute
+
 # Virtualenv for Python
 _pure_set_default pure_color_virtualenv pure_color_mute
 
@@ -64,3 +68,6 @@ _pure_set_default pure_reverse_prompt_symbol_in_vimode true
 
 # Title
 _pure_set_default pure_symbol_title_bar_separator "—"
+
+# Check for new release on startup
+_pure_set_default pure_check_for_new_release false
