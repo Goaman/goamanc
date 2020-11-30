@@ -1,0 +1,6 @@
+version: '3.5'
+services:
+  jupyter_lab:
+    image: jupyter/base-notebook:latest
+    ports:
+      - '9999:8888'

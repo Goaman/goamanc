@@ -153,6 +153,7 @@ abbr gopr "cd ~/projects/self/programming"
 abbr gob "cd ~/projects/self/programming/big"
 abbr gosc "cd $HOME/goamanc/scripts"
 abbr gopo "cd ~/projects/self/programming/goa/goa-power"
+abbr goev "cd ~/projects/self/programming/nevdev"
 abbr gor "cd ~/projects/self/rust/testrust"
 abbr gopo2 "cd ~/projects/self/goa-power-worktree/master2"
 abbr gostoi "cd ~/projects/self/goastorage/public/img/original"
@@ -358,12 +359,13 @@ abbr dv "setxkbmap us dvorak-intl"
 abbr dvc "sudo loadkeys dvorak"
 
 abbr se "sensation --debug --config $HOME/goamanc/.config/sensation/config.py 4"
-# function se 
-#   sed -i "/Environment=DISPLAY=:./c\Environment=DISPLAY=$DISPLAY" /home/odoo/goamanc/.config/systemd/user/sensation.service
-#   sudo cp /home/odoo/goamanc/.config/systemd/user/sensation.service /etc/systemd/system/sensation.service
-#   sudo systemctl daemon-reload
-#   sudo systemctl restart sensation
-# end
+function serd
+  sed -i "/Environment=DISPLAY=:./c\Environment=DISPLAY=$DISPLAY" /home/odoo/goamanc/.config/systemd/user/sensation.service
+  sudo cp /home/odoo/goamanc/.config/systemd/user/sensation.service /etc/systemd/system/sensation.service
+  sudo systemctl daemon-reload
+  sudo systemctl restart sensation
+end
+
 #function sensation
 #  sudo -E $HOME/anaconda3/bin/python3 ~/projects/self/programming/goa/goa-sensation/src/__main__.py $argv
 #end
@@ -1052,6 +1054,22 @@ abbr btm btmarshal
 abbr btr btroom
 abbr btd btdisconnect
 
+####################################################################################################
+# Terminator
+####################################################################################################
+function setTerminatorDefaultProfile 
+  set user $argv[1]
+  set file /home/odoo/goamanc/.config/terminator/config
+  sed -Ei "s/(\s+profile = )(.*)/\1$user/" $file
+end
+abbr stg 'setTerminatorDefaultProfile "Goaman"; killall terminator'
+abbr stgo 'setTerminatorDefaultProfile "Goaman opaque"; killall terminator'
+
+
+####################################################################################################
+# Jabberwock
+####################################################################################################
+
 function cpb
   set from /home/odoo/projects/external/odoo/jabberwock/build/odoo
   set to ~/src/master-jabberwock-build-sge-age-dmo-chm-nby/odoo/addons/web_editor/static/lib/jabberwock
@@ -1212,4 +1230,38 @@ function build_odoo_test
 end
 
 
-abbr kdis "ps aux | grep -v grep | grep discord | onespace | head -n1 | cuts -f2 | xargs kill -9"
+abbr kdis killall Discord
+
+abbr rmw remove_warn
+function remove_warn
+  sed -i '/console.warn/d' $argv[1]
+end
+abbr rmw remove_warn
+
+function goa
+  set path pwd
+  cd /home/odoo/projects/self/programming/goa/goa-power
+  node -r source-map-support/register /home/odoo/projects/self/programming/goa/goa-power/packages/goapower-build-cli/dist/ts/goapower-build-cli/src/cli.js $argv
+  cd $pwd
+end
+
+function power-output
+  #tput smcup
+  clear
+  clear
+  set path ./stdout.log
+  sleep 0.1
+  cat $path
+  set filebefore ""
+  while sleep 0.1
+    set file (cat $path)
+    set length1 (string length (string join $file))
+    set length2 (string length (string join $filebefore))
+
+    if test $length1 != $length2 2>/dev/null
+      clear
+      cat $path
+    end
+    set filebefore $file
+  end
+end

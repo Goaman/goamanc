@@ -47,7 +47,7 @@ Description=sensation
 ; Environment=_JAVA_AWT_WM_NONREPARENTING=1
 
 ; Environment=WINDOWPATH=2
-Environment=DISPLAY=:0
+Environment=DISPLAY=:2
 Environment=HOME=/home/odoo
 Environment=USER=odoo
 Environment=LOGNAME=odoo

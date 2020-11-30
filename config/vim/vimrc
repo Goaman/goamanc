@@ -53,8 +53,8 @@
 
   " " NeoBundle 'CSApprox'
   "
-   " NeoBundle 'Color-Sampler-Pack'      
-   " NeoBundle 'ScrollColors'            
+  "NeoBundle 'Color-Sampler-Pack'      
+  "NeoBundle 'ScrollColors'            
    " NeoBundle 'Smooth-Scroll'           
    "NeoBundle 'The-NERD-Commenter'     
    NeoBundle 'tComment'
@@ -990,3 +990,4 @@ autocmd BufNewFile,BufRead *.fish set wrap
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
+set clipboard=unnamedplus

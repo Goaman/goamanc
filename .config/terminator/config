@@ -46,8 +46,8 @@
     foreground_color = "#ffffff"
     scrollback_infinite = True
     show_titlebar = False
-  [[Goaman opaque]]
-    background_darkness = 1.0
+  [[Goaman]]
+    background_darkness = 0.55
     background_type = transparent
     cursor_color = "#bbbbbb"
     font = Monospace 7
@@ -56,8 +56,8 @@
     scrollback_infinite = True
     show_titlebar = False
     use_system_font = False
-  [[Goaman]]
-    background_darkness = 0.55
+  [[Goaman opaque]]
+    background_darkness = 1.0
     background_type = transparent
     cursor_color = "#bbbbbb"
     font = Monospace 7
@@ -74,3 +74,4 @@
     show_titlebar = False
   [[Slate]]
     cursor_color = "#aaaaaa"
+

@@ -93,9 +93,6 @@ main_mode = [
 
     # [["KEY_6", "KEY_Q"], [">su - odoo -c 'google-chrome --remote-debugging-port=9222 &'"]], #
     [[mod_1, "KEY_RIGHTBRACE"], [">su - odoo -m -c 'flameshot gui -p /home/odoo/captures'"]],
-    # [[mod_1, "KEY_RIGHTBRACE"], [">su - odoo -c 'terminator -x \'/usr/bin/flameshot gui &\''"]], #
-    # [[mod_1, "KEY_RIGHTBRACE"], [">su - odoo -c 'terminator'"]], #
-    # [[mod_1, "KEY_RIGHTBRACE"], [">gnome-screenshot -f ~/captures/$(date +%s).png"]], #
     [["KEY_SYSRQ"], ['>gnome-screenshot -f ~/captures/$(date +%s).png']],
     [["KEY_6", "KEY_J"], [">su - odoo -m -c 'echo agent: $SSH_AGENT_PID'"]],
 

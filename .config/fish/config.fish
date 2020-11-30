@@ -30,7 +30,7 @@ set -x PATH $PATH $HOME/.fzf/bin/
 function nvm
     bass source ~/.nvm/nvm.sh --no-use ';' nvm $argv
 end
-#nvm use default 1>/dev/null
+nvm use default 1>/dev/null
 
 ####################################################
 # Conda
