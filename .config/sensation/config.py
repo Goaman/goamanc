@@ -92,9 +92,9 @@ main_mode = [
 
 
     # [["KEY_6", "KEY_Q"], [">su - odoo -c 'google-chrome --remote-debugging-port=9222 &'"]], #
-    [[mod_1, "KEY_RIGHTBRACE"], [">su - goaman -m -c 'flameshot gui -p /home/goaman/captures'"]],
+    [[mod_1, "KEY_RIGHTBRACE"], [">su goaman -m -c 'flameshot gui -p /home/goaman/captures'"]],
     [["KEY_SYSRQ"], ['>gnome-screenshot -f ~/captures/$(date +%s).png']],
-    [["KEY_6", "KEY_J"], [">su - goaman -m -c 'echo agent: $SSH_AGENT_PID'"]],
+    [["KEY_6", "KEY_J"], [">su goaman -m -c 'echo agent: $SSH_AGENT_PID'"]],
 
     [[mod_1, "KEY_EQUAL"], ['!reload-config']],
 
@@ -103,7 +103,7 @@ main_mode = [
     [["KEY_4", "KEY_M"], ['>setxkbmap us dvorak-intl']],
     [["KEY_4", "KEY_COMMA"], ['>setxkbmap us']],
     [["KEY_4", "KEY_DOT"], ['>setxkbmap be']],
-    [["KEY_4", "KEY_P"], [">su - goaman -m -c 'killall trayer;trayer'"]], #
+    [["KEY_4", "KEY_P"], [">su goaman -m -c 'killall trayer;trayer'"]], #
 
     # [["KEY_4", "KEY_DOT"], ['>setxkbmap fr']],
     [[mod_3, "KEY_H"], [">xdotool key asciitilde"]],
@@ -137,13 +137,13 @@ main_mode = [
     [["KEY_6", "KEY_Y"], [">su goaman -c 'slock &'"]], #
     [["KEY_6", "KEY_P"], [">su goaman -c 'xkill &'"]], #
     [["KEY_6", "KEY_SLASH"], [">su goaman -c 'flameshot gui &'"]], #
-    [[mod_1, "KEY_LEFTBRACE"], [">sudo -goaman -E -b gpick -p"]], #
+    [[mod_1, "KEY_LEFTBRACE"], [">sudo goaman -E -b gpick -p"]], #
 
     [["KEY_6", 'KEY_M'], [">su goaman -c '/home/goaman/goamanc/bin/xrandoff &'"]], #
     [["KEY_6", 'KEY_COMMA'], [">su goaman -c '/home/goaman/goamanc/bin/xrandon &'"]], #
     [["KEY_6", 'KEY_DOT'], [">su goaman -c '/home/goaman/goamanc/bin/xrand_screen2 &'"]], #
 
-    [["KEY_6", "KEY_SEMICOLON"], [">su - goaman -c 'xdg-open /home/goaman/Downloads/agents.jpg'"]], #
+    [["KEY_6", "KEY_SEMICOLON"], [">su goaman -c 'xdg-open /home/goaman/Downloads/agents.jpg'"]], #
     # [["KEY_6", "KEY_E"], [">su - odoo -c google-chrome"]], #
     # [["KEY_6", "KEY_R"], [">"]], #
     # [["KEY_6", "KEY_T"], [">"]], #
