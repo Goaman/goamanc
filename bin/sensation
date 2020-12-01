@@ -1,4 +1,4 @@
 #!/bin/bash
 echo display: $DIPLAY
 # export DISPLAY :2
-sudo -E /home/odoo/anaconda3/bin/python3 /home/odoo/projects/self/programming/goa/goa-sensation/src/__main__.py $@
+sudo -E /home/goaman/anaconda3/bin/python3 /home/goaman/projects/self/programming/goa/goa-sensation/src/__main__.py $@

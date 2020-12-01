@@ -33,7 +33,7 @@ SETUVAR _fish_abbr_cf:code\x20\x28fzf\x29
 SETUVAR _fish_abbr_clip:xclip\x20\x2dselection\x20clipboard\x20\x2di
 SETUVAR _fish_abbr_cn:code\x20\x2dn
 SETUVAR _fish_abbr_coucou:echo\x20couocu
-SETUVAR _fish_abbr_cpd:cp\x20/home/odoo/projects/external/odoo/jabberwock/dev/odoo\x2dintegration\x2ddev\x2ejs\x20/home/goaman/src/master\x2djabberwock\x2dnby/odoo/addons/web_editor/static/lib/jabberwock/jabberwock\x2ejs
+SETUVAR _fish_abbr_cpd:cp\x20/home/goaman/projects/external/odoo/jabberwock/dev/odoo\x2dintegration\x2ddev\x2ejs\x20/home/goaman/src/master\x2djabberwock\x2dnby/odoo/addons/web_editor/static/lib/jabberwock/jabberwock\x2ejs
 SETUVAR _fish_abbr_cya:shutdown\x20now
 SETUVAR _fish_abbr_db:yarn\x20run\x20dev\x2dbrowser
 SETUVAR _fish_abbr_dc:docker\x2dcompose
@@ -152,7 +152,7 @@ SETUVAR _fish_abbr_killodoobin:ps\x20aux\x20\x7c\x20grep\x20odoo\x2dbin\x20\x7c\
 SETUVAR _fish_abbr_kob:ps\x20aux\x20\x7c\x20grep\x20odoo\x2dbin\x20\x7c\x20head\x20\x2dn\x2d1\x20\x7c\x20onespace\x20\x7c\x20cuts\x20\x2df2\x20\x7c\x20xargs\x20kill\x20\x2d9
 SETUVAR _fish_abbr_l:ls
 SETUVAR _fish_abbr_lesscol:less\x20\x2dr
-SETUVAR _fish_abbr_lnd:set\x20file\x20/home/odoo/src/saas\x2d13\x2e5\x2djabberwock\x2dnby/odoo/addons/web_editor/static/lib/jabberwock/jabberwock\x2ejs\x3b\x20rm\x20\x24file\x3b\x20ln\x20\x2ds\x20/home/odoo/projects/external/odoo/jabberwock/build/odoo/odoo\x2dintegration\x2ejs\x20\x24file
+SETUVAR _fish_abbr_lnd:set\x20file\x20/home/goaman/src/saas\x2d13\x2e5\x2djabberwock\x2dnby/odoo/addons/web_editor/static/lib/jabberwock/jabberwock\x2ejs\x3b\x20rm\x20\x24file\x3b\x20ln\x20\x2ds\x20/home/goaman/projects/external/odoo/jabberwock/build/odoo/odoo\x2dintegration\x2ejs\x20\x24file
 SETUVAR _fish_abbr_localip:ifconfig\x20\x7c\x20grep\x20192\x20\x7c\x20onespace\x20\x7c\x20cuts\x20\x2df3
 SETUVAR _fish_abbr_lof:lsof\x20\x2dP\x20\x2dn\x20\x2di
 SETUVAR _fish_abbr_logsplit:\x24HOME/Downloads/old/prev/log_split/build/log_split
@@ -182,7 +182,7 @@ SETUVAR _fish_abbr_rmw:remove_warn
 SETUVAR _fish_abbr_s:pavucontrol
 SETUVAR _fish_abbr_sa:ssh\x2dadd
 SETUVAR _fish_abbr_screenshot:shutter
-SETUVAR _fish_abbr_se:sensation\x20\x2d\x2ddebug\x20\x2d\x2dconfig\x20/home/goaman/goamanc/\x2econfig/sensation/config\x2epy\x204
+SETUVAR _fish_abbr_se:sensation\x20\x2d\x2ddebug\x20\x2d\x2dconfig\x20/home/goaman/goamanc/\x2econfig/sensation/config\x2epy\x2011
 SETUVAR _fish_abbr_ser:sudo\x20service
 SETUVAR _fish_abbr_shgoa:ssh\x20root\x40173\x2e249\x2e32\x2e76
 SETUVAR _fish_abbr_si:sudo\x20snap\x20install

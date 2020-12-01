@@ -358,10 +358,10 @@ abbr us "setxkbmap us"
 abbr dv "setxkbmap us dvorak-intl"
 abbr dvc "sudo loadkeys dvorak"
 
-abbr se "sensation --debug --config $HOME/goamanc/.config/sensation/config.py 4"
+abbr se "sensation --debug --config $HOME/goamanc/.config/sensation/config.py 11"
 function serd
-  sed -i "/Environment=DISPLAY=:./c\Environment=DISPLAY=$DISPLAY" /home/odoo/goamanc/.config/systemd/user/sensation.service
-  sudo cp /home/odoo/goamanc/.config/systemd/user/sensation.service /etc/systemd/system/sensation.service
+  sed -i "/Environment=DISPLAY=:./c\Environment=DISPLAY=$DISPLAY" /home/goaman/goamanc/.config/systemd/user/sensation.service
+  sudo cp /home/goaman/goamanc/.config/systemd/user/sensation.service /etc/systemd/system/sensation.service
   sudo systemctl daemon-reload
   sudo systemctl restart sensation
 end
@@ -1059,7 +1059,7 @@ abbr btd btdisconnect
 ####################################################################################################
 function setTerminatorDefaultProfile 
   set user $argv[1]
-  set file /home/odoo/goamanc/.config/terminator/config
+  set file /home/goaman/goamanc/.config/terminator/config
   sed -Ei "s/(\s+profile = )(.*)/\1$user/" $file
 end
 abbr stg 'setTerminatorDefaultProfile "Goaman"; killall terminator'
@@ -1071,21 +1071,21 @@ abbr stgo 'setTerminatorDefaultProfile "Goaman opaque"; killall terminator'
 ####################################################################################################
 
 function cpb
-  set from /home/odoo/projects/external/odoo/jabberwock/build/odoo
+  set from /home/goaman/projects/external/odoo/jabberwock/build/odoo
   set to ~/src/master-jabberwock-build-sge-age-dmo-chm-nby/odoo/addons/web_editor/static/lib/jabberwock
   cp $from/odoo-integration.js $to/jabberwock.js
   cp $from/odoo-integration.css $to/jabberwock.css
 end
-abbr cpd cp /home/odoo/projects/external/odoo/jabberwock/dev/odoo-integration-dev.js ~/src/master-jabberwock-nby/odoo/addons/web_editor/static/lib/jabberwock/jabberwock.js
-abbr lnd 'set file /home/odoo/src/saas-13.5-jabberwock-nby/odoo/addons/web_editor/static/lib/jabberwock/jabberwock.js; rm $file; ln -s /home/odoo/projects/external/odoo/jabberwock/build/odoo/odoo-integration.js $file'
+abbr cpd cp /home/goaman/projects/external/odoo/jabberwock/dev/odoo-integration-dev.js ~/src/master-jabberwock-nby/odoo/addons/web_editor/static/lib/jabberwock/jabberwock.js
+abbr lnd 'set file /home/goaman/src/saas-13.5-jabberwock-nby/odoo/addons/web_editor/static/lib/jabberwock/jabberwock.js; rm $file; ln -s /home/goaman/projects/external/odoo/jabberwock/build/odoo/odoo-integration.js $file'
 
 
 
 function build_jabberwock_odoo
   set original_dir (pwd)
-  #set jabberwock_path /home/odoo/projects/external/odoo/jabberwock-worktree/master-build
-  set jabberwock_path /home/odoo/projects/external/odoo/jabberwock
-  set build_path /home/odoo/src/14.0-jabberwock-build-sge-age-dmo-chm-nby
+  #set jabberwock_path /home/goaman/projects/external/odoo/jabberwock-worktree/master-build
+  set jabberwock_path /home/goaman/projects/external/odoo/jabberwock
+  set build_path /home/goaman/src/14.0-jabberwock-build-sge-age-dmo-chm-nby
 
   cd $jabberwock_path
   git fetch origin master
@@ -1121,7 +1121,7 @@ abbr bjo build_jabberwock_odoo
 function build_jabberwock
   set original_dir (pwd)
 
-  cd /home/odoo/projects/external/odoo/jabberwock
+  cd /home/goaman/projects/external/odoo/jabberwock
   npm run build-odoo
   cd $original_dir
 end
@@ -1132,7 +1132,7 @@ function reset_test_odoo
 
   cd ~/src/master-jabberwock-age-dmo-chm-nby-test/odoo
   git reset --hard master-jabberwock-age-dmo-chm-nby
-  cp /home/odoo/projects/external/odoo/jabberwock/build/odoo/odoo-integration.js /home/odoo/src/master-jabberwock-age-dmo-chm-nby-test/odoo/addons/web_editor/static/lib/jabberwock/jabberwock.js
+  cp /home/goaman/projects/external/odoo/jabberwock/build/odoo/odoo-integration.js /home/goaman/src/master-jabberwock-age-dmo-chm-nby-test/odoo/addons/web_editor/static/lib/jabberwock/jabberwock.js
 
   #cd ../enterprise
 
@@ -1146,7 +1146,7 @@ function test_odoo_lint
 
   cd ~/src/master-jabberwock-age-dmo-chm-nby-test/odoo
   git reset --hard master-jabberwock-age-dmo-chm-nby
-  cp /home/odoo/projects/external/odoo/jabberwock/build/odoo/odoo-integration.js /home/odoo/src/master-jabberwock-age-dmo-chm-nby-test/odoo/addons/web_editor/static/lib/jabberwock/jabberwock.js
+  cp /home/goaman/projects/external/odoo/jabberwock/build/odoo/odoo-integration.js /home/goaman/src/master-jabberwock-age-dmo-chm-nby-test/odoo/addons/web_editor/static/lib/jabberwock/jabberwock.js
 
   #cd ../enterprise
 
@@ -1167,15 +1167,15 @@ function sl
 end
 
 function showPerf
-  ls -lh /home/odoo/projects/external/odoo/jabberwock/build/odoo/odoo-integration.js
+  ls -lh /home/goaman/projects/external/odoo/jabberwock/build/odoo/odoo-integration.js
 
-  rm /home/odoo/projects/external/odoo/jabberwock/build/odoo/odoo-integration-gzip.js
-  gzip --best /home/odoo/projects/external/odoo/jabberwock/build/odoo/odoo-integration.js -c > /home/odoo/projects/external/odoo/jabberwock/build/odoo/odoo-integration-gzip.js
-  ls -lh /home/odoo/projects/external/odoo/jabberwock/build/odoo/odoo-integration-gzip.js
+  rm /home/goaman/projects/external/odoo/jabberwock/build/odoo/odoo-integration-gzip.js
+  gzip --best /home/goaman/projects/external/odoo/jabberwock/build/odoo/odoo-integration.js -c > /home/goaman/projects/external/odoo/jabberwock/build/odoo/odoo-integration-gzip.js
+  ls -lh /home/goaman/projects/external/odoo/jabberwock/build/odoo/odoo-integration-gzip.js
 
-  rm /home/odoo/projects/external/odoo/jabberwock/build/odoo/odoo-integration-brotli.js
-  brotli /home/odoo/projects/external/odoo/jabberwock/build/odoo/odoo-integration.js -o /home/odoo/projects/external/odoo/jabberwock/build/odoo/odoo-integration-brotli.js
-  ls -lh /home/odoo/projects/external/odoo/jabberwock/build/odoo/odoo-integration-brotli.js
+  rm /home/goaman/projects/external/odoo/jabberwock/build/odoo/odoo-integration-brotli.js
+  brotli /home/goaman/projects/external/odoo/jabberwock/build/odoo/odoo-integration.js -o /home/goaman/projects/external/odoo/jabberwock/build/odoo/odoo-integration-brotli.js
+  ls -lh /home/goaman/projects/external/odoo/jabberwock/build/odoo/odoo-integration-brotli.js
 end
 
 function perfbuild
@@ -1240,8 +1240,8 @@ abbr rmw remove_warn
 
 function goa
   set path pwd
-  cd /home/odoo/projects/self/programming/goa/goa-power
-  node -r source-map-support/register /home/odoo/projects/self/programming/goa/goa-power/packages/goapower-build-cli/dist/ts/goapower-build-cli/src/cli.js $argv
+  cd /home/goaman/projects/self/programming/goa/goa-power
+  node -r source-map-support/register /home/goaman/projects/self/programming/goa/goa-power/packages/goapower-build-cli/dist/ts/goapower-build-cli/src/cli.js $argv
   cd $pwd
 end
 

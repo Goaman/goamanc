@@ -11,7 +11,7 @@ Description=Jabberwock
 ;Environment=TERM=xterm-256color
 ;Environment=COLORTERM=truecolor
 Environment=FORCE_COLOR=true
-ExecStart=/home/odoo/goamanc/.config/systemd/user/jabberwock.fish
+ExecStart=/home/goaman/goamanc/.config/systemd/user/jabberwock.fish
 
 
 

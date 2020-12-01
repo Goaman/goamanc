@@ -78,3 +78,9 @@ set -x _JAVA_AWT_WM_NONREPARENTING 1
 
 
 
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+eval /home/goaman/anaconda3/bin/conda "shell.fish" "hook" $argv | source
+# <<< conda initialize <<<
+

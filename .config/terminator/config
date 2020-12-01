@@ -1,23 +1,19 @@
 [global_config]
-  always_split_with_profile = True
-  enabled_plugins = InactivityWatch, TerminatorThemes, ActivityWatch, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
-  homogeneous_tabbar = False
-  inactive_color_offset = 0.802469135802
   scroll_tabbar = True
-  suppress_multiple_term_dialog = True
+  homogeneous_tabbar = False
   title_inactive_fg_color = "#982929"
+  inactive_color_offset = 0.802469135802
+  enabled_plugins = InactivityWatch, TerminatorThemes, ActivityWatch, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  suppress_multiple_term_dialog = True
+  always_split_with_profile = True
 [keybindings]
   cycle_next = <Primary><Shift><Alt>KP_Subtract
   cycle_prev = <Primary><Shift><Alt>KP_Subtract
   go_next = <Primary><Super>Tab
   go_prev = <Primary><Shift><Super>Tab
-  help = <Primary><Shift><Super>Print
-  next_profile = <Primary><Super>bracketright
   next_tab = <Primary>Tab
   prev_tab = <Primary><Shift>Tab
-  previous_profile = <Primary><Super>bracketleft
   switch_to_tab_1 = <Alt>1
-  switch_to_tab_10 = <Alt>0
   switch_to_tab_2 = <Alt>2
   switch_to_tab_3 = <Alt>3
   switch_to_tab_4 = <Alt>4
@@ -26,6 +22,38 @@
   switch_to_tab_7 = <Alt>7
   switch_to_tab_8 = <Alt>8
   switch_to_tab_9 = <Alt>9
+  switch_to_tab_10 = <Alt>0
+  next_profile = <Primary><Super>bracketright
+  previous_profile = <Primary><Super>bracketleft
+  help = <Primary><Shift><Super>Print
+[profiles]
+  [[default]]
+    background_color = "#300a24"
+    background_darkness = 0.63
+    background_type = transparent
+    cursor_color = "#c46c32"
+    font = Yanone Kaffeesatz 10
+    foreground_color = "#ffffff"
+    show_titlebar = False
+    scrollback_infinite = True
+  [[Goaman]]
+    background_darkness = 0.55
+    background_type = transparent
+    cursor_color = "#bbbbbb"
+    font = Monospace 7
+    foreground_color = "#e6832f"
+    show_titlebar = False
+    scrollback_infinite = True
+    palette = "#161819:#f73028:#aab01e:#f7b125:#719586:#c77089:#7db669:#faefbb:#7f7061:#be0f17:#868715:#cc881a:#377375:#a04b73:#578e57:#e6d4a3"
+    use_system_font = False
+  [[Goaman opaque]]
+    cursor_color = "#aaaaaa"
+  [[New Profile]]
+    background_color = "#222222"
+    cursor_color = "#87d3c4"
+    foreground_color = "#35b1d2"
+    show_titlebar = False
+    palette = "#222222:#e2a8bf:#81d778:#c4c9c0:#264b49:#a481d3:#15ab9c:#02c5e0:#ffffff:#ffcdd9:#beffa8:#d0ccca:#7ab0d2:#c5a7d9:#8cdfe0:#e0e0e0"
 [layouts]
   [[default]]
     [[[child1]]]
@@ -36,42 +64,3 @@
       parent = ""
       type = Window
 [plugins]
-[profiles]
-  [[default]]
-    background_color = "#300a24"
-    background_darkness = 0.63
-    background_type = transparent
-    cursor_color = "#c46c32"
-    font = Yanone Kaffeesatz 10
-    foreground_color = "#ffffff"
-    scrollback_infinite = True
-    show_titlebar = False
-  [[Goaman]]
-    background_darkness = 0.55
-    background_type = transparent
-    cursor_color = "#bbbbbb"
-    font = Monospace 7
-    foreground_color = "#e6832f"
-    palette = "#161819:#f73028:#aab01e:#f7b125:#719586:#c77089:#7db669:#faefbb:#7f7061:#be0f17:#868715:#cc881a:#377375:#a04b73:#578e57:#e6d4a3"
-    scrollback_infinite = True
-    show_titlebar = False
-    use_system_font = False
-  [[Goaman opaque]]
-    background_darkness = 1.0
-    background_type = transparent
-    cursor_color = "#bbbbbb"
-    font = Monospace 7
-    foreground_color = "#e6832f"
-    palette = "#161819:#f73028:#aab01e:#f7b125:#719586:#c77089:#7db669:#faefbb:#7f7061:#be0f17:#868715:#cc881a:#377375:#a04b73:#578e57:#e6d4a3"
-    scrollback_infinite = True
-    show_titlebar = False
-    use_system_font = False
-  [[New Profile]]
-    background_color = "#222222"
-    cursor_color = "#87d3c4"
-    foreground_color = "#35b1d2"
-    palette = "#222222:#e2a8bf:#81d778:#c4c9c0:#264b49:#a481d3:#15ab9c:#02c5e0:#ffffff:#ffcdd9:#beffa8:#d0ccca:#7ab0d2:#c5a7d9:#8cdfe0:#e0e0e0"
-    show_titlebar = False
-  [[Slate]]
-    cursor_color = "#aaaaaa"
-

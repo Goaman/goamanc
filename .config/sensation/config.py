@@ -92,9 +92,9 @@ main_mode = [
 
 
     # [["KEY_6", "KEY_Q"], [">su - odoo -c 'google-chrome --remote-debugging-port=9222 &'"]], #
-    [[mod_1, "KEY_RIGHTBRACE"], [">su - odoo -m -c 'flameshot gui -p /home/odoo/captures'"]],
+    [[mod_1, "KEY_RIGHTBRACE"], [">su - goaman -m -c 'flameshot gui -p /home/goaman/captures'"]],
     [["KEY_SYSRQ"], ['>gnome-screenshot -f ~/captures/$(date +%s).png']],
-    [["KEY_6", "KEY_J"], [">su - odoo -m -c 'echo agent: $SSH_AGENT_PID'"]],
+    [["KEY_6", "KEY_J"], [">su - goaman -m -c 'echo agent: $SSH_AGENT_PID'"]],
 
     [[mod_1, "KEY_EQUAL"], ['!reload-config']],
 
@@ -103,7 +103,7 @@ main_mode = [
     [["KEY_4", "KEY_M"], ['>setxkbmap us dvorak-intl']],
     [["KEY_4", "KEY_COMMA"], ['>setxkbmap us']],
     [["KEY_4", "KEY_DOT"], ['>setxkbmap be']],
-    [["KEY_4", "KEY_P"], [">su - odoo -m -c 'killall trayer;trayer'"]], #
+    [["KEY_4", "KEY_P"], [">su - goaman -m -c 'killall trayer;trayer'"]], #
 
     # [["KEY_4", "KEY_DOT"], ['>setxkbmap fr']],
     [[mod_3, "KEY_H"], [">xdotool key asciitilde"]],
@@ -121,29 +121,29 @@ main_mode = [
 
 
     # [["KEY_6", "KEY_Q"], [">su - odoo -m -c 'google-chrome --remote-debugging-port=9222 &'"]], #
-    [["KEY_6", "KEY_Q"], [">su - odoo -m -c 'google-chrome &'"]], #
-    [["KEY_6", "KEY_W"], [">su - odoo -c 'firefox &'"]], #
-    [["KEY_6", "KEY_U"], [">su - odoo -c 'spotify &'"]], #
-    [["KEY_6", "KEY_G"], [">su - odoo -c '/snap/bin/discord &'"]], #
-    [["KEY_6", "KEY_O"], [">su - odoo -c '/usr/bin/obs &'"]], #
-    [["KEY_6", "KEY_A"], [">su - odoo -m -c '/home/odoo/app/blender-2.80/blender &'"]], #
-    [["KEY_6", "KEY_S"], [">su - odoo -m -c '/home/odoo/bin/godot &'"]], #
-    [["KEY_6", "KEY_D"], [">su - odoo -m -c '/usr/bin/inkscape &'"]], #
-    [["KEY_3", "KEY_T"], [">su - odoo -m -c '/usr/bin/copyq toggle &'"]], #
-    [["KEY_6", "KEY_E"], [">su -m - odoo -c 'code -n --disable-gpu /home/odoo &'"]], #
-    [["KEY_6", "KEY_K"], [">su -m - odoo -c 'kazam &'"]], #
-    # [["KEY_6", "KEY_R"], [">su - odoo -c 'xdg-open $HOME &'"]], #
-    [["KEY_6", "KEY_R"], [">su - odoo -c 'xdg-open $HOME &'"]], #
-    [["KEY_6", "KEY_Y"], [">su - odoo -c 'slock &'"]], #
-    [["KEY_6", "KEY_P"], [">su - odoo -c 'xkill &'"]], #
-    [["KEY_6", "KEY_SLASH"], [">su - odoo -c 'flameshot gui &'"]], #
-    [[mod_1, "KEY_LEFTBRACE"], [">sudo -u odoo -E -b gpick -p"]], #
+    [["KEY_6", "KEY_Q"], [">su goaman -m -c 'google-chrome &'"]], #
+    [["KEY_6", "KEY_W"], [">su goaman -c 'firefox &'"]], #
+    [["KEY_6", "KEY_U"], [">su goaman -c 'spotify &'"]], #
+    [["KEY_6", "KEY_G"], [">su goaman -c '/usr/bin/discord &'"]], #
+    [["KEY_6", "KEY_O"], [">su goaman -c '/usr/bin/obs &'"]], #
+    [["KEY_6", "KEY_A"], [">su goaman -m -c '/home/odoo/app/blender-2.80/  &'"]], #
+    [["KEY_6", "KEY_S"], [">su goaman -m -c '/home/odoo/bin/godot &'"]], #
+    [["KEY_6", "KEY_D"], [">su goaman -m -c '/usr/bin/inkscape &'"]], #
+    [["KEY_3", "KEY_T"], [">su goaman -m -c '/usr/bin/copyq toggle &'"]], #
+    [["KEY_6", "KEY_E"], [">su -m goaman -c 'code -n --disable-gpu /home/goaman &'"]], #
+    [["KEY_6", "KEY_K"], [">su -m goaman -c 'kazam &'"]], #
+    # [["KEY_6", "KEY_R"], [">su - goaman -c 'xdg-open $HOME &'"]], #
+    [["KEY_6", "KEY_R"], [">su goaman -c 'xdg-open $HOME &'"]], #
+    [["KEY_6", "KEY_Y"], [">su goaman -c 'slock &'"]], #
+    [["KEY_6", "KEY_P"], [">su goaman -c 'xkill &'"]], #
+    [["KEY_6", "KEY_SLASH"], [">su goaman -c 'flameshot gui &'"]], #
+    [[mod_1, "KEY_LEFTBRACE"], [">sudo -goaman -E -b gpick -p"]], #
 
-    [["KEY_6", 'KEY_M'], [">su - odoo -c '/home/odoo/goamanc/bin/xrandoff &'"]], #
-    [["KEY_6", 'KEY_COMMA'], [">su - odoo -c '/home/odoo/goamanc/bin/xrandon &'"]], #
-    [["KEY_6", 'KEY_DOT'], [">su - odoo -c '/home/odoo/goamanc/bin/xrand_screen2 &'"]], #
+    [["KEY_6", 'KEY_M'], [">su goaman -c '/home/goaman/goamanc/bin/xrandoff &'"]], #
+    [["KEY_6", 'KEY_COMMA'], [">su goaman -c '/home/goaman/goamanc/bin/xrandon &'"]], #
+    [["KEY_6", 'KEY_DOT'], [">su goaman -c '/home/goaman/goamanc/bin/xrand_screen2 &'"]], #
 
-    [["KEY_6", "KEY_SEMICOLON"], [">su - odoo -c 'xdg-open /home/odoo/Downloads/agents.jpg'"]], #
+    [["KEY_6", "KEY_SEMICOLON"], [">su - goaman -c 'xdg-open /home/goaman/Downloads/agents.jpg'"]], #
     # [["KEY_6", "KEY_E"], [">su - odoo -c google-chrome"]], #
     # [["KEY_6", "KEY_R"], [">"]], #
     # [["KEY_6", "KEY_T"], [">"]], #
