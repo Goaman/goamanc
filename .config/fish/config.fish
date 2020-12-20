@@ -50,6 +50,14 @@ set -x SASS_LIBSASS_PATH "/usr/local/lib/libsass"
 
 set -x PATH $PATH ~/goamanc/bin/
 set -x PATH $PATH ~/.local/bin
+set -x PATH $PATH ~/bin
+
+####################################################
+# Go
+####################################################
+
+set -x PATH $PATH /usr/local/go/bin
+
 
 ####################################################
 # To organise

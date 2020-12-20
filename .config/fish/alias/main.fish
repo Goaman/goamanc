@@ -154,6 +154,7 @@ abbr gob "cd ~/projects/self/programming/big"
 abbr gosc "cd $HOME/goamanc/scripts"
 abbr gopo "cd ~/projects/self/programming/goa/goa-power"
 abbr goev "cd ~/projects/self/programming/nevdev"
+abbr gotouch "cd ~/projects/self/programming/goa/goa-touch"
 abbr gor "cd ~/projects/self/rust/testrust"
 abbr gopo2 "cd ~/projects/self/goa-power-worktree/master2"
 abbr gostoi "cd ~/projects/self/goastorage/public/img/original"
@@ -359,6 +360,7 @@ abbr dv "setxkbmap us dvorak-intl"
 abbr dvc "sudo loadkeys dvorak"
 
 abbr se "sensation --debug --config $HOME/goamanc/.config/sensation/config.py 11"
+abbr tou "sudo -E /home/goaman/.nvm/versions/node/v15.3.0/bin/node --enable-source-maps /home/goaman/projects/self/programming/goa/goa-touch/build/main.js"
 function serd
   sed -i "/Environment=DISPLAY=:./c\Environment=DISPLAY=$DISPLAY" /home/goaman/goamanc/.config/systemd/user/sensation.service
   sudo cp /home/goaman/goamanc/.config/systemd/user/sensation.service /etc/systemd/system/sensation.service
@@ -840,6 +842,7 @@ abbr gat 'git add .; git commit -m "temp"'
 abbr gcp 'git cherry-pick'
 abbr gatp 'git add .; git commit -m "temp"; git push origin HEAD -f;'
 abbr gatpr 'git add .; git commit -m "temp"; git push origin HEAD -f; git reset HEAD~'
+abbr gca 'git commit --amend'
 abbr gam 'git add .; git commit --amend'
 abbr atr 'git add .; git commit -m "temp"; git rebase -i HEAD~5'
 abbr grc 'git rebase --continue'
@@ -956,7 +959,7 @@ end
 ####################################################################################################
 
 ## Pulse audio has a module to restore the an application in a previous sink
-# which is pretty annoying. To remove that behavion, change line
+# which is pretty annoying. To remove that behavior, change line
 # `load-module module-stream-restore restore_device=false`
 # in `/etc/pulse/default.pa`
 # See https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/#index28h3

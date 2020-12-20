@@ -132,8 +132,8 @@
          id="rect"
          style="fill:blue;"
          usecurrent="1"
-         width="244.978"
-         height="141.737"
+         width="50.0413"
+         height="26.7211"
          rx="0"
          ry="0"
          convertguides="1" />
@@ -172,8 +172,8 @@
          end="0"
          start="0"
          usecurrent="1"
-         rx="15.1582"
-         ry="37.8609" />
+         rx="1.9912"
+         ry="1.9912" />
       <eventcontext
          id="star"
          magnitude="5"
@@ -579,12 +579,12 @@
        panel_mode="1"
        panel_wrap="0"
        panel_border="0"
-       page="0"
+       page="2"
        x="0"
        y="0"
-       w="333"
-       h="370"
-       visible="1"
+       w="345"
+       h="358"
+       visible="0"
        state="2"
        placement="1" />
     <group
@@ -598,8 +598,8 @@
        panel_border="0"
        x="0"
        y="0"
-       w="366"
-       h="384"
+       w="327"
+       h="318"
        visible="0"
        state="2"
        placement="1" />
@@ -628,8 +628,8 @@
        panel_border="0"
        x="0"
        y="0"
-       w="368"
-       h="363"
+       w="276"
+       h="454"
        visible="0"
        state="2"
        placement="1" />
@@ -642,8 +642,8 @@
        panel_border="0"
        x="0"
        y="0"
-       w="366"
-       h="384"
+       w="345"
+       h="266"
        visible="0"
        state="2"
        placement="1" />
@@ -792,8 +792,8 @@
        panel_border="0"
        x="0"
        y="0"
-       w="366"
-       h="384"
+       w="300"
+       h="168"
        visible="0"
        state="2"
        placement="1" />
@@ -1076,6 +1076,7 @@
        masks="65535" />
     <group
        id="svgoutput"
+       disable_optimizations="0"
        usenamedcolors="0"
        numericprecision="8"
        minimumexponent="-8"
@@ -1155,12 +1156,12 @@
      org.ekips.filter.addnodes.segments="2" />
   <group
      id="desktop"
-     style="line-height:1.25;fill:#808000;fill-opacity:0.16872427;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:24px;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;stroke:#000000;stroke-opacity:1;stroke-width:1.59806986;stroke-miterlimit:4;stroke-dasharray:none;opacity:1;font-variant-position:normal;font-variant-alternates:normal;font-variant-east_asian:normal;text-indent:0;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;white-space:normal;shape-padding:0;vector-effect:none;stroke-linecap:butt;stroke-linejoin:miter;stroke-dashoffset:0">
+     style="line-height:1.25;fill:#e9c6af;fill-opacity:1;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:8.93519974px;text-anchor:middle;text-align:center;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;stroke:#808080;stroke-opacity:1;stroke-width:1.59806986;stroke-miterlimit:4;stroke-dasharray:none;opacity:1;font-variant-position:normal;font-variant-alternates:normal;font-variant-east_asian:normal;text-indent:0;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;white-space:normal;shape-padding:0;vector-effect:none;stroke-linecap:butt;stroke-linejoin:miter;stroke-dashoffset:0">
     <group
-       width="1920"
-       height="1080"
-       x="0"
-       y="1080"
+       width="1914"
+       height="842"
+       x="3"
+       y="22"
        fullscreen="0"
        id="geometry"
        maximized="0" />

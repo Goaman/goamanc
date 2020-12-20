@@ -36,8 +36,19 @@ main_mode = [
     [[mod_3, "KEY_SLASH"], [">echo hespohe"]],
     [[mod_3, "KEY_SEMICOLON"], ["KEY_0"]],
 
+    [['KEY_BRIGHTNESSDOWN'], ["KEY_F1"]],
+    [['KEY_BRIGHTNESSUP'], ["KEY_F2"]],
+    [['KEY_SCALE'], ["KEY_F3"]],
+    [['KEY_DASHBOARD'], ["KEY_F4"]],
+    [['KEY_KBDILLUMDOWN'], ["KEY_F5"]],
 
-    [[mod_3, "KEY_W"], [">xdotool key --delay 0 ctrl+x"]],
+    [['KEY_PREVIOUSSONG'], ['KEY_F7']],
+    [['KEY_PLAYPAUSE'], ['KEY_F8']],
+    [['KEY_NEXTSONG'], ['KEY_F9']],
+    [['KEY_VOLUMEDOWN'], ['KEY_F11']],
+    [['KEY_VOLUMEUP'], ['KEY_F12']],
+
+
     [[mod_3, "KEY_E"], [">xdotool key --delay 0 ctrl+c"]],
     [[mod_3, "KEY_R"], [">xdotool key --delay 0 ctrl+v"]],
     [[mod_3, "KEY_G"], [">xdotool key --delay 0 ctrl+g"]],
@@ -124,7 +135,7 @@ main_mode = [
     [["KEY_6", "KEY_Q"], [">su goaman -m -c 'google-chrome &'"]], #
     [["KEY_6", "KEY_W"], [">su goaman -c 'firefox &'"]], #
     [["KEY_6", "KEY_U"], [">su goaman -c 'spotify &'"]], #
-    [["KEY_6", "KEY_G"], [">su goaman -c '/usr/bin/discord &'"]], #
+    [["KEY_6", "KEY_G"], [">su goaman -c '/snap/bin/discord &'"]], #
     [["KEY_6", "KEY_O"], [">su goaman -c '/usr/bin/obs &'"]], #
     [["KEY_6", "KEY_A"], [">su goaman -m -c '/home/odoo/app/blender-2.80/  &'"]], #
     [["KEY_6", "KEY_S"], [">su goaman -m -c '/home/odoo/bin/godot &'"]], #
@@ -137,7 +148,7 @@ main_mode = [
     [["KEY_6", "KEY_Y"], [">su goaman -c 'slock &'"]], #
     [["KEY_6", "KEY_P"], [">su goaman -c 'xkill &'"]], #
     [["KEY_6", "KEY_SLASH"], [">su goaman -c 'flameshot gui &'"]], #
-    [[mod_1, "KEY_LEFTBRACE"], [">sudo goaman -E -b gpick -p"]], #
+    [[mod_1, "KEY_LEFTBRACE"], [">sudo -u goaman -E -b gpick -p"]], #
 
     [["KEY_6", 'KEY_M'], [">su goaman -c '/home/goaman/goamanc/bin/xrandoff &'"]], #
     [["KEY_6", 'KEY_COMMA'], [">su goaman -c '/home/goaman/goamanc/bin/xrandon &'"]], #

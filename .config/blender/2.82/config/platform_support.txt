@@ -1,0 +1,1 @@
+{Intel/Mesa Intel(R) UHD Graphics (CML GT2)/4.6 (Core Profile) Mesa 20.0.8}=SUPPORTED
