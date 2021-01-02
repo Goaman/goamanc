@@ -1,5 +1,5 @@
 import subprocess
-subprocess.call('setxkbmap us dvorak-intl', shell=True)
+subprocess.call('setxkbmap us dvorak-alt-intl', shell=True)
 
 mod_1 = "KEY_3"
 
@@ -111,7 +111,7 @@ main_mode = [
 
 
     [["KEY_4"], ["@fn4"]],
-    [["KEY_4", "KEY_M"], ['>setxkbmap us dvorak-intl']],
+    [["KEY_4", "KEY_M"], ['>setxkbmap us dvorak-alt-intl']],
     [["KEY_4", "KEY_COMMA"], ['>setxkbmap us']],
     [["KEY_4", "KEY_DOT"], ['>setxkbmap be']],
     [["KEY_4", "KEY_P"], [">su goaman -m -c 'killall trayer;trayer'"]], #

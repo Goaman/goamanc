@@ -1,0 +1,9 @@
+[Unit]
+Description=goatouch
+[Service]
+
+ExecStart=/home/goaman/.nvm/versions/node/v15.3.0/bin/node --enable-source-maps /home/goaman/projects/self/programming/goa/goa-touch/build/main.js
+KillMode=process
+
+[Install]
+WantedBy=home-goaman.mount

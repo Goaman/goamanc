@@ -686,8 +686,12 @@ abbr gobin cd $HOME/goamanc/bin
 abbr goser cd $HOME/goamanc/.config/systemd/user
 
 function copyservices
-  sudo cp $HOME/goamanc/services/*.service /etc/systemd/system
-  sudo cp $HOME/goamanc/services/*.timer /etc/systemd/system
+  for file in (find $HOME/goamanc/.config/systemd/system -type f -name '*.service')
+    sudo cp $file /etc/systemd/system
+  end
+  for file in (find $HOME/goamanc/.config/systemd/system -type f -name '*.timer')
+    sudo cp $file /etc/systemd/system
+  end
   sudo systemctl daemon-reload
 end
 
@@ -708,7 +712,7 @@ abbr stsu systemctl --user status
 set prof_fold $HOME/odootemp/perfs/
 function prof
   set name $argv[1]
-  gprof2dot -f pstats -o $prof_fold/$name.xdot  $prof_fold/$name.profile 
+  gprof2dot -f pstats -o $prof_fold/$name.xdot  $prof_fold/$name.profile
   xdot $prof_fold/$name.xdot
 end
 complete -x -c prof -a "(ls $prof_fold | grep -E '.profile\$' | sed 's/.profile\$//g')"
@@ -1043,11 +1047,9 @@ function btmarshal
   pactl set-default-sink (get-bluetooth-sink)
 end
 function btdisconnect
-  echo disconnect $bt_marshal\nexit\n | bluetoothctl
-  echo disconnect $bt_bose\nexit\n | bluetoothctl
-  echo disconnect $bt_room\nexit\n | bluetoothctl
-  sink-to-analog
-  sleep 5
+  #echo disconnect $bt_marshal\nexit\n | bluetoothctl
+  #echo disconnect $bt_bose\nexit\n | bluetoothctl
+  #echo disconnect $bt_room\nexit\n | bluetoothctl
   sink-to-analog
   pactl set-default-sink $sink_analog
 end
@@ -1268,3 +1270,11 @@ function power-output
     set filebefore $file
   end
 end
+
+function no
+  bash -c "$argv 1>/dev/null 2>/dev/null &"
+end
+
+abbr xo xdg-open
+abbr xon nohv xdg-open
+abbr o nohv xdg-open

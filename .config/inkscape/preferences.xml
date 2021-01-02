@@ -132,8 +132,8 @@
          id="rect"
          style="fill:blue;"
          usecurrent="1"
-         width="50.0413"
-         height="26.7211"
+         width="728.571"
+         height="145.714"
          rx="0"
          ry="0"
          convertguides="1" />
@@ -663,10 +663,10 @@
        panel_mode="1"
        panel_wrap="0"
        panel_border="0"
-       x="1292"
-       y="283"
-       w="480"
-       h="554"
+       x="2044"
+       y="195"
+       w="617"
+       h="606"
        visible="0"
        placement="1" />
     <group
@@ -727,7 +727,7 @@
        default="org.inkscape.output.svg.inkscape"
        append_extension="1"
        enable_preview="1"
-       path="/home/odoo/notes/grapical-notes"
+       path="/home/goaman/notes/grapical-notes"
        use_current_dir="1" />
     <group
        id="save_copy"
@@ -1156,12 +1156,12 @@
      org.ekips.filter.addnodes.segments="2" />
   <group
      id="desktop"
-     style="line-height:1.25;fill:#e9c6af;fill-opacity:1;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:8.93519974px;text-anchor:middle;text-align:center;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;stroke:#808080;stroke-opacity:1;stroke-width:1.59806986;stroke-miterlimit:4;stroke-dasharray:none;opacity:1;font-variant-position:normal;font-variant-alternates:normal;font-variant-east_asian:normal;text-indent:0;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;white-space:normal;shape-padding:0;vector-effect:none;stroke-linecap:butt;stroke-linejoin:miter;stroke-dashoffset:0">
+     style="line-height:1.25;fill:#ffffff;fill-opacity:1;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:8.93519974px;text-anchor:middle;text-align:center;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;stroke:#808080;stroke-opacity:1;stroke-width:1.59806986;stroke-miterlimit:4;stroke-dasharray:none;opacity:1;font-variant-position:normal;font-variant-alternates:normal;font-variant-east_asian:normal;text-indent:0;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;white-space:normal;shape-padding:0;vector-effect:none;stroke-linecap:butt;stroke-linejoin:miter;stroke-dashoffset:0">
     <group
-       width="1914"
-       height="842"
+       width="2554"
+       height="278"
        x="3"
-       y="22"
+       y="1159"
        fullscreen="0"
        id="geometry"
        maximized="0" />

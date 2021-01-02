@@ -47,13 +47,13 @@ Description=sensation
 ; Environment=_JAVA_AWT_WM_NONREPARENTING=1
 
 ; Environment=WINDOWPATH=2
-Environment=DISPLAY=:2
-Environment=HOME=/home/odoo
-Environment=USER=odoo
-Environment=LOGNAME=odoo
-Environment=XAUTHORITY=/home/odoo/.Xauthority
+; Environment=DISPLAY=:0
+; Environment=HOME=/home/odoo
+; Environment=USER=odoo
+; Environment=LOGNAME=odoo
+; Environment=XAUTHORITY=/home/odoo/.Xauthority
 
 
 ExecStart=/home/odoo/goamanc/bin/sensation --debug --config /home/odoo/goamanc/.config/sensation/config.py 4
-[Install]
-WantedBy=multi-user.target
+; [Install]
+; WantedBy=multi-user.target
