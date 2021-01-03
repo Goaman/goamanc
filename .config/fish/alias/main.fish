@@ -633,8 +633,8 @@ abbr pgui omnidb-app
 function bright
   set level $argv[1]
   # xrandr --output $(xrandr | grep " connected" | cut -f1 -d " ") --brightness $level
-  xrandr --output eDP-1 --brightness $level
-  xrandr --output HDMI-2 --brightness $level
+  xrandr --output eDP-1-1 --brightness $level
+  xrandr --output HDMI-0 --brightness $level
 end
 abbr bri bright 1
 abbr bri3 bright 0.3

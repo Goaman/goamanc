@@ -132,8 +132,8 @@
          id="rect"
          style="fill:blue;"
          usecurrent="1"
-         width="728.571"
-         height="145.714"
+         width="26.3075"
+         height="13.084"
          rx="0"
          ry="0"
          convertguides="1" />
@@ -340,8 +340,8 @@
        outer_style="0"
        align_mode="1">
       <group
-         display_unit="0"
-         id="lineheight" />
+         id="lineheight"
+         display_unit="0" />
     </eventcontext>
     <eventcontext
        id="nodes"
@@ -359,8 +359,8 @@
        live_outline="1"
        live_objects="1"
        show_helperpath="0"
-       x="0"
-       y="0"
+       x="-3304.01"
+       y="-251.908"
        edit_clipping_paths="0"
        edit_masks="0" />
     <eventcontext
@@ -430,12 +430,12 @@
        offset="0"
        offsetunits="mm" />
     <group
-       unit="mm"
-       offset="5"
-       scale="100"
-       precision="2"
+       id="measure"
        fontsize="10"
-       id="measure" />
+       precision="2"
+       scale="100"
+       offset="5"
+       unit="mm" />
   </group>
   <group
      id="palette">
@@ -579,14 +579,14 @@
        panel_mode="1"
        panel_wrap="0"
        panel_border="0"
-       page="2"
+       page="1"
        x="0"
        y="0"
-       w="345"
-       h="358"
-       visible="0"
+       w="325"
+       h="367"
+       visible="1"
        state="2"
-       placement="1" />
+       placement="5" />
     <group
        id="filtereffects" />
     <group
@@ -628,11 +628,11 @@
        panel_border="0"
        x="0"
        y="0"
-       w="276"
-       h="454"
-       visible="0"
+       w="325"
+       h="367"
+       visible="1"
        state="2"
-       placement="1" />
+       placement="5" />
     <group
        id="xml"
        panel_size="1"
@@ -816,7 +816,21 @@
        on-blur="0.50"
        animate-time="100" />
     <group
-       id="objects"
+       placement="1"
+       state="2"
+       visible="0"
+       h="368"
+       w="326"
+       y="0"
+       x="0"
+       panel_border="0"
+       panel_wrap="0"
+       panel_mode="1"
+       panel_ratio="100"
+       panel_size="1"
+       id="objects" />
+    <group
+       id="glyphs"
        panel_size="1"
        panel_ratio="100"
        panel_mode="1"
@@ -824,8 +838,8 @@
        panel_border="0"
        x="0"
        y="0"
-       w="326"
-       h="368"
+       w="418"
+       h="863"
        visible="0"
        state="2"
        placement="1" />
@@ -833,30 +847,16 @@
        placement="1"
        state="2"
        visible="0"
-       h="863"
-       w="418"
-       y="0"
-       x="0"
-       panel_border="0"
-       panel_wrap="0"
-       panel_mode="1"
-       panel_ratio="100"
-       panel_size="1"
-       id="glyphs" />
-    <group
-       id="symbols"
-       panel_size="1"
-       panel_ratio="100"
-       panel_mode="1"
-       panel_wrap="0"
-       panel_border="0"
-       x="0"
-       y="0"
-       w="366"
        h="264"
-       visible="0"
-       state="2"
-       placement="1" />
+       w="366"
+       y="0"
+       x="0"
+       panel_border="0"
+       panel_wrap="0"
+       panel_mode="1"
+       panel_ratio="100"
+       panel_size="1"
+       id="symbols" />
   </group>
   <group
      id="printing">
@@ -1145,8 +1145,8 @@
     <group
        id="rendering" />
     <group
-       id="snapindicatorpersistence"
-       value="1.5" />
+       value="1.5"
+       id="snapindicatorpersistence" />
   </group>
   <group
      id="extensions"
@@ -1156,12 +1156,12 @@
      org.ekips.filter.addnodes.segments="2" />
   <group
      id="desktop"
-     style="line-height:1.25;fill:#ffffff;fill-opacity:1;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:8.93519974px;text-anchor:middle;text-align:center;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;stroke:#808080;stroke-opacity:1;stroke-width:1.59806986;stroke-miterlimit:4;stroke-dasharray:none;opacity:1;font-variant-position:normal;font-variant-alternates:normal;font-variant-east_asian:normal;text-indent:0;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;white-space:normal;shape-padding:0;vector-effect:none;stroke-linecap:butt;stroke-linejoin:miter;stroke-dashoffset:0">
+     style="line-height:1.25;fill:#360080;fill-opacity:0.16872427;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:8.93519974px;text-anchor:middle;text-align:center;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;stroke:#000000;stroke-opacity:1;stroke-width:1.59806974;stroke-miterlimit:4;stroke-dasharray:none;opacity:1;font-variant-position:normal;font-variant-alternates:normal;font-variant-east_asian:normal;text-indent:0;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;white-space:normal;shape-padding:0;vector-effect:none;stroke-linecap:butt;stroke-linejoin:miter;stroke-dashoffset:0">
     <group
-       width="2554"
-       height="278"
-       x="3"
-       y="1159"
+       width="2560"
+       height="1440"
+       x="0"
+       y="0"
        fullscreen="0"
        id="geometry"
        maximized="0" />
