@@ -33,7 +33,6 @@ SETUVAR _fish_abbr_cf:code\x20\x28fzf\x29
 SETUVAR _fish_abbr_clip:xclip\x20\x2dselection\x20clipboard\x20\x2di
 SETUVAR _fish_abbr_cn:code\x20\x2dn
 SETUVAR _fish_abbr_coucou:echo\x20couocu
-SETUVAR _fish_abbr_cpd:cp\x20/home/goaman/projects/external/odoo/jabberwock/dev/odoo\x2dintegration\x2ddev\x2ejs\x20/home/goaman/src/master\x2djabberwock\x2dnby/odoo/addons/web_editor/static/lib/jabberwock/jabberwock\x2ejs
 SETUVAR _fish_abbr_cya:shutdown\x20now
 SETUVAR _fish_abbr_db:yarn\x20run\x20dev\x2dbrowser
 SETUVAR _fish_abbr_dc:docker\x2dcompose

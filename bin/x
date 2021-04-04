@@ -15,12 +15,7 @@ goabar 1>/dev/null 2>&1 &
 
 sleep 0.1
 
-killall stalonetray
-stalonetray -t 1>/dev/null 2>&1 &
-
-nm-applet 1>/dev/null 2>&1 &
-blueberry-tray 1>/dev/null 2>&1 &
-blueman-applet 1>/dev/null 2>&1 &
+tray
 
 systemctl --user restart copyq 1>/dev/null 2>&1 &
 

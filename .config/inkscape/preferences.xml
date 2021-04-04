@@ -132,8 +132,8 @@
          id="rect"
          style="fill:blue;"
          usecurrent="1"
-         width="26.3075"
-         height="13.084"
+         width="48.3806"
+         height="26.9257"
          rx="0"
          ry="0"
          convertguides="1" />
@@ -359,8 +359,8 @@
        live_outline="1"
        live_objects="1"
        show_helperpath="0"
-       x="-3304.01"
-       y="-251.908"
+       x="0"
+       y="0"
        edit_clipping_paths="0"
        edit_masks="0" />
     <eventcontext
@@ -579,11 +579,11 @@
        panel_mode="1"
        panel_wrap="0"
        panel_border="0"
-       page="1"
+       page="0"
        x="0"
        y="0"
-       w="325"
-       h="367"
+       w="354"
+       h="459"
        visible="1"
        state="2"
        placement="5" />
@@ -628,8 +628,8 @@
        panel_border="0"
        x="0"
        y="0"
-       w="325"
-       h="367"
+       w="354"
+       h="459"
        visible="1"
        state="2"
        placement="5" />
@@ -663,9 +663,9 @@
        panel_mode="1"
        panel_wrap="0"
        panel_border="0"
-       x="2044"
-       y="195"
-       w="617"
+       x="2491"
+       y="761"
+       w="643"
        h="606"
        visible="0"
        placement="1" />
@@ -679,9 +679,9 @@
        panel_border="0"
        x="512"
        y="247"
-       w="895"
-       h="586"
-       page="7" />
+       w="893"
+       h="584"
+       page="41" />
     <group
        id="gradienteditor" />
     <group
@@ -710,17 +710,17 @@
        panel_border="0"
        x="0"
        y="0"
-       w="366"
-       h="384"
-       visible="0"
+       w="354"
+       h="459"
+       visible="1"
        state="2"
-       placement="1">
+       placement="5">
       <group
          id="exportarea"
-         value="custom" />
+         value="page" />
       <group
          id="defaultxdpi"
-         value="96" />
+         value="328" />
     </group>
     <group
        id="save_as"
@@ -738,7 +738,7 @@
     <group
        id="open"
        enable_preview="1"
-       path="/home/odoo/notes/grapical-notes/" />
+       path="/home/goaman/notes/grapical-notes/" />
     <group
        id="import"
        enable_preview="1"
@@ -1108,8 +1108,8 @@
        named_nodelay="0" />
     <group
        id="autosave"
-       enable="0"
-       interval="10"
+       enable="1"
+       interval="1"
        path=""
        max="10" />
     <group
@@ -1156,7 +1156,7 @@
      org.ekips.filter.addnodes.segments="2" />
   <group
      id="desktop"
-     style="line-height:1.25;fill:#360080;fill-opacity:0.16872427;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:8.93519974px;text-anchor:middle;text-align:center;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;stroke:#000000;stroke-opacity:1;stroke-width:1.59806974;stroke-miterlimit:4;stroke-dasharray:none;opacity:1;font-variant-position:normal;font-variant-alternates:normal;font-variant-east_asian:normal;text-indent:0;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;white-space:normal;shape-padding:0;vector-effect:none;stroke-linecap:butt;stroke-linejoin:miter;stroke-dashoffset:0">
+     style="line-height:1.25;fill:#a0a0a0;fill-opacity:0.16872427;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:8.93519974px;text-anchor:middle;text-align:center;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;stroke:#000000;stroke-opacity:1;stroke-width:1.59806997;stroke-miterlimit:4;stroke-dasharray:none;opacity:1;font-variant-position:normal;font-variant-alternates:normal;font-variant-east_asian:normal;text-indent:0;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;white-space:normal;shape-padding:0;vector-effect:none;stroke-linecap:butt;stroke-linejoin:miter;stroke-dashoffset:0">
     <group
        width="2560"
        height="1440"

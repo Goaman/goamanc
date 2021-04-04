@@ -1075,13 +1075,54 @@ abbr stgo 'setTerminatorDefaultProfile "Goaman opaque"; killall terminator'
 # Jabberwock
 ####################################################################################################
 
+# function cpb
+#   set from /home/goaman/projects/external/odoo/jabberwock/build/odoo
+#   set to ~/src/master-jabberwock-build-sge-age-dmo-chm-nby/odoo/addons/web_editor/static/lib/jabberwock
+#   cp $from/odoo-integration.js $to/jabberwock.js
+#   cp $from/odoo-integration.css $to/jabberwock.css
+# end
+# abbr cpd cp /home/goaman/projects/external/odoo/jabberwock/dev/odoo-integration-dev.js ~/src/master-jabberwock-nby/odoo/addons/web_editor/static/lib/jabberwock/jabberwock.js
+# abbr cpb cp /home/goaman/projects/external/odoo/odoo-editor/odoo/odoo-dev-lib.js /home/goaman/src/master-odoo-editor-integration/odoo/addons/web_editor/static/src/js/editor/odoo-editor.js
 function cpb
-  set from /home/goaman/projects/external/odoo/jabberwock/build/odoo
-  set to ~/src/master-jabberwock-build-sge-age-dmo-chm-nby/odoo/addons/web_editor/static/lib/jabberwock
-  cp $from/odoo-integration.js $to/jabberwock.js
-  cp $from/odoo-integration.css $to/jabberwock.css
+  set branchTo $argv[1]
+  if not test -n "$branchTo"
+    set branchTo master-odoo-editor-integration-nby
+  end
+
+  set fromFilejs $HOME/projects/external/odoo/odoo-editor/build/odoo-editor-bundle.js
+  set toFilejs $HOME/src/$branchTo/odoo/addons/web_editor/static/lib/odoo-editor/odoo-editor.js
+  set fromFilecss $HOME/projects/external/odoo/odoo-editor/build/odoo-editor-bundle.css
+  set toFilecss $HOME/src/$branchTo/odoo/addons/web_editor/static/lib/odoo-editor/odoo-editor.css
+
+  echo rm $toFilejs
+  rm $toFilejs
+  echo cp $fromFilejs $toFilejs
+  cp $fromFilejs $toFilejs
+
+
+  echo rm $toFilecss
+  rm $toFilecss
+  echo cp $fromFilecss $toFilecss
+  cp $fromFilecss $toFilecss
 end
-abbr cpd cp /home/goaman/projects/external/odoo/jabberwock/dev/odoo-integration-dev.js ~/src/master-jabberwock-nby/odoo/addons/web_editor/static/lib/jabberwock/jabberwock.js
+
+function cpd
+  set branchTo $argv[1]
+  if not test -n "$branchTo"
+    set branchTo master-odoo-editor-integration-nby
+  end
+
+  set fromFilejs $HOME/projects/external/odoo/odoo-editor/build/odoo-editor-bundle.js
+  set toFilejs $HOME/src/$branchTo/odoo/addons/web_editor/static/lib/odoo-editor/odoo-editor.js
+  set fromFilecss $HOME/projects/external/odoo/odoo-editor/build/odoo-editor-bundle.css
+  set toFilecss $HOME/src/$branchTo/odoo/addons/web_editor/static/lib/odoo-editor/odoo-editor.css
+
+  echo ln -sf $fromFilejs $toFilejs
+  ln -sf $fromFilejs $toFilejs
+
+  echo ln -sf $fromFilecss $toFilecss
+  ln -sf $fromFilecss $toFilecss
+end
 abbr lnd 'set file /home/goaman/src/saas-13.5-jabberwock-nby/odoo/addons/web_editor/static/lib/jabberwock/jabberwock.js; rm $file; ln -s /home/goaman/projects/external/odoo/jabberwock/build/odoo/odoo-integration.js $file'
 
 
@@ -1165,9 +1206,9 @@ end
 function sl
   while true 
     sleep 1
-    xdotool mousemove 500 500
+    xdotool mousemove 500 0
     sleep 1
-    xdotool mousemove 500 501
+    xdotool mousemove 500 1
   end
 end
 
