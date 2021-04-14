@@ -207,10 +207,11 @@ function touchnow
   set date (date +"%s-%d-%m-%Y" $argv[2])
   echo $date.md
 
+  echo touch $folder/$date.md
   touch $folder/$date.md
 end
-#abbr newday "touchnow ~/notes/days/"
-abbr newday 'touchnow ~/notes/days/ --date="1 day"'
+abbr newday "touchnow ~/notes/days/"
+abbr newtomorrow 'touchnow ~/notes/days/ --date="1 day"'
 function lastday 
   cd ~/notes/days/
   echo (ls | sort | tail -n1)
@@ -1124,6 +1125,27 @@ function cpd
   ln -sf $fromFilecss $toFilecss
 end
 abbr lnd 'set file /home/goaman/src/saas-13.5-jabberwock-nby/odoo/addons/web_editor/static/lib/jabberwock/jabberwock.js; rm $file; ln -s /home/goaman/projects/external/odoo/jabberwock/build/odoo/odoo-integration.js $file'
+
+function buildEditor
+  set branchTo $argv[1]
+  if not test -n "$branchTo"
+    set branchTo master-odoo-editor-integration-nby
+  end
+  set startPath (pwd)
+
+  cd $HOME/projects/external/odoo/odoo-editor/
+  set lastCommitId (git log -n1 --format="%h")
+  cd $HOME/src/$branchTo/odoo
+  git add .
+  git stash
+  cpb $branchTo
+  git add .
+  echo git commit -m "web_editor: update odoo-editor lib to commit $lastCommitId"
+  git commit -m "web_editor: update odoo-editor lib to commit $lastCommitId"
+
+  cd $startPath
+
+end
 
 
 

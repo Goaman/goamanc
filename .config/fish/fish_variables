@@ -160,7 +160,8 @@ SETUVAR _fish_abbr_logsplit:\x24HOME/Downloads/old/prev/log_split/build/log_spli
 SETUVAR _fish_abbr_myip:ifconfig\x20\x7c\x20grep\x20wlp2s0\x3a\x20\x2dA\x201\x20\x7c\x20tail\x20\x2dn\x201\x20\x7c\x20onespace\x20\x7ccuts\x20\x2df3
 SETUVAR _fish_abbr_nd:npm\x20run\x20dev
 SETUVAR _fish_abbr_netm:/usr/share/cinnamon/cinnamon\x2dsettings/cinnamon\x2dsettings\x2epy\x20network
-SETUVAR _fish_abbr_newday:touchnow\x20\x7e/notes/days/\x20\x2d\x2ddate\x3d\x221\x20day\x22
+SETUVAR _fish_abbr_newday:touchnow\x20\x7e/notes/days/
+SETUVAR _fish_abbr_newtomorrow:touchnow\x20\x7e/notes/days/\x20\x2d\x2ddate\x3d\x221\x20day\x22
 SETUVAR _fish_abbr_o:nohv\x20xdg\x2dopen
 SETUVAR _fish_abbr_oes:python3\x20/home/goaman/projects/support\x2dtools/oe\x2dsupport\x2epy
 SETUVAR _fish_abbr_os:odo\x20start

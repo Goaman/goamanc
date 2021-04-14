@@ -340,8 +340,8 @@
        outer_style="0"
        align_mode="1">
       <group
-         id="lineheight"
-         display_unit="0" />
+         display_unit="0"
+         id="lineheight" />
     </eventcontext>
     <eventcontext
        id="nodes"
@@ -430,12 +430,12 @@
        offset="0"
        offsetunits="mm" />
     <group
-       id="measure"
-       fontsize="10"
-       precision="2"
-       scale="100"
+       unit="mm"
        offset="5"
-       unit="mm" />
+       scale="100"
+       precision="2"
+       fontsize="10"
+       id="measure" />
   </group>
   <group
      id="palette">
@@ -816,30 +816,16 @@
        on-blur="0.50"
        animate-time="100" />
     <group
-       placement="1"
-       state="2"
-       visible="0"
-       h="368"
+       id="objects"
+       panel_size="1"
+       panel_ratio="100"
+       panel_mode="1"
+       panel_wrap="0"
+       panel_border="0"
+       x="0"
+       y="0"
        w="326"
-       y="0"
-       x="0"
-       panel_border="0"
-       panel_wrap="0"
-       panel_mode="1"
-       panel_ratio="100"
-       panel_size="1"
-       id="objects" />
-    <group
-       id="glyphs"
-       panel_size="1"
-       panel_ratio="100"
-       panel_mode="1"
-       panel_wrap="0"
-       panel_border="0"
-       x="0"
-       y="0"
-       w="418"
-       h="863"
+       h="368"
        visible="0"
        state="2"
        placement="1" />
@@ -847,8 +833,8 @@
        placement="1"
        state="2"
        visible="0"
-       h="264"
-       w="366"
+       h="863"
+       w="418"
        y="0"
        x="0"
        panel_border="0"
@@ -856,7 +842,21 @@
        panel_mode="1"
        panel_ratio="100"
        panel_size="1"
-       id="symbols" />
+       id="glyphs" />
+    <group
+       id="symbols"
+       panel_size="1"
+       panel_ratio="100"
+       panel_mode="1"
+       panel_wrap="0"
+       panel_border="0"
+       x="0"
+       y="0"
+       w="366"
+       h="264"
+       visible="0"
+       state="2"
+       placement="1" />
   </group>
   <group
      id="printing">
@@ -1145,8 +1145,8 @@
     <group
        id="rendering" />
     <group
-       value="1.5"
-       id="snapindicatorpersistence" />
+       id="snapindicatorpersistence"
+       value="1.5" />
   </group>
   <group
      id="extensions"
