@@ -51,6 +51,7 @@ set -x SASS_LIBSASS_PATH "/usr/local/lib/libsass"
 set -x PATH $PATH ~/goamanc/bin/
 set -x PATH $PATH ~/.local/bin
 set -x PATH $PATH ~/bin
+set -x PATH $PATH ~/projects/self/programming/js_scripts/bin/
 
 ####################################################
 # Go

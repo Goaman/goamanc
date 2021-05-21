@@ -1,6 +1,8 @@
 #!/bin/fish
 
 abbr esa "vim ~/.config/fish/alias/main.fish;source ~/.config/fish/alias/main.fish"
+# source fish alia
+abbr sf "source ~/.config/fish/alias/main.fish"
 abbr es  "vim ~/.config/fish/config.fish"
 abbr e vim
 abbr a ls -l
@@ -31,9 +33,10 @@ end
 function killport
     #lsof -i tcp:$1 | sed -n 2p | grep -Eo '[0-9]+' | head -1 | xargs kill -9
     echo port: $argv[1]
-    set pythonProcess (listport $argv[1] | grep python | head -n1 | onespace | cuts -f 2)
-    echo first python process: $pythonProcess
-    kill -9 $pythonProcess
+    # set processId (listport $argv[1] | grep python | head -n1 | onespace | cuts -f 2)
+    set processId (listport $argv[1] | tail -n+2 | onespace | cuts -f 2)
+    echo first process: $processId
+    kill -9 $processId
 end
 # abbr kp "killport"
 # #
@@ -439,7 +442,7 @@ end
 #
 # }
 #
-# #set-default-sink-vol
+# #set_default_sink-vol
 # sdsv() {
 #     pactl -- set-sink-volume $(getdefaultsinkname) $1
 # }
@@ -930,8 +933,6 @@ function removeAggridLicence
   removeAggridLicenceFile $file "console.error('*****************************************   Trial Period Expired.    *******************************************');"
   removeAggridLicenceFile $file 'console.error("* Your license for ag-Grid Enterprise expired on " + formattedExpiryDate + ".                                                *");'
   removeAggridLicenceFile $file "console.error('* Please email info@ag-grid.com to purchase a license.                                                         *');"
-
-
 end
 function removeAllAggrid
   removeAggridLicence $HOME/projects/self/programming/goa/goa-power/node_modules/@ag-grid-enterprise/core/dist/cjs/licenseManager.js
@@ -984,19 +985,19 @@ end
 
 set sink_analog alsa_output.pci-0000_00_1f.3.analog-stereo
 # set sink_bluetooth bluez_sink.28_11_A5_77_FE_D2.a2dp_sink
-function get-bluetooth-sink
+function get_bluetooth_sink
   pactl list short sinks | grep module-bluez5-device.c | onespace | cuts -f2
 end
 # set sink_bluetooth module-bluez5-device.c
 
-function sink-to-analog
+function sink_to_analog
   for sink in (sink-list-id ); pactl move-sink-input $sink $sink_analog; end
 end
-function sink-to-bluetooth
-  for sink in (sink-list-id ); pactl move-sink-input $sink (get-bluetooth-sink); end
+function sink_to_bluetooth
+  for sink in (sink-list-id ); pactl move-sink-input $sink (get_bluetooth_sink); end
 end
-abbr pata sink-to-analog
-abbr patb sink-to-bluetooth
+abbr pata sink_to_analog
+abbr patb sink_to_bluetooth
 
 ####################################################################################################
 # Bluetooth
@@ -1004,55 +1005,61 @@ abbr patb sink-to-bluetooth
 
 set bt_marshal 00:12:6F:57:B8:9C
 set bt_bose 28:11:A5:77:FE:D2
+set bt_earbuds_bose 78:2B:64:25:70:85
 set bt_room FC:58:FA:C0:03:B9
+function bt_disconnect_all
+  echo disconnect $bt_marshal\nexit\n | bluetoothctl
+  echo disconnect $bt_bose\nexit\n | bluetoothctl
+  echo disconnect $bt_earbuds_bose\nexit\n | bluetoothctl
+end
+function bluetooth_sync
+  pactl set_default_sink (get_bluetooth_sink)
+
+  sink_to_bluetooth
+  sleep 1
+  sink_to_bluetooth
+  sleep 5
+  sink_to_bluetooth
+  sleep 5
+  sink_to_bluetooth
+
+  pactl set_default_sink (get_bluetooth_sink)
+end
 # bluetooth bose
 function btbose
-  echo disconnect $bt_marshal\nexit\n | bluetoothctl
-  echo disconnect $bt_room\nexit\n | bluetoothctl
+  # echo disconnect $bt_marshal\nexit\n | bluetoothctl
+  # echo disconnect $bt_room\nexit\n | bluetoothctl
+  bt_disconnect_all
   echo connect $bt_bose| bluetoothctl
-  pactl set-default-sink (get-bluetooth-sink)
-  sink-to-bluetooth
-  sleep 1
-  sink-to-bluetooth
-  sleep 5
-  sink-to-bluetooth
-  sleep 5
-  sink-to-bluetooth
-  pactl set-default-sink (get-bluetooth-sink)
+  bluetooth_sync
+  pactl set_default_sink (get_bluetooth_sink)
 end
 function btroom
   #echo disconnect $bt_marshal\nexit\n | bluetoothctl
+  bt_disconnect_all
   echo connect $bt_room| bluetoothctl
-  pactl set-default-sink (get-bluetooth-sink)
-  sink-to-bluetooth
-  sleep 1
-  sink-to-bluetooth
-  sleep 5
-  sink-to-bluetooth
-  sleep 5
-  sink-to-bluetooth
-  pactl set-default-sink (get-bluetooth-sink)
+  bluetooth_sync
 end
 # bluetooth marshal
 function btmarshal
-  pactl set-default-sink (get-bluetooth-sink)
-  echo disconnect $bt_bose\nexit\n | bluetoothctl
+  bt_disconnect_all
+  # echo disconnect $bt_bose\nexit\n | bluetoothctl
+
   echo connect $bt_marshal | bluetoothctl
-  sink-to-bluetooth
-  sleep 1
-  sink-to-bluetooth
-  sleep 5
-  sink-to-bluetooth
-  sleep 5
-  sink-to-bluetooth
-  pactl set-default-sink (get-bluetooth-sink)
+  bluetooth_sync
+end
+function btearbuds
+  bt_disconnect_all
+  # echo disconnect $bt_earbuds_bose\nexit\n | bluetoothctl
+  echo connect $bt_earbuds_bose | bluetoothctl
+  bluetooth_sync
 end
 function btdisconnect
+  bt_disconnect_all
   #echo disconnect $bt_marshal\nexit\n | bluetoothctl
   #echo disconnect $bt_bose\nexit\n | bluetoothctl
   #echo disconnect $bt_room\nexit\n | bluetoothctl
-  sink-to-analog
-  pactl set-default-sink $sink_analog
+  sink_to_analog
 end
 
 abbr btb btbose
@@ -1140,8 +1147,7 @@ function buildEditor
   git stash
   cpb $branchTo
   git add .
-  echo git commit -m "web_editor: update odoo-editor lib to commit $lastCommitId"
-  git commit -m "web_editor: update odoo-editor lib to commit $lastCommitId"
+  git commit -m "[IMP] web_editor: update odoo-editor lib to commit $lastCommitId"
 
   cd $startPath
 
@@ -1196,7 +1202,6 @@ end
 
 function reset_test_odoo
   set original_dir (pwd)
-  
 
   cd ~/src/master-jabberwock-age-dmo-chm-nby-test/odoo
   git reset --hard master-jabberwock-age-dmo-chm-nby
@@ -1226,11 +1231,11 @@ function test_odoo_lint
 end
 
 function sl
-  while true 
+  while true
     sleep 1
-    xdotool mousemove 500 0
+    xdotool mousemove 2560 1440
     sleep 1
-    xdotool mousemove 500 1
+    xdotool mousemove 2560 1439
   end
 end
 
@@ -1306,12 +1311,12 @@ function remove_warn
 end
 abbr rmw remove_warn
 
-function goa
-  set path pwd
-  cd /home/goaman/projects/self/programming/goa/goa-power
-  node -r source-map-support/register /home/goaman/projects/self/programming/goa/goa-power/packages/goapower-build-cli/dist/ts/goapower-build-cli/src/cli.js $argv
-  cd $pwd
-end
+# function goa
+#   set path pwd
+#   cd /home/goaman/projects/self/programming/goa/goa-power
+#   node -r source-map-support/register /home/goaman/projects/self/programming/goa/goa-power/packages/goapower-build-cli/dist/ts/goapower-build-cli/src/cli.js $argv
+#   cd $pwd
+# end
 
 function power-output
   #tput smcup
@@ -1341,3 +1346,33 @@ end
 abbr xo xdg-open
 abbr xon nohv xdg-open
 abbr o nohv xdg-open
+
+function build_goabar
+  echo cd /home/goaman/projects/self/programming/goa/goa-power/; yarn run build:electron $argv
+  cd /home/goaman/projects/self/programming/goa/goa-power/; yarn run build:electron $argv
+end
+function kill_goabar
+  for p in (ps aux |grep node | grep power | grep electron | grep app.js | awk '{print $2}'); kill -9 $p; end
+end
+function start_goabar
+  # bash -c "node --cpu-prof --heap-prof  /home/goaman/projects/self/programming/goa/goa-power/node_modules/.bin/electron --enable-transparent-visuals --disable-gpu /home/goaman/projects/self/programming/goa/goa-power/packages/goapower-build-electron/dist/app.js $argv &"
+  bash -c "node /home/goaman/projects/self/programming/goa/goa-power/node_modules/.bin/electron --enable-transparent-visuals --disable-gpu /home/goaman/projects/self/programming/goa/goa-power/packages/goapower-build-electron/dist/app.js $argv &"
+end
+function restart_goabar
+  kill_goabar
+  start_goabar $argv
+end
+
+function locate_with_home
+  locate $argv
+  locate -d $HOME/locatedb $argv
+end
+
+function updatedb_with_home
+  sudo updatedb $argv
+  updatedb -l 0 --output=$HOME/locatedb -U $HOME $argv
+end
+
+abbr lo locate_with_home
+abbr up update_with_home
+abbr mime handlr
