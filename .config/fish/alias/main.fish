@@ -155,11 +155,11 @@ abbr gosp "cd ~/projects/self/programming"
 abbr gopr "cd ~/projects/self/programming"
 abbr gob "cd ~/projects/self/programming/big"
 abbr gosc "cd $HOME/goamanc/scripts"
-abbr gopo "cd ~/projects/self/programming/goa/goa-power"
+abbr gopo "cd ~/projects/self/programming/goa/goapower"
 abbr goev "cd ~/projects/self/programming/nevdev"
 abbr gotouch "cd ~/projects/self/programming/goa/goa-touch"
 abbr gor "cd ~/projects/self/rust/testrust"
-abbr gopo2 "cd ~/projects/self/goa-power-worktree/master2"
+abbr gopo2 "cd ~/projects/self/goapower-worktree/master2"
 abbr gostoi "cd ~/projects/self/goastorage/public/img/original"
 abbr gol "cd ~/projects/self/programming/odoo/odoo-power"
 abbr si 'sudo snap install'
@@ -935,8 +935,8 @@ function removeAggridLicence
   removeAggridLicenceFile $file "console.error('* Please email info@ag-grid.com to purchase a license.                                                         *');"
 end
 function removeAllAggrid
-  removeAggridLicence $HOME/projects/self/programming/goa/goa-power/node_modules/@ag-grid-enterprise/core/dist/cjs/licenseManager.js
-  #removeAggridLicence $HOME/projects/self/programming/goa/goa-power/node_modules/@ag-grid-enterprise/clipboard/dist/clipboard.esm.js
+  removeAggridLicence $HOME/projects/self/programming/goa/goapower/node_modules/@ag-grid-enterprise/core/dist/cjs/licenseManager.js
+  #removeAggridLicence $HOME/projects/self/programming/goa/goapower/node_modules/@ag-grid-enterprise/clipboard/dist/clipboard.esm.js
 end
 
 function searchAgGrid
@@ -1313,8 +1313,8 @@ abbr rmw remove_warn
 
 # function goa
 #   set path pwd
-#   cd /home/goaman/projects/self/programming/goa/goa-power
-#   node -r source-map-support/register /home/goaman/projects/self/programming/goa/goa-power/packages/goapower-build-cli/dist/ts/goapower-build-cli/src/cli.js $argv
+#   cd /home/goaman/projects/self/programming/goa/goapower
+#   node -r source-map-support/register /home/goaman/projects/self/programming/goa/goapower/packages/goapower-build-cli/dist/ts/goapower-build-cli/src/cli.js $argv
 #   cd $pwd
 # end
 
@@ -1348,15 +1348,15 @@ abbr xon nohv xdg-open
 abbr o nohv xdg-open
 
 function build_goabar
-  echo cd /home/goaman/projects/self/programming/goa/goa-power/; yarn run build:electron $argv
-  cd /home/goaman/projects/self/programming/goa/goa-power/; yarn run build:electron $argv
+  echo cd /home/goaman/projects/self/programming/goa/goapower/; yarn run build:electron $argv
+  cd /home/goaman/projects/self/programming/goa/goapower/; yarn run build:electron $argv
 end
 function kill_goabar
   for p in (ps aux |grep node | grep power | grep electron | grep app.js | awk '{print $2}'); kill -9 $p; end
 end
 function start_goabar
-  # bash -c "node --cpu-prof --heap-prof  /home/goaman/projects/self/programming/goa/goa-power/node_modules/.bin/electron --enable-transparent-visuals --disable-gpu /home/goaman/projects/self/programming/goa/goa-power/packages/goapower-build-electron/dist/app.js $argv &"
-  bash -c "node /home/goaman/projects/self/programming/goa/goa-power/node_modules/.bin/electron --enable-transparent-visuals --disable-gpu /home/goaman/projects/self/programming/goa/goa-power/packages/goapower-build-electron/dist/app.js $argv &"
+  # bash -c "node --cpu-prof --heap-prof  /home/goaman/projects/self/programming/goa/goapower/node_modules/.bin/electron --enable-transparent-visuals --disable-gpu /home/goaman/projects/self/programming/goa/goapower/packages/goapower-build-electron/dist/app.js $argv &"
+  bash -c "node /home/goaman/projects/self/programming/goa/goapower/node_modules/.bin/electron --enable-transparent-visuals --disable-gpu /home/goaman/projects/self/programming/goa/goapower/packages/goapower-build-electron/dist/app.js $argv &"
 end
 function restart_goabar
   kill_goabar

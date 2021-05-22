@@ -1,3 +1,3 @@
 #!/bin/bash
 
-/home/goaman/projects/self/programming/goa/goa-power/node_modules/.bin/electron --enable-transparent-visuals --disable-gpu /home/goaman/projects/self/programming/goa/goa-power/packages/goapower-build-electron/dist/app.js
+/home/goaman/projects/self/programming/goa/goapower/node_modules/.bin/electron --enable-transparent-visuals --disable-gpu /home/goaman/projects/self/programming/goa/goapower/packages/goapower-build-electron/dist/app.js

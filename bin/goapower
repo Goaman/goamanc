@@ -1,6 +1,6 @@
 #!/bin/bash
 INIT_DIR=$(pwd)
-cd /home/odoo/projects/self/goa-power-electron
+cd /home/odoo/projects/self/goapower-electron
 yarn start
 cd $INIT_DIR
 
