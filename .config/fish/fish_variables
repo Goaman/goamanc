@@ -105,8 +105,8 @@ SETUVAR _fish_abbr_gojc:\x7e/projects/self/jabberwock\x2dcode/
 SETUVAR _fish_abbr_gol:cd\x20\x7e/projects/self/programming/odoo/odoo\x2dpower
 SETUVAR _fish_abbr_goner:cd\x20/home/goaman/goamanc/interbin/node
 SETUVAR _fish_abbr_gop:cd\x20\x7e/projects
-SETUVAR _fish_abbr_gopo:cd\x20\x7e/projects/self/programming/goa/goa\x2dpower
-SETUVAR _fish_abbr_gopo2:cd\x20\x7e/projects/self/goa\x2dpower\x2dworktree/master2
+SETUVAR _fish_abbr_gopo:cd\x20\x7e/projects/self/programming/goa/goapower
+SETUVAR _fish_abbr_gopo2:cd\x20\x7e/projects/self/goapower\x2dworktree/master2
 SETUVAR _fish_abbr_gopr:cd\x20\x7e/projects/self/programming
 SETUVAR _fish_abbr_gor:cd\x20\x7e/projects/self/rust/testrust
 SETUVAR _fish_abbr_gos:cd\x20\x7e/projects/self
