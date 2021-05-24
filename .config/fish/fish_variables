@@ -33,6 +33,7 @@ SETUVAR _fish_abbr_ce:e\x20projects/self/goa\x2dtap/src/evdev/evdevServer\x2epy
 SETUVAR _fish_abbr_cf:code\x20\x28fzf\x29
 SETUVAR _fish_abbr_clip:xclip\x20\x2dselection\x20clipboard\x20\x2di
 SETUVAR _fish_abbr_cn:code\x20\x2dn
+SETUVAR _fish_abbr_codeng:code\x20\x2dn\x20\x2dg
 SETUVAR _fish_abbr_coucou:echo\x20couocu
 SETUVAR _fish_abbr_cya:shutdown\x20now
 SETUVAR _fish_abbr_db:yarn\x20run\x20dev\x2dbrowser
@@ -107,6 +108,7 @@ SETUVAR _fish_abbr_goner:cd\x20/home/goaman/goamanc/interbin/node
 SETUVAR _fish_abbr_gop:cd\x20\x7e/projects
 SETUVAR _fish_abbr_gopo:cd\x20\x7e/projects/self/programming/goa/goapower
 SETUVAR _fish_abbr_gopo2:cd\x20\x7e/projects/self/goapower\x2dworktree/master2
+SETUVAR _fish_abbr_gopog:cd\x20\x7e/projects/self/programming/goa/goapower\x2dgoaman
 SETUVAR _fish_abbr_gopr:cd\x20\x7e/projects/self/programming
 SETUVAR _fish_abbr_gor:cd\x20\x7e/projects/self/rust/testrust
 SETUVAR _fish_abbr_gos:cd\x20\x7e/projects/self

@@ -156,6 +156,7 @@ abbr gopr "cd ~/projects/self/programming"
 abbr gob "cd ~/projects/self/programming/big"
 abbr gosc "cd $HOME/goamanc/scripts"
 abbr gopo "cd ~/projects/self/programming/goa/goapower"
+abbr gopog "cd ~/projects/self/programming/goa/goapower-goaman"
 abbr goev "cd ~/projects/self/programming/nevdev"
 abbr gotouch "cd ~/projects/self/programming/goa/goa-touch"
 abbr gor "cd ~/projects/self/rust/testrust"
@@ -163,6 +164,7 @@ abbr gopo2 "cd ~/projects/self/goapower-worktree/master2"
 abbr gostoi "cd ~/projects/self/goastorage/public/img/original"
 abbr gol "cd ~/projects/self/programming/odoo/odoo-power"
 abbr si 'sudo snap install'
+
 
 abbr gowo cd ~/projects/vsc-workspace/
 
@@ -1376,3 +1378,4 @@ end
 abbr lo locate_with_home
 abbr up update_with_home
 abbr mime handlr
+abbr codeng code -n -g
