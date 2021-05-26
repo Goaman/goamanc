@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <inkscape
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   version="1"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   version="1">
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd">
   <group
      id="window">
     <group
        id="task"
-       taskset="2" />
+       taskset="0" />
     <group
        id="menu"
        state="1" />
@@ -110,11 +110,14 @@
     <sodipodi:namedview
        id="base"
        pagecolor="#ffffff"
-       bordercolor="#666666"
-       borderopacity="1.0"
+       pageopacity="0"
+       pagecheckerboard="0"
+       bordercolor="#999999"
+       borderopacity="1"
        objecttolerance="10.0"
        gridtolerance="10.0"
        guidetolerance="10.0"
+       pageshadow="0"
        inkscape:pageopacity="0.0"
        inkscape:pageshadow="2"
        inkscape:window-width="640"
@@ -132,8 +135,8 @@
          id="rect"
          style="fill:blue;"
          usecurrent="1"
-         width="48.3806"
-         height="26.9257"
+         width="382.888"
+         height="279.686"
          rx="0"
          ry="0"
          convertguides="1" />
@@ -199,7 +202,8 @@
          selcue="1"
          style="stroke-width:1px;"
          usecurrent="0"
-         average_all_sketches="1" />
+         average_all_sketches="1"
+         pressure="0" />
       <eventcontext
          id="pen"
          mode="drag"
@@ -221,6 +225,8 @@
        usepressure="1"
        usetilt="0"
        keep_selected="1"
+       abs_width="1"
+       unit="mm"
        tremor="0"
        wiggle="0">
       <group
@@ -335,19 +341,19 @@
        gradientdrag="1"
        font_sample="AaBbCcIiPpQq12369$€¢?.;/()"
        show_sample_in_list="1"
+       use_svg2="1"
        style="fill:black;fill-opacity:1;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:30.66666667px;line-height:1.25;letter-spacing:0px;word-spacing:0px;-inkscape-font-specification:'sans-serif, Normal';font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal"
        selcue="1"
        outer_style="0"
        align_mode="1">
       <group
-         display_unit="0"
-         id="lineheight" />
+         id="lineheight"
+         display_unit="0" />
     </eventcontext>
     <eventcontext
        id="nodes"
        selcue="1"
        gradientdrag="1"
-       highlight_color="4278190335"
        pathflash_enabled="1"
        pathflash_unselected="0"
        pathflash_timeout="500"
@@ -362,7 +368,8 @@
        x="0"
        y="0"
        edit_clipping_paths="0"
-       edit_masks="0" />
+       edit_masks="0"
+       highlight_color="4278190335" />
     <eventcontext
        id="tweak"
        selcue="0"
@@ -430,12 +437,12 @@
        offset="0"
        offsetunits="mm" />
     <group
-       unit="mm"
-       offset="5"
-       scale="100"
-       precision="2"
+       id="measure"
        fontsize="10"
-       id="measure" />
+       precision="2"
+       scale="100"
+       offset="5"
+       unit="mm" />
   </group>
   <group
      id="palette">
@@ -579,7 +586,7 @@
        panel_mode="1"
        panel_wrap="0"
        panel_border="0"
-       page="0"
+       page="1"
        x="0"
        y="0"
        w="354"
@@ -635,6 +642,8 @@
        placement="5" />
     <group
        id="xml"
+       h="266"
+       w="345"
        panel_size="1"
        panel_ratio="100"
        panel_mode="1"
@@ -642,8 +651,6 @@
        panel_border="0"
        x="0"
        y="0"
-       w="345"
-       h="266"
        visible="0"
        state="2"
        placement="1" />
@@ -653,8 +660,8 @@
        id="spellcheck"
        w="200"
        h="250"
-       lang="en_US"
-       ignorenumbers="1" />
+       ignorenumbers="1"
+       lang="en_US" />
     <group
        id="documentoptions"
        state="1"
@@ -681,7 +688,7 @@
        y="247"
        w="893"
        h="584"
-       page="41" />
+       page="27" />
     <group
        id="gradienteditor" />
     <group
@@ -744,9 +751,11 @@
        enable_preview="1"
        path=""
        ask="0"
+       ask_svg="1"
        link="embed"
        scale="auto"
-       forcexdpi="0" />
+       forcexdpi="0"
+       import_mode_svg="include" />
     <group
        id="debug"
        redirect="0" />
@@ -785,6 +794,8 @@
     <group
        id="layers"
        maxDepth="20"
+       w="300"
+       h="168"
        panel_size="1"
        panel_ratio="100"
        panel_mode="1"
@@ -792,8 +803,6 @@
        panel_border="0"
        x="0"
        y="0"
-       w="300"
-       h="168"
        visible="0"
        state="2"
        placement="1" />
@@ -816,7 +825,21 @@
        on-blur="0.50"
        animate-time="100" />
     <group
-       id="objects"
+       placement="1"
+       state="2"
+       visible="0"
+       h="368"
+       w="326"
+       y="0"
+       x="0"
+       panel_border="0"
+       panel_wrap="0"
+       panel_mode="1"
+       panel_ratio="100"
+       panel_size="1"
+       id="objects" />
+    <group
+       id="glyphs"
        panel_size="1"
        panel_ratio="100"
        panel_mode="1"
@@ -824,8 +847,8 @@
        panel_border="0"
        x="0"
        y="0"
-       w="326"
-       h="368"
+       w="418"
+       h="863"
        visible="0"
        state="2"
        placement="1" />
@@ -833,30 +856,16 @@
        placement="1"
        state="2"
        visible="0"
-       h="863"
-       w="418"
-       y="0"
-       x="0"
-       panel_border="0"
-       panel_wrap="0"
-       panel_mode="1"
-       panel_ratio="100"
-       panel_size="1"
-       id="glyphs" />
-    <group
-       id="symbols"
-       panel_size="1"
-       panel_ratio="100"
-       panel_mode="1"
-       panel_wrap="0"
-       panel_border="0"
-       x="0"
-       y="0"
-       w="366"
        h="264"
-       visible="0"
-       state="2"
-       placement="1" />
+       w="366"
+       y="0"
+       x="0"
+       panel_border="0"
+       panel_wrap="0"
+       panel_mode="1"
+       panel_ratio="100"
+       panel_size="1"
+       id="symbols" />
   </group>
   <group
      id="printing">
@@ -1122,10 +1131,10 @@
          origin_y="0.0"
          spacing_x="1.0"
          spacing_y="1.0"
-         color="1061158688"
-         empcolor="1061158720"
          empspacing="5"
-         dotted="0" />
+         dotted="0"
+         color="1061158688"
+         empcolor="1061158720" />
       <group
          id="axonom"
          units="mm"
@@ -1134,9 +1143,9 @@
          spacing_y="1.0"
          angle_x="30.0"
          angle_z="30.0"
+         empspacing="5"
          color="1061158688"
-         empcolor="1061158720"
-         empspacing="5" />
+         empcolor="1061158720" />
     </group>
     <group
        id="workarounds"
@@ -1145,8 +1154,28 @@
     <group
        id="rendering" />
     <group
-       id="snapindicatorpersistence"
-       value="1.5" />
+       value="1.5"
+       id="snapindicatorpersistence" />
+    <group
+       id="svgeditor"
+       value="inkscape" />
+    <group
+       id="dash"
+       scale="1" />
+    <group
+       id="middlemousezoom"
+       value="1" />
+    <group
+       id="boot"
+       canvas="light"
+       theme="compacted">
+      <group
+         id="shown"
+         ver1.1="1" />
+    </group>
+    <group
+       id="font"
+       unitType="2" />
   </group>
   <group
      id="extensions"
@@ -1156,15 +1185,15 @@
      org.ekips.filter.addnodes.segments="2" />
   <group
      id="desktop"
-     style="line-height:1.25;fill:#a0a0a0;fill-opacity:0.16872427;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:8.93519974px;text-anchor:middle;text-align:center;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;stroke:#000000;stroke-opacity:1;stroke-width:1.59806997;stroke-miterlimit:4;stroke-dasharray:none;opacity:1;font-variant-position:normal;font-variant-alternates:normal;font-variant-east_asian:normal;text-indent:0;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;white-space:normal;shape-padding:0;vector-effect:none;stroke-linecap:butt;stroke-linejoin:miter;stroke-dashoffset:0">
+     style="line-height:1.25;fill:#800000;fill-opacity:0.16872427;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-size:8.93519974px;text-anchor:middle;text-align:center;writing-mode:lr;stroke:#ff0000;stroke-width:1.59806997;font-variant-east_asian:normal;text-decoration:none;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px">
     <group
        width="2560"
        height="1440"
        x="0"
        y="0"
+       maximized="1"
        fullscreen="0"
-       id="geometry"
-       maximized="0" />
+       id="geometry" />
     <group
        id="XYfront" />
     <group
@@ -1188,7 +1217,7 @@
     <group
        id="tools"
        icononly="1"
-       small="0" />
+       small="1" />
   </group>
   <group
      id="iconpreview"
@@ -1261,4 +1290,35 @@
   <group
      id="ui"
      language="" />
+  <group
+     id="theme"
+     defaultPreferDarkTheme="0"
+     defaultGtkTheme="Yaru"
+     defaultIconTheme="Yaru"
+     symbolicIcons="1"
+     preferDarkTheme="0"
+     darkTheme="0"
+     symbolicDefaultBaseColors="1"
+     symbolicDefaultHighColors="1"
+     gtkTheme="Minwaita-Inkscape"
+     iconTheme="hicolor"
+     menuIcons_canvas="0"
+     menuIcons_layers="0"
+     menuIcons_objects="0">
+    <group
+       id="multicolor"
+       symbolicBaseColor="255"
+       symbolicSuccessColor="3435973887"
+       symbolicWarningColor="2155905279"
+       symbolicErrorColor="2155905279" />
+    <group
+       id="hicolor"
+       symbolicBaseColor="775173887"
+       symbolicSuccessColor="1943148287"
+       symbolicWarningColor="4118348031"
+       symbolicErrorColor="3422552319" />
+  </group>
+  <group
+     id="live_effects"
+     flattening="0" />
 </inkscape>

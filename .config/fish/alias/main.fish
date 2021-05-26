@@ -908,38 +908,6 @@ function removeAggridLicenceFile
   grep -vF $pattern $tempfile > $file
   #cp $tempfile $file
 end
-function removeAggridLicence
-  set file $argv[1]
-  removeAggridLicenceFile $file "console.error('****************************************************************************************************************');"
-  removeAggridLicenceFile $file "console.error('***************************************** ag-Grid Enterprise License *******************************************');"
-  removeAggridLicenceFile $file "console.error('****************************************** License Key Not Found ***********************************************');"
-  removeAggridLicenceFile $file "console.error('* All ag-Grid Enterprise features are unlocked.                                                                *');"
-  removeAggridLicenceFile $file "console.error('* This is an evaluation only version, it is not licensed for development projects intended for production.     *');"
-  removeAggridLicenceFile $file "console.error('* If you want to hide the watermark, please email info@ag-grid.com for a trial license.                        *');"
-
-  removeAggridLicenceFile $file "console.error('****************************************************************************************************************************');"
-  removeAggridLicenceFile $file "console.error('********************************************* ag-Grid Enterprise License ***************************************************');"
-  removeAggridLicenceFile $file "console.error('*************************** License not compatible with installed version of ag-Grid Enterprise. ***************************');"
-  removeAggridLicenceFile $file 'console.error("* Your license for ag-Grid Enterprise expired on " + formattedExpiryDate + " but the version installed was released on " + formattedReleaseDate + ". *");'
-  removeAggridLicenceFile $file "console.error('* Please contact info@ag-grid.com to renew your subscription to new versions.                                              *');"
-  removeAggridLicenceFile $file "console.error('****************************************************************************************************************************');"
-  removeAggridLicenceFile $file "console.error('****************************************************************************************************************************');"
-
-  removeAggridLicenceFile $file "console.error('*****************************************************************************************************************');"
-  removeAggridLicenceFile $file "console.error('***************************************** ag-Grid Enterprise License ********************************************');"
-  removeAggridLicenceFile $file "console.error('********************************************* Invalid License ***************************************************');"
-  removeAggridLicenceFile $file "console.error('* Your license for ag-Grid Enterprise is not valid - please contact info@ag-grid.com to obtain a valid license. *');"
-  removeAggridLicenceFile $file "console.error('*****************************************************************************************************************');"
-  removeAggridLicenceFile $file "console.error('*****************************************************************************************************************');"
-
-  removeAggridLicenceFile $file "console.error('*****************************************   Trial Period Expired.    *******************************************');"
-  removeAggridLicenceFile $file 'console.error("* Your license for ag-Grid Enterprise expired on " + formattedExpiryDate + ".                                                *");'
-  removeAggridLicenceFile $file "console.error('* Please email info@ag-grid.com to purchase a license.                                                         *');"
-end
-function removeAllAggrid
-  removeAggridLicence $HOME/projects/self/programming/goa/goapower/node_modules/@ag-grid-enterprise/core/dist/cjs/licenseManager.js
-  #removeAggridLicence $HOME/projects/self/programming/goa/goapower/node_modules/@ag-grid-enterprise/clipboard/dist/clipboard.esm.js
-end
 
 function searchAgGrid
   grep -Rl "ag-Grid Enterprise License" .
@@ -1349,21 +1317,21 @@ abbr xo xdg-open
 abbr xon nohv xdg-open
 abbr o nohv xdg-open
 
-function build_goabar
-  echo cd /home/goaman/projects/self/programming/goa/goapower/; yarn run build:electron $argv
-  cd /home/goaman/projects/self/programming/goa/goapower/; yarn run build:electron $argv
-end
-function kill_goabar
-  for p in (ps aux |grep node | grep power | grep electron | grep app.js | awk '{print $2}'); kill -9 $p; end
-end
-function start_goabar
-  # bash -c "node --cpu-prof --heap-prof  /home/goaman/projects/self/programming/goa/goapower/node_modules/.bin/electron --enable-transparent-visuals --disable-gpu /home/goaman/projects/self/programming/goa/goapower/packages/goapower-build-electron/dist/app.js $argv &"
-  bash -c "node /home/goaman/projects/self/programming/goa/goapower/node_modules/.bin/electron --enable-transparent-visuals --disable-gpu /home/goaman/projects/self/programming/goa/goapower/packages/goapower-build-electron/dist/app.js $argv &"
-end
-function restart_goabar
-  kill_goabar
-  start_goabar $argv
-end
+# function build_goabar
+#   echo cd /home/goaman/projects/self/programming/goa/goapower/; yarn run build:electron $argv
+#   cd /home/goaman/projects/self/programming/goa/goapower/; yarn run build:electron $argv
+# end
+# function kill_goabar
+#   for p in (ps aux |grep node | grep power | grep electron | grep app.js | awk '{print $2}'); kill -9 $p; end
+# end
+# function start_goabar
+#   # bash -c "node --cpu-prof --heap-prof  /home/goaman/projects/self/programming/goa/goapower/node_modules/.bin/electron --enable-transparent-visuals --disable-gpu /home/goaman/projects/self/programming/goa/goapower/packages/goapower-build-electron/dist/app.js $argv &"
+#   bash -c "node /home/goaman/projects/self/programming/goa/goapower/node_modules/.bin/electron --enable-transparent-visuals --disable-gpu /home/goaman/projects/self/programming/goa/goapower/packages/goapower-build-electron/dist/app.js $argv &"
+# end
+# function restart_goabar
+#   kill_goabar
+#   start_goabar $argv
+# end
 
 function locate_with_home
   locate $argv
