@@ -1,7 +1,0 @@
-#!/bin/bash
-
-static-server /home/odoo/projects/self/goapower/dist -p 7845 &
-cd /home/odoo/projects/self/goapower-electron
-npm run start &
-
-

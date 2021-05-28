@@ -1,17 +1,26 @@
-#!/bin/bash
+#!/usr/bin/fish
 
 # env > /tmp/envmonad
 
 # set -e DISPLAY :0
 # set -e XAUTHORITY /home/goaman/.Xauthority
 
+# set -e PATH $PATH /home/goaman/.nvm/versions/node/v15.3.0/bin
+
 setxkbmap us dvorak-alt-intl
 
 startsession 1>/dev/null 2>&1 &
 # xcompmgr  1>/dev/null 2>&1 &
 # xmobar 1>/dev/null 2>&1 &
-killall goabar
-goabar 1>/dev/null 2>&1 &
+sleep 0.1
+/home/goaman/projects/self/programming/goa/goapower/dist/bin/restart_goabar 1>/dev/null 2>&1 &
+/home/goaman/goamanc/bin/xrandon second
+
+
+sleep 0.1
+feh --bg-scale $HOME/goamanc/desktop-background/orange-star.jpg
+# killall goabar
+# goabar 1>/dev/null 2>&1 &
 
 sleep 0.1
 
