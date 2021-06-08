@@ -3,6 +3,8 @@
   <operations>
     <action>win.canvas-zoom-1-2</action>
     <action>win.canvas-flip-vertical</action>
+    <action>doc.snap-bbox-corner</action>
+    <action>win.canvas-zoom-1-1</action>
   </operations>
   <params />
 </cphistory>

@@ -40,6 +40,11 @@ set -x PATH $HOME/anaconda3/bin $PATH
 set -x PATH $HOME/anaconda3/envs/py365/bin $PATH
 
 ####################################################
+# Yarn
+####################################################
+set -x PATH $HOME/.yarn/bin $PATH
+
+####################################################
 # Libsass
 ####################################################
 set -x SASS_LIBSASS_PATH "/usr/local/lib/libsass"

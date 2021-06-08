@@ -930,112 +930,112 @@ function ggreps
   git diff-index -U --cached -G $argv HEAD
 end
 
-####################################################################################################
-# Pulse audio
-####################################################################################################
+# ####################################################################################################
+# # Pulse audio
+# ####################################################################################################
 
-## Pulse audio has a module to restore the an application in a previous sink
-# which is pretty annoying. To remove that behavior, change line
-# `load-module module-stream-restore restore_device=false`
-# in `/etc/pulse/default.pa`
-# See https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/#index28h3
-# and https://www.reddit.com/r/linuxaudio/comments/939wwz/how_correctly_to_switch_pulseaudios_default_sink/
-# load-module module-stream-restore restore_device=false
-#
-## Bluetooth audio HSP mode is awefull.
-# source: https://askubuntu.com/questions/1205749/how-permanently-remove-or-disable-hsp-hfp-bluetooth-profile 
-# Open (sudo) /etc/pulse/default.pa and add auto_switch=false like this:
-# ```
-# load-module module-bluetooth-policy auto_switch=false  # <---- !
-# ```
+# ## Pulse audio has a module to restore the an application in a previous sink
+# # which is pretty annoying. To remove that behavior, change line
+# # `load-module module-stream-restore restore_device=false`
+# # in `/etc/pulse/default.pa`
+# # See https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/#index28h3
+# # and https://www.reddit.com/r/linuxaudio/comments/939wwz/how_correctly_to_switch_pulseaudios_default_sink/
+# # load-module module-stream-restore restore_device=false
+# #
+# ## Bluetooth audio HSP mode is awefull.
+# # source: https://askubuntu.com/questions/1205749/how-permanently-remove-or-disable-hsp-hfp-bluetooth-profile 
+# # Open (sudo) /etc/pulse/default.pa and add auto_switch=false like this:
+# # ```
+# # load-module module-bluetooth-policy auto_switch=false  # <---- !
+# # ```
 
-function sink-list-id
-  pactl list short sink-inputs | onespace | cuts -f 1
-end
+# function sink-list-id
+#   pactl list short sink-inputs | onespace | cuts -f 1
+# end
 
-set sink_analog alsa_output.pci-0000_00_1f.3.analog-stereo
-# set sink_bluetooth bluez_sink.28_11_A5_77_FE_D2.a2dp_sink
-function get_bluetooth_sink
-  pactl list short sinks | grep module-bluez5-device.c | onespace | cuts -f2
-end
-# set sink_bluetooth module-bluez5-device.c
+# set sink_analog alsa_output.pci-0000_00_1f.3.analog-stereo
+# # set sink_bluetooth bluez_sink.28_11_A5_77_FE_D2.a2dp_sink
+# function get_bluetooth_sink
+#   pactl list short sinks | grep module-bluez5-device.c | onespace | cuts -f2
+# end
+# # set sink_bluetooth module-bluez5-device.c
 
-function sink_to_analog
-  for sink in (sink-list-id ); pactl move-sink-input $sink $sink_analog; end
-end
-function sink_to_bluetooth
-  for sink in (sink-list-id ); pactl move-sink-input $sink (get_bluetooth_sink); end
-end
-abbr pata sink_to_analog
-abbr patb sink_to_bluetooth
+# function sink_to_analog
+#   for sink in (sink-list-id ); pactl move-sink-input $sink $sink_analog; end
+# end
+# function sink_to_bluetooth
+#   for sink in (sink-list-id ); pactl move-sink-input $sink (get_bluetooth_sink); end
+# end
+# abbr pata sink_to_analog
+# abbr patb sink_to_bluetooth
 
-####################################################################################################
-# Bluetooth
-####################################################################################################
+# ####################################################################################################
+# # Bluetooth
+# ####################################################################################################
 
-set bt_marshal 00:12:6F:57:B8:9C
-set bt_bose 28:11:A5:77:FE:D2
-set bt_earbuds_bose 78:2B:64:25:70:85
-set bt_room FC:58:FA:C0:03:B9
-function bt_disconnect_all
-  echo disconnect $bt_marshal\nexit\n | bluetoothctl
-  echo disconnect $bt_bose\nexit\n | bluetoothctl
-  echo disconnect $bt_earbuds_bose\nexit\n | bluetoothctl
-end
-function bluetooth_sync
-  pactl set_default_sink (get_bluetooth_sink)
+# set bt_marshal 00:12:6F:57:B8:9C
+# set bt_bose 28:11:A5:77:FE:D2
+# set bt_earbuds_bose 78:2B:64:25:70:85
+# set bt_room FC:58:FA:C0:03:B9
+# function bt_disconnect_all
+#   echo disconnect $bt_marshal\nexit\n | bluetoothctl
+#   echo disconnect $bt_bose\nexit\n | bluetoothctl
+#   echo disconnect $bt_earbuds_bose\nexit\n | bluetoothctl
+# end
+# function bluetooth_sync
+#   pactl set_default_sink (get_bluetooth_sink)
 
-  sink_to_bluetooth
-  sleep 1
-  sink_to_bluetooth
-  sleep 5
-  sink_to_bluetooth
-  sleep 5
-  sink_to_bluetooth
+#   sink_to_bluetooth
+#   sleep 1
+#   sink_to_bluetooth
+#   sleep 5
+#   sink_to_bluetooth
+#   sleep 5
+#   sink_to_bluetooth
 
-  pactl set_default_sink (get_bluetooth_sink)
-end
-# bluetooth bose
-function btbose
-  # echo disconnect $bt_marshal\nexit\n | bluetoothctl
-  # echo disconnect $bt_room\nexit\n | bluetoothctl
-  bt_disconnect_all
-  echo connect $bt_bose| bluetoothctl
-  bluetooth_sync
-  pactl set_default_sink (get_bluetooth_sink)
-end
-function btroom
-  #echo disconnect $bt_marshal\nexit\n | bluetoothctl
-  bt_disconnect_all
-  echo connect $bt_room| bluetoothctl
-  bluetooth_sync
-end
-# bluetooth marshal
-function btmarshal
-  bt_disconnect_all
-  # echo disconnect $bt_bose\nexit\n | bluetoothctl
+#   pactl set_default_sink (get_bluetooth_sink)
+# end
+# # bluetooth bose
+# function btbose
+#   # echo disconnect $bt_marshal\nexit\n | bluetoothctl
+#   # echo disconnect $bt_room\nexit\n | bluetoothctl
+#   bt_disconnect_all
+#   echo connect $bt_bose| bluetoothctl
+#   bluetooth_sync
+#   pactl set_default_sink (get_bluetooth_sink)
+# end
+# function btroom
+#   #echo disconnect $bt_marshal\nexit\n | bluetoothctl
+#   bt_disconnect_all
+#   echo connect $bt_room| bluetoothctl
+#   bluetooth_sync
+# end
+# # bluetooth marshal
+# function btmarshal
+#   bt_disconnect_all
+#   # echo disconnect $bt_bose\nexit\n | bluetoothctl
 
-  echo connect $bt_marshal | bluetoothctl
-  bluetooth_sync
-end
-function btearbuds
-  bt_disconnect_all
-  # echo disconnect $bt_earbuds_bose\nexit\n | bluetoothctl
-  echo connect $bt_earbuds_bose | bluetoothctl
-  bluetooth_sync
-end
-function btdisconnect
-  bt_disconnect_all
-  #echo disconnect $bt_marshal\nexit\n | bluetoothctl
-  #echo disconnect $bt_bose\nexit\n | bluetoothctl
-  #echo disconnect $bt_room\nexit\n | bluetoothctl
-  sink_to_analog
-end
+#   echo connect $bt_marshal | bluetoothctl
+#   bluetooth_sync
+# end
+# function btearbuds
+#   bt_disconnect_all
+#   # echo disconnect $bt_earbuds_bose\nexit\n | bluetoothctl
+#   echo connect $bt_earbuds_bose | bluetoothctl
+#   bluetooth_sync
+# end
+# function btdisconnect
+#   bt_disconnect_all
+#   #echo disconnect $bt_marshal\nexit\n | bluetoothctl
+#   #echo disconnect $bt_bose\nexit\n | bluetoothctl
+#   #echo disconnect $bt_room\nexit\n | bluetoothctl
+#   sink_to_analog
+# end
 
-abbr btb btbose
-abbr btm btmarshal
-abbr btr btroom
-abbr btd btdisconnect
+# abbr btb btbose
+# abbr btm btmarshal
+# abbr btr btroom
+# abbr btd btdisconnect
 
 ####################################################################################################
 # Terminator
@@ -1315,7 +1315,7 @@ end
 
 abbr xo xdg-open
 abbr xon nohv xdg-open
-abbr o nohv xdg-open
+abbr o xdg-open
 
 # function build_goabar
 #   echo cd /home/goaman/projects/self/programming/goa/goapower/; yarn run build:electron $argv

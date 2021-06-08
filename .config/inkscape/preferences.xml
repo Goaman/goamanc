@@ -135,10 +135,10 @@
          id="rect"
          style="fill:blue;"
          usecurrent="1"
-         width="382.888"
-         height="279.686"
+         width="374.497"
+         height="46.3503"
          rx="0"
-         ry="0"
+         ry="8.40997"
          convertguides="1" />
       <eventcontext
          id="3dbox"
@@ -688,7 +688,7 @@
        y="247"
        w="893"
        h="584"
-       page="27" />
+       page="45" />
     <group
        id="gradienteditor" />
     <group
@@ -772,7 +772,13 @@
     <group
        id="messages" />
     <group
-       id="swatches" />
+       id="swatches"
+       panel_size="1"
+       panel_ratio="100"
+       panel_mode="1"
+       panel_wrap="0"
+       panel_border="0"
+       palette="Auto" />
     <group
        id="iconpreview"
        panel_size="1"
@@ -1185,7 +1191,7 @@
      org.ekips.filter.addnodes.segments="2" />
   <group
      id="desktop"
-     style="line-height:1.25;fill:#800000;fill-opacity:0.16872427;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-size:8.93519974px;text-anchor:middle;text-align:center;writing-mode:lr;stroke:#ff0000;stroke-width:1.59806997;font-variant-east_asian:normal;text-decoration:none;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px">
+     style="line-height:1.25;fill:#999999;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-size:8.93519974px;text-anchor:middle;text-align:center;writing-mode:lr;stroke-width:1.59874016;font-variant-east_asian:normal;text-decoration:none;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px">
     <group
        width="2560"
        height="1440"
