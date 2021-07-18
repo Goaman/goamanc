@@ -135,10 +135,10 @@
          id="rect"
          style="fill:blue;"
          usecurrent="1"
-         width="374.497"
-         height="46.3503"
+         width="370"
+         height="390"
          rx="0"
-         ry="8.40997"
+         ry="0"
          convertguides="1" />
       <eventcontext
          id="3dbox"
@@ -175,7 +175,7 @@
          end="0"
          start="0"
          usecurrent="1"
-         rx="1.9912"
+         rx="1.991"
          ry="1.9912" />
       <eventcontext
          id="star"
@@ -333,7 +333,7 @@
        id="lpetool"
        mode="drag"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none;"
-       unit="mm"
+       unit="px"
        show_bbox="1" />
     <eventcontext
        id="text"
@@ -365,8 +365,8 @@
        live_outline="1"
        live_objects="1"
        show_helperpath="0"
-       x="0"
-       y="0"
+       x="987.594"
+       y="98.2197"
        edit_clipping_paths="0"
        edit_masks="0"
        highlight_color="4278190335" />
@@ -639,7 +639,8 @@
        h="380"
        visible="1"
        state="2"
-       placement="5" />
+       placement="5"
+       align-to="4" />
     <group
        id="xml"
        h="266"
@@ -1191,7 +1192,7 @@
      org.ekips.filter.addnodes.segments="2" />
   <group
      id="desktop"
-     style="line-height:1.25;fill:#999999;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-size:8.93519974px;text-anchor:middle;text-align:center;writing-mode:lr;stroke-width:1.59874016;font-variant-east_asian:normal;text-decoration:none;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px">
+     style="line-height:1.25;fill:#008000;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-size:8.93519974px;text-anchor:middle;text-align:center;writing-mode:lr;stroke-width:1.59874016;font-variant-east_asian:normal;text-decoration:none;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px">
     <group
        width="2560"
        height="1440"

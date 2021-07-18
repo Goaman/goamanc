@@ -3,6 +3,10 @@
 laptop_screen=eDP-1-1
 second_screen=HDMI-0
 
+
+# laptop_screen=eDP-1
+# second_screen=HDMI-1-0
+
 echo $
 
 case $1 in

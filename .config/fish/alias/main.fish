@@ -743,7 +743,7 @@ function get_all_git_projects_subscribed
 end
 
 abbr goner cd ~/goamanc/interbin/node
-abbr sshgoa ssh -t root@80.241.221.164 fish
+abbr sshgoa ssh -t root@167.86.75.203
 
 abbr grepe grep -E 
 abbr ins 'cd "$HOME/Downloads/Beachbody Insanity/"; xdg-open .'
@@ -1347,3 +1347,12 @@ abbr lo locate_with_home
 abbr up update_with_home
 abbr mime handlr
 abbr codeng code -n -g
+
+# odoo odoo dir
+function odir
+  if [ $argv[1] = 'master' ]
+    cd ~/main_odoo/odoo
+  else
+    cd ~/src/$argv[1]/odoo
+  end
+end
