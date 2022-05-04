@@ -119,7 +119,7 @@ SETUVAR _fish_abbr_gostoi:cd\x20\x7e/projects/self/goastorage/public/img/origina
 SETUVAR _fish_abbr_got:cd\x20\x7e/projects/self/programming/test
 SETUVAR _fish_abbr_gotouch:cd\x20\x7e/projects/self/programming/goa/goa\x2dtouch
 SETUVAR _fish_abbr_gowo:cd\x20/home/goaman/projects/vsc\x2dworkspace/
-SETUVAR _fish_abbr_gp:git\x20pull
+SETUVAR _fish_abbr_gp:git\x20push\x20origin\x20HEAD
 SETUVAR _fish_abbr_gpf:git\x20push\x20origin\x20HEAD\x20\x2df
 SETUVAR _fish_abbr_gpfo:git\x20push\x20odoo\x2ddev\x20HEAD\x20\x2df
 SETUVAR _fish_abbr_gpu:git\x20push
@@ -196,6 +196,7 @@ SETUVAR _fish_abbr_shgoa:ssh\x20root\x40173\x2e249\x2e32\x2e76
 SETUVAR _fish_abbr_si:sudo\x20snap\x20install
 SETUVAR _fish_abbr_sound:pavucontrol
 SETUVAR _fish_abbr_sshgoa:ssh\x20\x2dt\x20root\x40167\x2e86\x2e75\x2e203
+SETUVAR _fish_abbr_sshpower:ssh\x20\x2dt\x20root\x40167\x2e86\x2e75\x2e203\x20\x27cd\x20/root/goapower\x3b\x20bash\x27
 SETUVAR _fish_abbr_st:sudo\x20systemctl
 SETUVAR _fish_abbr_sta:sudo\x20systemctl\x20start
 SETUVAR _fish_abbr_stau:systemctl\x20\x2d\x2duser\x20start

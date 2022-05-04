@@ -744,6 +744,7 @@ end
 
 abbr goner cd ~/goamanc/interbin/node
 abbr sshgoa ssh -t root@167.86.75.203
+abbr sshpower ssh -t root@167.86.75.203 "'cd /root/goapower; bash'"
 
 abbr grepe grep -E 
 abbr ins 'cd "$HOME/Downloads/Beachbody Insanity/"; xdg-open .'
@@ -861,7 +862,8 @@ abbr grh 'git reset HEAD~'
 abbr gap 'git add .'
 # git commit reuse
 abbr gcor 'git commit --reuse-message=ORIG_HEAD'
-abbr gp 'git pull'
+# abbr gp 'git pull'
+abbr gp 'git push origin HEAD'
 abbr gpu 'git push'
 
 abbr an "2>/dev/null"
@@ -1355,4 +1357,19 @@ function odir
   else
     cd ~/src/$argv[1]/odoo
   end
+end
+
+function owod
+  odir $argv[1]
+  owo $argv[1]
+end
+
+function maketemplate
+  dropdb $argv[1]-template
+  createdb $argv[1]-template -T $argv[1]
+end
+
+function usetemplate
+  dropdb $argv[1]
+  createdb $argv[1] -T $argv[1]-template
 end

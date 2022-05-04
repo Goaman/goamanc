@@ -2,21 +2,26 @@
 zipname=$(basename "$1")
 dbname=${zipname%.*}
 echo $dbname
-dropdb $dbname
+echo "dbname: " $dbname
+# dropdb $dbname
 rm -rf /tmp/restore-$dbname
 mkdir /tmp/restore-$dbname
 echo "### downloading"
 wget $1 -P /tmp/restore-$dbname -q
-unzip -o -q /tmp/restore-$dbname/$zipname -d /tmp/restore-$dbname
 echo "### restoring filestore"
+unzip -o -q /tmp/restore-$dbname/$zipname -d /tmp/restore-$dbname
 rm -rf ~/.local/share/Odoo/filestore/$dbname
 mkdir ~/.local/share/Odoo/filestore/$dbname
 mv /tmp/restore-$dbname/filestore/* ~/.local/share/Odoo/filestore/$dbname
 echo /tmp/restore-$dbname
+
 echo "### restoring db"
+dropdb $dbname
 createdb $dbname
 psql -1 -q $dbname -f /tmp/restore-$dbname/dump.sql
 # psql -e -1 -q $dbname -f /tmp/restore-$dbname/dump.sql
-echo "### cleaning"
+
+echo "### cleaning temp filestore"
 rm -r /tmp/restore-$dbname
+
 echo "### finished"

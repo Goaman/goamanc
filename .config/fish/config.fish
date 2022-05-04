@@ -30,7 +30,7 @@ set -x PATH $PATH $HOME/.fzf/bin/
 function nvm
     bass source ~/.nvm/nvm.sh --no-use ';' nvm $argv
 end
-set -x PATH $HOME/.nvm/versions/node/v15.3.0/bin $PATH
+set -x PATH $HOME/.nvm/versions/node/v16.13.2/bin $PATH
 # nvm use default 1>/dev/null
 
 ####################################################
@@ -43,6 +43,11 @@ set -x PATH $HOME/anaconda3/envs/py365/bin $PATH
 # Yarn
 ####################################################
 set -x PATH $HOME/.yarn/bin $PATH
+
+####################################################
+# Rust
+####################################################
+set -x PATH $HOME/.cargo/bin $PATH
 
 ####################################################
 # Libsass

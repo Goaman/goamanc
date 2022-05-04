@@ -11,10 +11,11 @@ setxkbmap us dvorak-alt-intl
 
 startsession 1>/dev/null 2>&1 &
 # xcompmgr  1>/dev/null 2>&1 &
+
 # xmobar 1>/dev/null 2>&1 &
 sleep 0.1
 /home/goaman/projects/self/programming/goa/goapower/dist/bin/restart_goabar 1>/dev/null 2>&1 &
-/home/goaman/goamanc/bin/xrandon second
+# /home/goaman/goamanc/bin/xrandon second
 
 
 sleep 0.1

@@ -2,6 +2,8 @@
 
 laptop_screen=eDP-1-1
 second_screen=HDMI-0
+# second_screen=DP-4
+# second_screen=DP-4.8
 
 
 # laptop_screen=eDP-1
@@ -16,10 +18,14 @@ case $1 in
     ;;
 
   second)
+    # xrandr --output $laptop_screen --off --output $second_screen --primary --mode 1600x900
+    # xrandr --output $laptop_screen --off --output $second_screen --primary --mode 1920x1080
     xrandr --output $laptop_screen --off --output $second_screen --primary --auto
+    # xrandr --output $laptop_screen --off --output $second_screen --primary --auto
     ;;
 
   both)
+    # xrandr --output $laptop_screen --auto --output $second_screen --primary --mode 1600x900 --left-of $laptop_screen
     xrandr --output $laptop_screen --auto --output $second_screen --primary --auto --left-of $laptop_screen
     ;;
 
