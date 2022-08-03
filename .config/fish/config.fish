@@ -36,8 +36,8 @@ set -x PATH $HOME/.nvm/versions/node/v16.13.2/bin $PATH
 ####################################################
 # Conda
 ####################################################
-set -x PATH $HOME/anaconda3/bin $PATH
-set -x PATH $HOME/anaconda3/envs/py365/bin $PATH
+# set -x PATH $HOME/anaconda3/bin $PATH
+# set -x PATH $HOME/anaconda3/envs/py365/bin $PATH
 
 ####################################################
 # Yarn
@@ -62,7 +62,10 @@ set -x PATH $PATH ~/goamanc/bin/
 set -x PATH $PATH ~/.local/bin
 set -x PATH $PATH ~/bin
 # set -x PATH $PATH ~/projects/self/programming/js_scripts/bin/
-set -x PATH $PATH ~/projects/self/programming/goa/goapower/dist/bin
+set -x PATH $PATH ~/projects/self/programming/goa/goa-power/dist/bin
+# set -x PATH $PATH "/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin"
+set -x PATH $PATH "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+# fish_add_path -aP "/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin"
 
 
 
@@ -81,5 +84,10 @@ set -x _JAVA_AWT_WM_NONREPARENTING 1
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-eval /home/goaman/anaconda3/bin/conda "shell.fish" "hook" $argv | source
+eval /Users/goaman/opt/miniconda3/bin/conda "shell.fish" "hook" $argv | source
 # <<< conda initialize <<<
+
+# pnpm
+set -gx PNPM_HOME "/Users/goaman/Library/pnpm"
+set -gx PATH "$PNPM_HOME" $PATH
+# pnpm end

@@ -155,7 +155,7 @@ abbr gosp "cd ~/projects/self/programming"
 abbr gopr "cd ~/projects/self/programming"
 abbr gob "cd ~/projects/self/programming/big"
 abbr gosc "cd $HOME/goamanc/scripts"
-abbr gopo "cd ~/projects/self/programming/goa/goapower"
+abbr gopo "cd ~/projects/self/programming/goa/goa-power"
 abbr gopog "cd ~/projects/self/programming/goa/goapower-goaman"
 abbr goev "cd ~/projects/self/programming/nevdev"
 abbr gotouch "cd ~/projects/self/programming/goa/goa-touch"
@@ -492,6 +492,14 @@ end
 alias cuts="cut -d' '"
 alias onespace="sed -E 's/\s+/ /g'"
 
+# function cuts
+#   cut -d' ' $argv
+# end
+
+# function onespace
+#   sed -E 's/\s+/ /g' $argv
+# end
+
 
 #alias copylast="history | tail -n1 | cut -d' ' -f4- | pbcopy -selection clipboard"
 function topcommand
@@ -774,7 +782,8 @@ abbr do docker
 abbr dc docker-compose
 abbr lof lsof -P -n -i 
 abbr killodoobin "ps aux | grep odoo-bin | head -n-1 | onespace | cuts -f2 | xargs kill -9"
-abbr kob "ps aux | grep odoo-bin | head -n-1 | onespace | cuts -f2 | xargs kill -9"
+abbr kob "ps aux | grep odoo-bin | head -n-1 | sed 's/  */ /g' | cut -d' ' -f2 | xargs kill -9"
+# abbr kob "ps aux | grep odoo-bin | head -n-1 | onespace | xargs kill -9"
 function mvtemp
   mv $argv[1] ~/odootemp/$argv[1]
 end
@@ -1204,6 +1213,12 @@ end
 
 function sl
   while true
+    osascript -e 'tell application "System Events" to click at {1, 1}'
+    sleep 10
+  end
+end
+function slLinux
+  while true
     sleep 1
     xdotool mousemove 2560 1440
     sleep 1
@@ -1353,9 +1368,9 @@ abbr codeng code -n -g
 # odoo odoo dir
 function odir
   if [ $argv[1] = 'master' ]
-    cd ~/main_odoo/odoo
+    cd ~/odoo_root/main_repo/odoo
   else
-    cd ~/src/$argv[1]/odoo
+    cd ~/odoo_root/workspaces/$argv[1]/odoo
   end
 end
 
@@ -1372,4 +1387,8 @@ end
 function usetemplate
   dropdb $argv[1]
   createdb $argv[1] -T $argv[1]-template
+end
+
+function head
+  ghead $argv
 end

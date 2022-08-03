@@ -1,0 +1,46 @@
+ .tab-background {
+   border-radius: 0px 0px !important;
+   margin-bottom: 0px !important;qs
+   margin-top: 0 !important;
+ }
+
+ .tabbrowser-tab:not([selected=true]):not([multiselected=true]) .tab-background {
+   background-color: color-mix(in srgb, currentColor 5%, transparent);
+ }
+
+ .tabbrowser-tab {
+  border-right: 1px #0000001c solid !important;
+  padding: 0 !important;
+ }
+
+ #tabbrowser-tabs, #tabbrowser-arrowscrollbox, #tabbrowser-tabs[positionpinnedtabs] > #tabbrowser-arrowscrollbox > .tabbrowser-tab[pinned] {
+  min-height: 10px !important;
+  --tab-min-height: 0px;
+ }
+
+ .tab-throbber-tabslist, .tab-throbber, .tab-icon-pending, .tab-icon-image, .tab-sharing-icon-overlay, .tab-icon-overlay {
+  height: 14px !important;
+  width:  14px !important;
+}
+
+tabs {
+  height: 33px !important;
+}
+
+toolbar {
+  /* min-width: 1px;
+  min-height: 16px;
+  appearance: auto;
+  -moz-default-appearance: toolbar; */
+  height: 30px !important;
+}
+
+#tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab[first-visible-unpinned-tab] {
+  margin-inline-start: 3px !important;
+}
+
+ /* Tab: selected colors */
+/* #tabbrowser-tabs .tabbrowser-tab[selected] .tab-content { background: linear-gradient(to bottom,#AAFFAA,#FFAAFF) !important; } */
+
+/* Tab: hovered colors */
+/* #tabbrowser-tabs .tabbrowser-tab:hover:not([selected]) .tab-content { background: linear-gradient(to bottom,#808080,#FFFFFF) !important; } */

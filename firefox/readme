@@ -1,0 +1,7 @@
+See https://ourtechroom.com/tech/get-back-old-tab-design-firefox/
+
+to install a custom theme:
+"/Users/goaman/Library/Application Support/Firefox/Profiles/1j49ks2v.default-release-1659513851779/chrome/userChrome.css"
+
+add userChrome.css into it
+ln -s /Users/goaman/goamanc/firefox/userChrome.css "/Users/goaman/Library/Application Support/Firefox/Profiles/1j49ks2v.default-release-1659513851779/chrome/userChrome.css"
