@@ -754,7 +754,7 @@ abbr goner cd ~/goamanc/interbin/node
 abbr sshgoa ssh -t root@167.86.75.203
 abbr sshpower ssh -t root@167.86.75.203 "'cd /root/goapower; bash'"
 
-abbr grepe grep -E 
+abbr grepe grep -E
 abbr ins 'cd "$HOME/Downloads/Beachbody Insanity/"; xdg-open .'
 
 function list_projects
@@ -782,7 +782,7 @@ abbr do docker
 abbr dc docker-compose
 abbr lof lsof -P -n -i 
 abbr killodoobin "ps aux | grep odoo-bin | head -n-1 | onespace | cuts -f2 | xargs kill -9"
-abbr kob "ps aux | grep odoo-bin | head -n-1 | sed 's/  */ /g' | cut -d' ' -f2 | xargs kill -9"
+abbr kob "set ports (ps aux | grep odoo-bin | grep -v grep | sed 's/  */ /g' | cut -d' ' -f2); echo ports:;echo \$ports; echo \$ports | xargs kill -9"
 # abbr kob "ps aux | grep odoo-bin | head -n-1 | onespace | xargs kill -9"
 function mvtemp
   mv $argv[1] ~/odootemp/$argv[1]

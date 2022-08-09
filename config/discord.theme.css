@@ -1,0 +1,29 @@
+/**
+ * @name GoaTheme
+ * @version 0.0.1
+ * @description A theme for Goaman
+ *
+ * @website http://twitter.com/BandagedBD
+ */
+
+/* containerDefault-YUSmu3 */
+.containerDefault {
+  padding: 0 !important;
+}
+.mainContent-20q_Hp {
+  padding: 0 !important;
+}
+.avatarSmall-3qwAkA {
+    width: 15px;
+    height: 15px;
+}
+.draggable-S2aEx4{
+  height: 20px;
+}
+.containerDefault-3TQ5YN {
+  padding-top: 0px;
+}
+
+/* * {
+  padding: 0 !important;
+} */
