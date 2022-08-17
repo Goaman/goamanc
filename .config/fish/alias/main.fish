@@ -821,7 +821,7 @@ end
 abbr gwa git-worktree-add
 
 function git-worktree-go
-  set git_dir (pwd | sed 's/-worktree$//')
+  set git_dir (pwd | sed 's/-worktree.*//')
   if test $argv[1]
     cd $git_dir-worktree/$argv[1]
   else
@@ -1391,4 +1391,50 @@ end
 
 function head
   ghead $argv
+end
+
+
+function install_power_packages
+  set -l npm_packages assert buffer child_process cluster crypto dgram dns domain events fs http https net os path punycode querystring readline stream string_decoder timers tls tty url util v8 vm zlib
+  for package_path in /Users/goaman/projects/self/programming/goa/goa-power/packages/*
+
+
+    if test -d $package_path
+      echo == $package_path ==
+      cd $package_path
+      for lib in (ack '^import((?!\'\.).)*;' -h | grep -E "'[^']*';" -o | cut -c2- | rev | cut -c3- | rev | sort| uniq | grep -vE "^[^@].*/")
+        if not contains $lib $npm_packages
+          echo \$ rush ad -p $lib
+          # rush add -p $lib
+        end
+      end
+
+      echo
+    end
+  end
+end
+
+# function movePackage
+#   set -l package_dir $argv[1]
+#   set -l package_name $argv[2]
+#   echo package_dir $package_dir
+#   echo package_name $package_name
+# end
+
+function foo
+  set -l goapower_dir /Users/goaman/projects/self/programming/goa/goa-power
+  for package_dir in packages packages-goaman
+    echo $package_dir:
+
+    set -l current_path $goapower_dir/$package_dir
+    for package_name in (ls $current_path)
+      set -l node_module_path $current_path/$package_name/node_modules
+      set -l to_path /Users/goaman/projects/self/programming/goa/goa-power/dist/ts/$package_dir/$package_name
+      if test -e $node_module_path && test -e $to_path
+        echo \$ ln -s $node_module_path $to_path/node_modules
+        ln -s $node_module_path $to_path/node_modules
+      end
+    end
+    echo
+  end
 end
