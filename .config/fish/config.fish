@@ -81,6 +81,11 @@ set -x PATH $PATH "/opt/homebrew/opt/libxml2/bin"
 
 set -x PATH $PATH /usr/local/go/bin
 
+####################################################
+# Goa
+####################################################
+
+set -x COMPOSE_GOA_BASE_PLATFORM base_arm
 
 ####################################################
 # To organise

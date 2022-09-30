@@ -156,6 +156,7 @@ abbr gopr "cd ~/projects/self/programming"
 abbr gob "cd ~/projects/self/programming/big"
 abbr gosc "cd $HOME/goamanc/scripts"
 abbr gopo "cd ~/projects/self/programming/goa/goa-power"
+abbr gopot "cd ~/projects/self/programming/goa/goa-power-worktree/master-rush"
 abbr gopog "cd ~/projects/self/programming/goa/goapower-goaman"
 abbr goev "cd ~/projects/self/programming/nevdev"
 abbr gotouch "cd ~/projects/self/programming/goa/goa-touch"
@@ -1333,6 +1334,7 @@ end
 abbr xo xdg-open
 abbr xon nohv xdg-open
 abbr o xdg-open
+abbr o open
 
 # function build_goabar
 #   echo cd /home/goaman/projects/self/programming/goa/goapower/; yarn run build:electron $argv
@@ -1397,14 +1399,12 @@ end
 function install_power_packages
   set -l npm_packages assert buffer child_process cluster crypto dgram dns domain events fs http https net os path punycode querystring readline stream string_decoder timers tls tty url util v8 vm zlib
   for package_path in /Users/goaman/projects/self/programming/goa/goa-power/packages/*
-
-
     if test -d $package_path
       echo == $package_path ==
       cd $package_path
       for lib in (ack '^import((?!\'\.).)*;' -h | grep -E "'[^']*';" -o | cut -c2- | rev | cut -c3- | rev | sort| uniq | grep -vE "^[^@].*/")
         if not contains $lib $npm_packages
-          echo \$ rush ad -p $lib
+          echo \$ rush add -p $lib
           # rush add -p $lib
         end
       end
@@ -1432,9 +1432,13 @@ function foo
       set -l to_path /Users/goaman/projects/self/programming/goa/goa-power/dist/ts/$package_dir/$package_name
       if test -e $node_module_path && test -e $to_path
         echo \$ ln -s $node_module_path $to_path/node_modules
-        ln -s $node_module_path $to_path/node_modules
+        # ln -s $node_module_path $to_path/node_modules
       end
     end
     echo
   end
 end
+
+abbr opf odoo_push_force
+
+abbr ra rush add -p
