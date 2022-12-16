@@ -130,7 +130,7 @@ SETUVAR _fish_abbr_grc:git\x20rebase\x20\x2d\x2dcontinue
 SETUVAR _fish_abbr_grepe:grep\x20\x2dE
 SETUVAR _fish_abbr_gres:git\x20reset
 SETUVAR _fish_abbr_grh:git\x20reset\x20HEAD\x7e
-SETUVAR _fish_abbr_gri:git\x20rebase\x20\x2di\x20HEAD\x7e10
+SETUVAR _fish_abbr_gri:git\x20rebase\x20\x2di\x20\x28odooBranchVersion\x29
 SETUVAR _fish_abbr_gri10:git\x20rebase\x20\x2di\x20HEAD\x7e10
 SETUVAR _fish_abbr_grlog:git\x20reflog
 SETUVAR _fish_abbr_grs:git\x20rebase\x20\x2d\x2dskip

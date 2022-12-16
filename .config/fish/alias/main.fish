@@ -856,7 +856,7 @@ function reserve_npm_name
 end
 
 # add temp and push
-abbr gri 'git rebase -i HEAD~10'
+abbr gri 'git rebase -i (odooBranchVersion)'
 abbr gra 'git rebase --abort'
 abbr gri10 'git rebase -i HEAD~10'
 abbr gat 'git add .; git commit -m "temp"'
