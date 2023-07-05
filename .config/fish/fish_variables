@@ -47,7 +47,7 @@ SETUVAR _fish_abbr_eod:vim\x20/Users/goaman/projects/self/programming/odoo/odoo\
 SETUVAR _fish_abbr_es:vim\x20\x7e/\x2econfig/fish/config\x2efish
 SETUVAR _fish_abbr_esa:vim\x20\x7e/\x2econfig/fish/alias/main\x2efish\x3bsource\x20\x7e/\x2econfig/fish/alias/main\x2efish
 SETUVAR _fish_abbr_esaod:vim\x20/Users/goaman/goamanc/fishc/aliases/odoo\x3b\x20source\x20/Users/goaman/goamanc/fishc/aliases/odoo
-SETUVAR _fish_abbr_etoday:cd\x20\x7e/notes/days/\x3b\x20vim\x20\x28ls\x20\x7c\x20sort\x20\x7c\x20tail\x20\x2dn1\x29\x3b\x20cd\x20\x2d
+SETUVAR _fish_abbr_etoday:cd\x20\x7e/notes/days/\x3b\x20code\x20\x28ls\x20\x7c\x20sort\x20\x7c\x20tail\x20\x2dn1\x29\x3b\x20cd\x20\x2d
 SETUVAR _fish_abbr_ex:e\x20\x7e/\x2exmonad/xmonad\x2ehs
 SETUVAR _fish_abbr_exon:vim\x20\x28which\x20xrandon\x29\x3bxrandon
 SETUVAR _fish_abbr_f:fzf
@@ -150,7 +150,7 @@ SETUVAR _fish_abbr_ins:cd\x20\x22\x24HOME/Downloads/Beachbody\x20Insanity/\x22\x
 SETUVAR _fish_abbr_j:journalctl\x20\x2do\x20cat\x20\x2df\x20\x2du
 SETUVAR _fish_abbr_jpo:journalctl\x20\x2do\x20cat\x20\x2df\x20\x2du\x20goapower
 SETUVAR _fish_abbr_ju:journalctl\x20\x2d\x2duser\x20\x2do\x20cat\x20\x2df\x20\x2du
-SETUVAR _fish_abbr_jup:cd\x20/Users/goaman/projects/jupyter\x3b\x20jupyter\x20notebook\x3b\x20cd\x20\x2d
+SETUVAR _fish_abbr_jup:cd\x20/Users/goaman/projects/self/jupyter\x3b\x20jupyter\x2dlab\x3b\x20cd\x20\x2d
 SETUVAR _fish_abbr_k:kill
 SETUVAR _fish_abbr_kdis:killall\x20Discord
 SETUVAR _fish_abbr_killodoobin:ps\x20aux\x20\x7c\x20grep\x20odoo\x2dbin\x20\x7c\x20head\x20\x2dn\x2d1\x20\x7c\x20onespace\x20\x7c\x20cuts\x20\x2df2\x20\x7c\x20xargs\x20kill\x20\x2d9
@@ -166,7 +166,7 @@ SETUVAR _fish_abbr_mime:handlr
 SETUVAR _fish_abbr_myip:ifconfig\x20\x7c\x20grep\x20wlp2s0\x3a\x20\x2dA\x201\x20\x7c\x20tail\x20\x2dn\x201\x20\x7c\x20onespace\x20\x7ccuts\x20\x2df3
 SETUVAR _fish_abbr_nd:npm\x20run\x20dev
 SETUVAR _fish_abbr_netm:/usr/share/cinnamon/cinnamon\x2dsettings/cinnamon\x2dsettings\x2epy\x20network
-SETUVAR _fish_abbr_newday:touchnow\x20\x7e/notes/days/
+SETUVAR _fish_abbr_newday:touchnow\x20\x7e/notes/days
 SETUVAR _fish_abbr_newtomorrow:touchnow\x20\x7e/notes/days/\x20\x2d\x2ddate\x3d\x221\x20day\x22
 SETUVAR _fish_abbr_o:open
 SETUVAR _fish_abbr_oes:python3\x20/Users/goaman/projects/support\x2dtools/oe\x2dsupport\x2epy

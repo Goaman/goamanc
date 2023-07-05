@@ -136,7 +136,7 @@ abbr pyd "pydoc3"
 abbr py2 "python"
 abbr pyd2 "pydoc"
 
-abbr jup "cd $HOME/projects/jupyter; jupyter notebook; cd -"
+abbr jup "cd $HOME/projects/self/jupyter; jupyter-lab; cd -"
 
 #open depending on your system
 abbr o noh xdg-open
@@ -207,23 +207,21 @@ end
 # alias datet='date +"%s"'
 function touchnow
   set folder $argv[1]
-  echo "Amazing, you just begin a new day!!!"
-  echo "May the force be with you."
-  echo "Here is your file:"
   set date (date +"%s-%d-%m-%Y" $argv[2])
   echo $date.md
 
   echo touch $folder/$date.md
   touch $folder/$date.md
+  code $folder/$date.md
 end
-abbr newday "touchnow ~/notes/days/"
+abbr newday "touchnow ~/notes/days"
 abbr newtomorrow 'touchnow ~/notes/days/ --date="1 day"'
-function lastday 
+function lastday
   cd ~/notes/days/
   echo (ls | sort | tail -n1)
   cd -
 end
-abbr etoday 'cd ~/notes/days/; vim (ls | sort | tail -n1); cd -'
+abbr etoday 'cd ~/notes/days/; code (ls | sort | tail -n1); cd -'
 
 # getprojects() {
 #   ls -d ~/projects/self/*/ | tr " " "\n"
