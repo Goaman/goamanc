@@ -55,7 +55,8 @@ abbr gcl "git clone"
 #
 
 abbr gln "git log"
-abbr gl "git log --decorate"
+# abbr gl "git log --decorate"
+abbr gl "git log --pretty=oneline --decorate=no (odooBranchVersion)..HEAD"
 abbr glol "git lol"
 abbr glp "git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 abbr glg "git log --decorate --graph"
@@ -859,6 +860,8 @@ abbr gra 'git rebase --abort'
 abbr gri10 'git rebase -i HEAD~10'
 abbr gat 'git add .; git commit -m "temp"'
 abbr gcp 'git cherry-pick'
+abbr gcpd "git log --pretty=oneline --decorate=no master..master-debug-nby | fzf --bind 'enter:execute(git cherry-pick {1})'"
+
 abbr gatp 'git add .; git commit -m "temp"; git push origin HEAD -f;'
 abbr gatpr 'git add .; git commit -m "temp"; git push origin HEAD -f; git reset HEAD~'
 abbr gca 'git commit --amend'

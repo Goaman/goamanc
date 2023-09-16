@@ -67,11 +67,12 @@ SETUVAR _fish_abbr_gcom:git\x20commit\x20\x2dm
 SETUVAR _fish_abbr_gcor:git\x20commit\x20\x2d\x2dreuse\x2dmessage\x3dORIG_HEAD
 SETUVAR _fish_abbr_gcoswitch:git\x20add\x20\x2e\x3bgit\x20commit\x20\x2dm\x20\x27switch\x20computer\x27
 SETUVAR _fish_abbr_gcp:git\x20cherry\x2dpick
+SETUVAR _fish_abbr_gcpd:git\x20log\x20\x2d\x2dpretty\x3doneline\x20\x2d\x2ddecorate\x3dno\x20master\x2e\x2emaster\x2ddebug\x2dnby\x20\x7c\x20fzf\x20\x2d\x2dbind\x20\x27enter\x3aexecute\x28git\x20cherry\x2dpick\x20\x7b1\x7d\x29\x27
 SETUVAR _fish_abbr_gd:git\x20diff
 SETUVAR _fish_abbr_gfa:git\x20fetch\x20\x2d\x2dall
 SETUVAR _fish_abbr_gi:\x7e/projects/github/
 SETUVAR _fish_abbr_giveip:ifconfig\x20\x7c\x20grep\x20inet\x7c\x20grep\x20\x2dE\x20\x22\x28\x5b0\x2d9\x5d\x7b2\x2c\x7d\x5c\x2e\x29\x7b2\x2c\x7d\x22
-SETUVAR _fish_abbr_gl:git\x20log\x20\x2d\x2ddecorate
+SETUVAR _fish_abbr_gl:git\x20log\x20\x2d\x2dpretty\x3doneline\x20\x2d\x2ddecorate\x3dno\x20\x28odooBranchVersion\x29\x2e\x2eHEAD
 SETUVAR _fish_abbr_glc:gl\x20\x7c\x20cat
 SETUVAR _fish_abbr_glg:git\x20log\x20\x2d\x2ddecorate\x20\x2d\x2dgraph
 SETUVAR _fish_abbr_glgc:glg\x20\x7c\x20cat
