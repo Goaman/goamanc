@@ -131,6 +131,34 @@ layers:
 
       - [['@l31'], ['caps_lock']]
 
+  window_management:
+    keymap:
+      - [['@l11'], ['>/opt/homebrew/bin/yabai -m window --toggle zoom-fullscreen']]
+      - [['@l12'], ['>/opt/homebrew/bin/yabai -m window --swap largest']]
+      - [['@l13'], ['>/opt/homebrew/bin/yabai -m window --toggle sticky']]
+
+      - [['@l15'], ['>/opt/homebrew/bin/yabai -m space --rotate 270']]
+      - [['@l25'], ['>/opt/homebrew/bin/yabai -m space --balance']]
+
+      - [['@l31'], ['>/usr/local/bin/node /Users/goaman/projects/self/programming/goa/goa-power/dist/ts/packages-goaman/module-prototype/src/commandExec.js new_terminal']]
+
+  window_management_move_window:
+    keymap:
+      - [['@l31'], ['>/opt/homebrew/bin/yabai -m window --space 1']]
+      - [['@l32'], ['>/opt/homebrew/bin/yabai -m window --space 2']]
+      - [['@l33'], ['>/opt/homebrew/bin/yabai -m window --space 3']]
+      - [['@l21'], ['>/opt/homebrew/bin/yabai -m window --space 4']]
+      - [['@l22'], ['>/opt/homebrew/bin/yabai -m window --space 5']]
+      - [['@l23'], ['>/opt/homebrew/bin/yabai -m window --space 6']]
+      - [['@l11'], ['>/opt/homebrew/bin/yabai -m window --space 7']]
+      - [['@l12'], ['>/opt/homebrew/bin/yabai -m window --space 8']]
+      - [['@l13'], ['>/opt/homebrew/bin/yabai -m window --space 9']]
+
+      - [['@l24'], ['>/opt/homebrew/bin/yabai -m window --display recent']]
+      - [['@l14'], ['>/opt/homebrew/bin/yabai -m space --display recent']]
+
+
+
   razer_mouse:
     keymap:
       - [['f1'], ['left_control']]
@@ -142,20 +170,21 @@ layers:
       - [['f6'], ['#special_chars']]
 
       - [['f7'], ['#f_keys']]
-      # - [['f8'], ['#app']]
+      - [['f8'], ['#window_management']]
       - [['f9'], ['#app_util']]
 
-      - [['f10'], ['#screen_and_keyboard_language_layout']]
+      - [['f10'], ['#window_management_move_window']]
 
-      - [['f11'], ['']]
-      - [['f12'], ['BTN_RIGHT']]
-      - [['f13'], ['']]
+      - [['f11'], ['#window_management']]
+      - [['f12'], [{pointing_button: 'button2'}]]
+      - [['f13'], [{pointing_button: 'button3'}]]
       - [['f14'], ['']]
       - [['f15'], ['#left_as_right']]
 
   app_util:
     keymap:
       # - [['@l23'], ['>/Applications/flameshot.app/Contents/MacOS/flameshot gui']]
+      - [['@l11'], ['>open -a Firefox', {key: 'n', modifiers: ['left_command']}]]
       - [['@l24'], ['>/Applications/CopyQ.app/Contents/MacOS/CopyQ toggle ']]
 
   f_keys:
