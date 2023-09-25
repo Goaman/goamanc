@@ -184,7 +184,10 @@ layers:
   app_util:
     keymap:
       # - [['@l23'], ['>/Applications/flameshot.app/Contents/MacOS/flameshot gui']]
-      - [['@l11'], ['>open -a Firefox', {key: 'n', modifiers: ['left_command']}]]
+      - [['@l11'], ['>/usr/local/bin/node /Users/goaman/projects/self/programming/goa/goa-power/dist/ts/packages-goaman/module-prototype/src/commandExec.js new_terminal']]
+      - [['@l12'], ['>/usr/local/bin/node /Users/goaman/projects/self/programming/goa/goa-power/dist/ts/packages-goaman/module-prototype/src/commandExec.js new_firefox']]
+      - [['@l13'], ['>/usr/local/bin/node /Users/goaman/projects/self/programming/goa/goa-power/dist/ts/packages-goaman/module-prototype/src/commandExec.js new_chrome']]
+      - [['@l14'], ['>/usr/local/bin/node /Users/goaman/projects/self/programming/goa/goa-power/dist/ts/packages-goaman/module-prototype/src/commandExec.js window_focus_discord']]
       - [['@l24'], ['>/Applications/CopyQ.app/Contents/MacOS/CopyQ toggle ']]
 
   f_keys:
