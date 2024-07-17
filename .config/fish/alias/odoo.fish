@@ -361,6 +361,9 @@ function odo
   python3 $HOME/projects/self/programming/odoo/odoo-click/odoo-click.py $argv
 end
 
+abbr ofr odo_fetch_reset
+abbr ofrd odo_fetch_reset_dev
+
 function delete_invoices
   psql -d $argv[1] -c 'delete from account_partial_reconcile;'
   psql -d $argv[1] -c 'delete from account_invoice;'

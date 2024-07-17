@@ -62,7 +62,8 @@ set -x PATH $PATH ~/goamanc/bin/
 set -x PATH $PATH ~/.local/bin
 set -x PATH $PATH ~/bin
 # set -x PATH $PATH ~/projects/self/programming/js_scripts/bin/
-set -x PATH $PATH ~/projects/self/programming/goa/goa-power/dist/bin
+# set -x PATH $PATH ~/projects/self/programming/goa/goa-power/dist/bin
+set -x PATH $PATH ~/projects/self/programming/goa/goa-power-worktree/master-before-refactor/dist/bin
 # set -x PATH $PATH "/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin"
 set -x PATH $PATH "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 # fish_add_path -aP "/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin"
@@ -96,6 +97,7 @@ set -x _JAVA_AWT_WM_NONREPARENTING 1
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 eval /Users/goaman/opt/miniconda3/bin/conda "shell.fish" "hook" $argv | source
+conda activate x2
 # <<< conda initialize <<<
 
 # pnpm

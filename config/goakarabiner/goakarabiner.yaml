@@ -17,6 +17,7 @@ devices:
     vendor_id: 5426
     product_id: 143
     layoutName: razer_mouse
+    # layoutName: razer_mouse_game
 
   # - name: VirtualHID
   #   product_id: 61453
@@ -27,8 +28,6 @@ devices:
   #   product_id: 48879
   #   vendor_id: 65261
   #   layoutName: razer_mouse
-
-
 
 aliases:
   m0: non_us_backslash
@@ -94,179 +93,240 @@ layers:
     keymap:
       - [[grave_accent_and_tilde], [left_option]]
 
-      - [['@m0'], [left_control]]
+      - [["@m0"], [left_control]]
       # - [['@m1'], [left_control]]
-      - [['@m1'], ['#edit']]
-      - [['@m2'], [left_shift]]
+      - [["@m1"], ["#edit"]]
+      - [["@m2"], [left_shift]]
       # - [['@m3'], ['']]
       # - [['@m4'], ['']]
       # - [['@m5'], ['']]
       # - [['@m6'], ['']]
       # - [['@m7'], ['']]
 
-      - [['@m8'], ['right_shift']]
-      - [['@m9'], ['left_option']]
-      - [['@m10'], ['#navigation_and_general_mode']]
-      - [['@m11'], ['#numpad_left']]
+      - [["@m8"], ["right_shift"]]
+      - [["@m9"], ["left_option"]]
+      - [["@m10"], ["#navigation_and_general_mode"]]
+      - [["@m11"], ["#numpad_left"]]
 
       # - [['@m12'], ['']]\
 
-      - [['@o11'], ['#special_chars']]
-      - [['@o12'], ['#app_util']]
+      - [["@o11"], ["#special_chars"]]
+      - [["@o12"], ["#app_util"]]
 
-      - [['@o21'], ['#accents']]
+      - [["@o21"], ["#accents"]]
 
       # hyper key
-      - [['caps_lock'], ['tab']]
-      - [['tab'], [{key: right_option, modifiers: [right_command, right_control]}]]
+      - [["caps_lock"], ["tab"]]
+      - [
+          ["tab"],
+          [{ key: right_option, modifiers: [right_command, right_control] }],
+        ]
 
-      - [['caps_lock'], ['tab']]
-      - [['left_shift'], ['#left_shift_layer']]
+      - [["caps_lock"], ["tab"]]
+      - [["left_shift"], ["#left_shift_layer"]]
 
   left_shift_layer:
     keymap:
-      - [['@l11'], ['>open "btt://trigger_named/?trigger_name=mission_controll"']]
+      - [
+          ["@l11"],
+          ['>open "btt://trigger_named/?trigger_name=mission_controll"'],
+        ]
 
-      - [['@l21'], ['>open "btt://trigger_named/?trigger_name=fullscreen"']]
+      - [["@l21"], ['>open "btt://trigger_named/?trigger_name=fullscreen"']]
 
-      - [['@l31'], ['caps_lock']]
+      - [["@l31"], ["caps_lock"]]
 
   window_management:
     keymap:
-      - [['@l11'], ['>/opt/homebrew/bin/yabai -m window --toggle zoom-fullscreen']]
-      - [['@l12'], ['>/opt/homebrew/bin/yabai -m window --swap largest']]
-      - [['@l13'], ['>/opt/homebrew/bin/yabai -m window --toggle sticky']]
+      - [
+          ["@l11"],
+          [">/opt/homebrew/bin/yabai -m window --toggle zoom-fullscreen"],
+        ]
+      - [["@l12"], [">/opt/homebrew/bin/yabai -m window --swap largest"]]
+      - [["@l13"], [">/opt/homebrew/bin/yabai -m window --toggle sticky"]]
 
-      - [['@l15'], ['>/opt/homebrew/bin/yabai -m space --rotate 270']]
-      - [['@l25'], ['>/opt/homebrew/bin/yabai -m space --balance']]
+      - [
+          ["@l21"],
+          [
+            ">/usr/local/bin/node /Users/goaman/projects/self/programming/goa/goa-power/dist/ts/packages-goaman/module-prototype/src/commandExec.js yabai_switch_display",
+          ],
+        ]
 
-      - [['@l31'], ['>/usr/local/bin/node /Users/goaman/projects/self/programming/goa/goa-power/dist/ts/packages-goaman/module-prototype/src/commandExec.js new_terminal']]
+      - [["@l15"], [">/opt/homebrew/bin/yabai -m space --rotate 270"]]
+      - [["@l25"], [">/opt/homebrew/bin/yabai -m space --balance"]]
+
+      - [
+          ["@l31"],
+          [
+            ">/usr/local/bin/node /Users/goaman/projects/self/programming/goa/goa-power/dist/ts/packages-goaman/module-prototype/src/commandExec.js new_terminal",
+          ],
+        ]
 
   window_management_move_window:
     keymap:
-      - [['@l31'], ['>/opt/homebrew/bin/yabai -m window --space 1']]
-      - [['@l32'], ['>/opt/homebrew/bin/yabai -m window --space 2']]
-      - [['@l33'], ['>/opt/homebrew/bin/yabai -m window --space 3']]
-      - [['@l21'], ['>/opt/homebrew/bin/yabai -m window --space 4']]
-      - [['@l22'], ['>/opt/homebrew/bin/yabai -m window --space 5']]
-      - [['@l23'], ['>/opt/homebrew/bin/yabai -m window --space 6']]
-      - [['@l11'], ['>/opt/homebrew/bin/yabai -m window --space 7']]
-      - [['@l12'], ['>/opt/homebrew/bin/yabai -m window --space 8']]
-      - [['@l13'], ['>/opt/homebrew/bin/yabai -m window --space 9']]
+      - [["@l31"], [">/opt/homebrew/bin/yabai -m window --space s1"]]
+      - [["@l32"], [">/opt/homebrew/bin/yabai -m window --space s2"]]
+      - [["@l33"], [">/opt/homebrew/bin/yabai -m window --space s3"]]
+      - [["@l21"], [">/opt/homebrew/bin/yabai -m window --space s4"]]
+      - [["@l22"], [">/opt/homebrew/bin/yabai -m window --space s5"]]
+      - [["@l23"], [">/opt/homebrew/bin/yabai -m window --space s6"]]
+      - [["@l11"], [">/opt/homebrew/bin/yabai -m window --space s7"]]
+      - [["@l12"], [">/opt/homebrew/bin/yabai -m window --space s8"]]
+      - [["@l13"], [">/opt/homebrew/bin/yabai -m window --space s9"]]
 
-      - [['@l24'], ['>/opt/homebrew/bin/yabai -m window --display recent']]
-      - [['@l14'], ['>/opt/homebrew/bin/yabai -m space --display recent']]
-
-
+      - [["@l24"], [">/opt/homebrew/bin/yabai -m window --display recent"]]
+      - [["@l14"], [">/opt/homebrew/bin/yabai -m space --display recent"]]
 
   razer_mouse:
     keymap:
-      - [['f1'], ['left_control']]
-      - [['f2'], ['right_shift']]
-      - [['f3'], ['#navigation_and_general_mode']]
+      - [["f1"], ["left_control"]]
+      - [["f2"], ["right_shift"]]
+      - [["f3"], ["#navigation_and_general_mode"]]
 
-      - [['f4'], ['#accents']]
-      - [['f5'], ['#numpad_left']]
-      - [['f6'], ['#special_chars']]
+      - [["f4"], ["#accents"]]
+      - [["f5"], ["#numpad_left"]]
+      - [["f6"], ["#special_chars"]]
 
-      - [['f7'], ['#f_keys']]
-      - [['f8'], ['#window_management']]
-      - [['f9'], ['#app_util']]
+      - [["f7"], ["#f_keys"]]
+      - [["f8"], ["#window_management"]]
+      - [["f9"], ["#app_util"]]
 
-      - [['f10'], ['#window_management_move_window']]
+      - [["f10"], ["#window_management_move_window"]]
 
-      - [['f11'], ['#window_management']]
-      - [['f12'], [{pointing_button: 'button2'}]]
-      - [['f13'], [{pointing_button: 'button3'}]]
-      - [['f14'], ['']]
-      - [['f15'], ['#left_as_right']]
+      - [["f11"], ["#window_management"]]
+      - [["f12"], [{ pointing_button: "button2" }]]
+      - [["f13"], [{ pointing_button: "button3" }]]
+      - [["f14"], [""]]
+      - [["f15"], ["#left_as_right"]]
+
+  razer_mouse_game:
+    keymap:
+      - [["f1"], ["left_control"]]
+      - [["f2"], ["right_shift"]]
+      - [["f3"], ["#navigation_and_general_mode"]]
+
+      # - [['f4'], ['#accents']]
+      # - [['f5'], ['#numpad_left']]
+      - [["f6"], ["#special_chars"]]
+
+      - [["f7"], ["#f_keys"]]
+      - [["f8"], ["#window_management"]]
+      - [["f9"], ["#app_util"]]
+
+      - [["f10"], ["#window_management_move_window"]]
+
+      - [["f11"], ["#window_management"]]
+      - [["f12"], [{ pointing_button: "button2" }]]
+      - [["f13"], [{ pointing_button: "button3" }]]
+      - [["f14"], [""]]
+      - [["f15"], ["f10"]]
+      # - [['f15'], ['#left_as_right']]
 
   app_util:
     keymap:
       # - [['@l23'], ['>/Applications/flameshot.app/Contents/MacOS/flameshot gui']]
-      - [['@l11'], ['>/usr/local/bin/node /Users/goaman/projects/self/programming/goa/goa-power/dist/ts/packages-goaman/module-prototype/src/commandExec.js new_terminal']]
-      - [['@l12'], ['>/usr/local/bin/node /Users/goaman/projects/self/programming/goa/goa-power/dist/ts/packages-goaman/module-prototype/src/commandExec.js new_firefox']]
-      - [['@l13'], ['>/usr/local/bin/node /Users/goaman/projects/self/programming/goa/goa-power/dist/ts/packages-goaman/module-prototype/src/commandExec.js new_chrome']]
-      - [['@l14'], ['>/usr/local/bin/node /Users/goaman/projects/self/programming/goa/goa-power/dist/ts/packages-goaman/module-prototype/src/commandExec.js window_focus_discord']]
-      - [['@l24'], ['>/Applications/CopyQ.app/Contents/MacOS/CopyQ toggle ']]
+      - [
+          ["@l11"],
+          [
+            ">/usr/local/bin/node /Users/goaman/projects/self/programming/goa/goa-power/dist/ts/packages-goaman/module-prototype/src/commandExec.js new_terminal",
+          ],
+        ]
+      - [
+          ["@l12"],
+          [
+            ">/usr/local/bin/node /Users/goaman/projects/self/programming/goa/goa-power/dist/ts/packages-goaman/module-prototype/src/commandExec.js new_firefox",
+          ],
+        ]
+      - [
+          ["@l13"],
+          [
+            ">/usr/local/bin/node /Users/goaman/projects/self/programming/goa/goa-power/dist/ts/packages-goaman/module-prototype/src/commandExec.js new_chrome",
+          ],
+        ]
+      - [
+          ["@l14"],
+          [
+            ">/usr/local/bin/node /Users/goaman/projects/self/programming/goa/goa-power/dist/ts/packages-goaman/module-prototype/src/commandExec.js window_focus_discord",
+          ],
+        ]
+      - [["@l24"], [">/Applications/CopyQ.app/Contents/MacOS/CopyQ toggle "]]
 
   f_keys:
     keymap:
-      - [['@l31'], ['f1']]
-      - [['@l32'], ['f2']]
-      - [['@l33'], ['f3']]
+      - [["@l31"], ["f1"]]
+      - [["@l32"], ["f2"]]
+      - [["@l33"], ["f3"]]
 
-      - [['@l21'], ['f4']]
-      - [['@l22'], ['f5']]
-      - [['@l23'], ['f6']]
+      - [["@l21"], ["f4"]]
+      - [["@l22"], ["f5"]]
+      - [["@l23"], ["f6"]]
 
-      - [['@l11'], ['f7']]
-      - [['@l12'], ['f8']]
-      - [['@l13'], ['f9']]
+      - [["@l11"], ["f7"]]
+      - [["@l12"], ["f8"]]
+      - [["@l13"], ["f9"]]
 
-      - [['@l34'], ['f10']]
-      - [['@l24'], ['f11']]
-      - [['@l14'], ['f12']]
-
+      - [["@l34"], ["f10"]]
+      - [["@l24"], ["f11"]]
+      - [["@l14"], ["f12"]]
 
   edit:
     keymap:
-      - [['@l13'], [{key: "@r13", modifiers: [left_command]}]] # command c
-      - [['@l14'], [{key: "@r34", modifiers: [left_command]}]] # command v
+      - [["@l13"], [{ key: "@r13", modifiers: [left_command] }]] # command c
+      - [["@l14"], [{ key: "@r34", modifiers: [left_command] }]] # command v
 
   left_as_right:
     keymap:
-      - [['@l11'], ['@r11']]
-      - [['@l12'], ['@r12']]
-      - [['@l13'], ['@r13']]
-      - [['@l14'], ['@r14']]
-      - [['@l15'], ['@r15']]
+      - [["@l11"], ["@r11"]]
+      - [["@l12"], ["@r12"]]
+      - [["@l13"], ["@r13"]]
+      - [["@l14"], ["@r14"]]
+      - [["@l15"], ["@r15"]]
 
-      - [['@l21'], ['@r21']]
-      - [['@l22'], ['@r22']]
-      - [['@l23'], ['@r23']]
-      - [['@l24'], ['@r24']]
-      - [['@l25'], ['@r25']]
+      - [["@l21"], ["@r21"]]
+      - [["@l22"], ["@r22"]]
+      - [["@l23"], ["@r23"]]
+      - [["@l24"], ["@r24"]]
+      - [["@l25"], ["@r25"]]
 
-      - [['@l31'], ['@r31']]
-      - [['@l32'], ['@r32']]
-      - [['@l33'], ['@r33']]
-      - [['@l34'], ['@r34']]
-      - [['@l35'], ['@r35']]
+      - [["@l31"], ["@r31"]]
+      - [["@l32"], ["@r32"]]
+      - [["@l33"], ["@r33"]]
+      - [["@l34"], ["@r34"]]
+      - [["@l35"], ["@r35"]]
 
   numpad_left:
     keymap:
-      - [['@l31'], ['1']]
-      - [['@l32'], ['2']]
-      - [['@l33'], ['3']]
+      - [["@l31"], ["1"]]
+      - [["@l32"], ["2"]]
+      - [["@l33"], ["3"]]
 
-      - [['@l21'], ['4']]
-      - [['@l22'], ['5']]
-      - [['@l23'], ['6']]
+      - [["@l21"], ["4"]]
+      - [["@l22"], ["5"]]
+      - [["@l23"], ["6"]]
 
-      - [['@l11'], ['7']]
-      - [['@l12'], ['8']]
-      - [['@l13'], ['9']]
+      - [["@l11"], ["7"]]
+      - [["@l12"], ["8"]]
+      - [["@l13"], ["9"]]
 
-      - [['@l24'], ['0']]
+      - [["@l24"], ["0"]]
 
   navigation_and_general_mode:
     keymap:
-      - [['@l11'], ['home']]
-      - [['@l13'], ['page_up']]
-      - [['@l12'], ['page_down']]
-      - [['@l14'], ['end']]
+      - [["@l11"], ["home"]]
+      - [["@l13"], ["page_up"]]
+      - [["@l12"], ["page_down"]]
+      - [["@l14"], ["end"]]
 
-      - [['@l21'], ['left_arrow']]
-      - [['@l22'], ['down_arrow']]
-      - [['@l23'], ['up_arrow']]
-      - [['@l24'], ['right_arrow']]
-      - [['@l25'], ['tab']]
+      - [["@l21"], ["left_arrow"]]
+      - [["@l22"], ["down_arrow"]]
+      - [["@l23"], ["up_arrow"]]
+      - [["@l24"], ["right_arrow"]]
+      - [["@l25"], ["tab"]]
 
-      - [['@l31'], ['escape']]
-      - [['@l32'], ['delete_or_backspace']]
-      - [['@l33'], ['return_or_enter']]
-      - [['@l34'], ['delete_forward']]
+      - [["@l31"], ["escape"]]
+      - [["@l32"], ["delete_or_backspace"]]
+      - [["@l33"], ["return_or_enter"]]
+      - [["@l34"], ["delete_forward"]]
 
   special_chars:
     keymap:
@@ -277,65 +337,152 @@ layers:
 
       # - [['@l11'], [{key: "@o12", modifiers: []}]] # ?
       #- [['@l11'], ["@o12"]] # ?
-      - [['@l11'], [{key: "@o11", modifiers: ['left_shift']}]] # ?
+      - [["@l11"], [{ key: "@o11", modifiers: ["left_shift"] }]] # ?
       # - [['@l11'], [{key: "@", modifiers: ['left_shift']}]]
       # - [['@l1'], ['@']]
-      - [['@l12'], ['grave_accent_and_tilde']] # `
-      - [['@l13'], ["@o21"]] # -
-      - [['@l14'], [{key: "@o12", modifiers: ['left_shift']}]] # +
-      - [['@l15'], ["@o12"]] # =
+      - [["@l12"], ["grave_accent_and_tilde"]] # `
+      - [["@l13"], ["@o21"]] # -
+      - [["@l14"], [{ key: "@o12", modifiers: ["left_shift"] }]] # +
+      - [["@l15"], ["@o12"]] # =
 
-      - [['@l21'], ["@o22"]] # \
-      - [['@l22'], ["@o11"]] # /
-      - [['@l23'], [{key: "@m9", modifiers: ['left_shift']}]] # (
-      - [['@l24'], [{key: "@m10", modifiers: ['left_shift']}]] # )
-      - [['@l25'], [{key: "@o22", modifiers: ['left_shift']}]] # |
+      - [["@l21"], ["@o22"]] # \
+      - [["@l22"], ["@o11"]] # /
+      - [["@l23"], [{ key: "@m9", modifiers: ["left_shift"] }]] # (
+      - [["@l24"], [{ key: "@m10", modifiers: ["left_shift"] }]] # )
+      - [["@l25"], [{ key: "@o22", modifiers: ["left_shift"] }]] # |
 
-      - [['@l31'], [{key: "@m11", modifiers: []}]] # [
-      - [['@l32'], [{key: "@m12", modifiers: []}]] # ]
-      - [['@l33'], [{key: "@m11", modifiers: [left_shift]}]] # {
-      - [['@l34'], [{key: "@m12", modifiers: [left_shift]}]] # }
-      - [['@l35'], [{key: "@o21", modifiers: [left_shift]}]] # _
+      - [["@l31"], [{ key: "@m11", modifiers: [] }]] # [
+      - [["@l32"], [{ key: "@m12", modifiers: [] }]] # ]
+      - [["@l33"], [{ key: "@m11", modifiers: [left_shift] }]] # {
+      - [["@l34"], [{ key: "@m12", modifiers: [left_shift] }]] # }
+      - [["@l35"], [{ key: "@o21", modifiers: [left_shift] }]] # _
 
   special_chars2:
     keymap:
-      - [['@l11'], ['>sendkeys -c aaaaaa --delay 0']] # ?
+      - [["@l11"], [">sendkeys -c aaaaaa --delay 0"]] # ?
       # - [['@l11'], ['>open -a "/Applications/Alfred 5.app/"']] # ?
       # - [['@l11'], ['>osascript -e 'tell application "System Events" to keystroke "?"'']] # ?
       # - [['@l11'], ['>osascript -e ''tell application "System Events" to keystroke "?"''']] # ?
 
-      - [['@l11'], ['>osascript -e ''tell application "System Events" to keystroke "?"''']] # ?
-      - [['@l12'], ['>osascript -e ''tell application "System Events" to keystroke "`"''']] # `
-      - [['@l13'], ['>osascript -e ''tell application "System Events" to keystroke "-"''']] # +
-      - [['@l14'], ['>osascript -e ''tell application "System Events" to keystroke "+"''']] # -
-      - [['@l15'], ['>osascript -e ''tell application "System Events" to keystroke "="''']] # =
+      - [
+          ["@l11"],
+          [
+            '>osascript -e ''tell application "System Events" to keystroke "?"''',
+          ],
+        ] # ?
+      - [
+          ["@l12"],
+          [
+            '>osascript -e ''tell application "System Events" to keystroke "`"''',
+          ],
+        ] # `
+      - [
+          ["@l13"],
+          [
+            '>osascript -e ''tell application "System Events" to keystroke "-"''',
+          ],
+        ] # +
+      - [
+          ["@l14"],
+          [
+            '>osascript -e ''tell application "System Events" to keystroke "+"''',
+          ],
+        ] # -
+      - [
+          ["@l15"],
+          [
+            '>osascript -e ''tell application "System Events" to keystroke "="''',
+          ],
+        ] # =
 
-      - [['@l21'], ['>osascript -e ''tell application "System Events" to keystroke "\"''']] # \
-      - [['@l22'], ['>osascript -e ''tell application "System Events" to keystroke "/"''']] # /
-      - [['@l23'], ['>osascript -e ''tell application "System Events" to keystroke "("''']] # (
-      - [['@l24'], ['>osascript -e ''tell application "System Events" to keystroke ")"''']] # )
-      - [['@l25'], ['>osascript -e ''tell application "System Events" to keystroke "|"''']] # |
+      - [
+          ["@l21"],
+          [
+            '>osascript -e ''tell application "System Events" to keystroke "\"''',
+          ],
+        ] # \
+      - [
+          ["@l22"],
+          [
+            '>osascript -e ''tell application "System Events" to keystroke "/"''',
+          ],
+        ] # /
+      - [
+          ["@l23"],
+          [
+            '>osascript -e ''tell application "System Events" to keystroke "("''',
+          ],
+        ] # (
+      - [
+          ["@l24"],
+          [
+            '>osascript -e ''tell application "System Events" to keystroke ")"''',
+          ],
+        ] # )
+      - [
+          ["@l25"],
+          [
+            '>osascript -e ''tell application "System Events" to keystroke "|"''',
+          ],
+        ] # |
 
-      - [['@l31'], ['>osascript -e ''tell application "System Events" to keystroke "["''']] # [
-      - [['@l32'], ['>osascript -e ''tell application "System Events" to keystroke "]"''']] # ]
-      - [['@l33'], ['>osascript -e ''tell application "System Events" to keystroke "{"''']] # {
-      - [['@l34'], ['>osascript -e ''tell application "System Events" to keystroke "}"''']] # }
-      - [['@l35'], ['>osascript -e ''tell application "System Events" to keystroke "_"''']] # _
+      - [
+          ["@l31"],
+          [
+            '>osascript -e ''tell application "System Events" to keystroke "["''',
+          ],
+        ] # [
+      - [
+          ["@l32"],
+          [
+            '>osascript -e ''tell application "System Events" to keystroke "]"''',
+          ],
+        ] # ]
+      - [
+          ["@l33"],
+          [
+            '>osascript -e ''tell application "System Events" to keystroke "{"''',
+          ],
+        ] # {
+      - [
+          ["@l34"],
+          [
+            '>osascript -e ''tell application "System Events" to keystroke "}"''',
+          ],
+        ] # }
+      - [
+          ["@l35"],
+          [
+            '>osascript -e ''tell application "System Events" to keystroke "_"''',
+          ],
+        ] # _
 
   accents:
     keymap:
-      - [['@l11'], [{key: "grave_accent_and_tilde", modifiers: ['left_option']}, 'f']] # ù
-      - [['@l12'], [{key: "@l25", modifiers: ['left_option']}, 'f']] # û
-      - [['@l13'], [{key: "@l24", modifiers: ['left_option']}, 'f']] # ü
-      - [['@l14'], [{key: "grave_accent_and_tilde", modifiers: ['left_option']}, 'a']] # à
-      - [['@l15'], [{key: "@l25", modifiers: ['left_option']}, 'a']] # â
+      - [
+          ["@l11"],
+          [{ key: "grave_accent_and_tilde", modifiers: ["left_option"] }, "f"],
+        ] # ù
+      - [["@l12"], [{ key: "@l25", modifiers: ["left_option"] }, "f"]] # û
+      - [["@l13"], [{ key: "@l24", modifiers: ["left_option"] }, "f"]] # ü
+      - [
+          ["@l14"],
+          [{ key: "grave_accent_and_tilde", modifiers: ["left_option"] }, "a"],
+        ] # à
+      - [["@l15"], [{ key: "@l25", modifiers: ["left_option"] }, "a"]] # â
 
-      - [['@l21'], [{key: "@l23", modifiers: ['left_option']}, 'd']] # é
+      - [["@l21"], [{ key: "@l23", modifiers: ["left_option"] }, "d"]] # é
       # - [['@l22'], [{key: "grave_accent_and_tilde", modifiers: ['left_shift']}]] # ~
-      - [['@l22'], [{key: "grave_accent_and_tilde", modifiers: ['left_option']}, 'd']] # è
-      - [['@l23'], [{key: "@l25", modifiers: ['left_option']}, 'd']] # ê
-      - [['@l24'], [{key: "@l24", modifiers: ['left_option']}, 'd']] # ë
-      - [['@l25'], [{key: "2", modifiers: ['left_option', 'left_shift']}]] # €
+      - [
+          ["@l22"],
+          [{ key: "grave_accent_and_tilde", modifiers: ["left_option"] }, "d"],
+        ] # è
+      - [["@l23"], [{ key: "@l25", modifiers: ["left_option"] }, "d"]] # ê
+      - [["@l24"], [{ key: "@l24", modifiers: ["left_option"] }, "d"]] # ë
+      - [["@l25"], [{ key: "2", modifiers: ["left_option", "left_shift"] }]] # €
 
-      - [['@l31'], [{key: "grave_accent_and_tilde", modifiers: ['left_shift']}]] # ~
+      - [
+          ["@l31"],
+          [{ key: "grave_accent_and_tilde", modifiers: ["left_shift"] }],
+        ] # ~
 

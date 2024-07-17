@@ -752,7 +752,8 @@ end
 
 abbr goner cd ~/goamanc/interbin/node
 abbr sshgoa ssh -t root@167.86.75.203
-abbr sshpower ssh -t root@167.86.75.203 "'cd /root/goapower; bash'"
+abbr sshpower ssh -t root@167.86.75.203 'cd /root/goa-power; fish'
+abbr sp "ssh -t root@167.86.75.203 'cd /root/goa-power; fish'"
 
 abbr grepe grep -E
 abbr ins 'cd "$HOME/Downloads/Beachbody Insanity/"; xdg-open .'
@@ -858,7 +859,7 @@ end
 abbr gri 'git rebase -i (odooBranchVersion)'
 abbr gra 'git rebase --abort'
 abbr gri10 'git rebase -i HEAD~10'
-abbr gat 'git add .; git commit -m "temp"'
+abbr gat 'git add .; git commit -m "temp" --no-verify'
 abbr gcp 'git cherry-pick'
 abbr gcpd "git log --pretty=oneline --decorate=no master..master-debug-nby | fzf --bind 'enter:execute(git cherry-pick {1})'"
 
@@ -888,6 +889,11 @@ abbr yi 'yarn install'
 
 abbr gpf 'git push origin HEAD -f'
 abbr gpfo 'git push odoo-dev HEAD -f'
+abbr gpfo1 'git push odoo-dev HEAD:master-phoenix-1-nby -f'
+abbr gpfo2 'git push odoo-dev HEAD:master-phoenix-2-nby -f'
+abbr gpfo3 'git push odoo-dev HEAD:master-phoenix-3-nby -f'
+abbr gpfo4 'git push odoo-dev HEAD:master-phoenix-4-nby -f'
+abbr gpfo5 'git push odoo-dev HEAD:master-phoenix-5-nby -f'
 
 function noh
   /usr/bin/nohup $argv >/dev/null 2>/dev/null
@@ -1303,7 +1309,7 @@ abbr rmw remove_warn
 # function goa
 #   set path pwd
 #   cd /home/goaman/projects/self/programming/goa/goapower
-#   node -r source-map-support/register /home/goaman/projects/self/programming/goa/goapower/packages/goapower-build-cli/dist/ts/goapower-build-cli/src/cli.js $argv
+#   node -r source-map-support/register /home/goaman/projects/self/programming/goa/goapower/packages/goapower-core-cli/dist/ts/goapower-core-cli/src/cli.js $argv
 #   cd $pwd
 # end
 
@@ -1345,8 +1351,8 @@ abbr o open
 #   for p in (ps aux |grep node | grep power | grep electron | grep app.js | awk '{print $2}'); kill -9 $p; end
 # end
 # function start_goabar
-#   # bash -c "node --cpu-prof --heap-prof  /home/goaman/projects/self/programming/goa/goapower/node_modules/.bin/electron --enable-transparent-visuals --disable-gpu /home/goaman/projects/self/programming/goa/goapower/packages/goapower-build-electron/dist/app.js $argv &"
-#   bash -c "node /home/goaman/projects/self/programming/goa/goapower/node_modules/.bin/electron --enable-transparent-visuals --disable-gpu /home/goaman/projects/self/programming/goa/goapower/packages/goapower-build-electron/dist/app.js $argv &"
+#   # bash -c "node --cpu-prof --heap-prof  /home/goaman/projects/self/programming/goa/goapower/node_modules/.bin/electron --enable-transparent-visuals --disable-gpu /home/goaman/projects/self/programming/goa/goapower/packages/goapower-core-electron/dist/app.js $argv &"
+#   bash -c "node /home/goaman/projects/self/programming/goa/goapower/node_modules/.bin/electron --enable-transparent-visuals --disable-gpu /home/goaman/projects/self/programming/goa/goapower/packages/goapower-core-electron/dist/app.js $argv &"
 # end
 # function restart_goabar
 #   kill_goabar
@@ -1443,3 +1449,12 @@ end
 abbr opf odoo_push_force
 
 abbr ra rush add -p
+
+
+abbr gcn "git checkout master-phoenix-nby"
+# rebase phoenix
+abbr rp "odo_fetch_reset_dev master-phoenix; git rebase master-phoenix -i"
+# abbr rb "git rebase master-phoenix -i"
+abbr rb "git rebase -i (odooBranchVersion)"
+abbr gcpn git checkout -b master-phoenix--nby
+abbr h "set out (history | fzf --no-sort | tr -d '\n'); if test -n \"\$out\"; echo \$out | tr -d '\n' | pbcopy; end"
