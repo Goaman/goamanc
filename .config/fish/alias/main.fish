@@ -1453,8 +1453,8 @@ abbr ra rush add -p
 
 abbr gcn "git checkout master-phoenix-nby"
 # rebase phoenix
-abbr rp "odo_fetch_reset_dev master-phoenix; git rebase master-phoenix -i"
-# abbr rb "git rebase master-phoenix -i"
-abbr rb "git rebase -i (odooBranchVersion)"
+abbr rp "odo_fetch_reset_dev master-phoenix-massmailing; git rebase master-phoenix-massmailing -i"
+abbr rb "git rebase master-phoenix-massmailing -i"
+# abbr rb "git rebase -i (odooBranchVersion)"
 abbr gcpn git checkout -b master-phoenix--nby
 abbr h "set out (history | fzf --no-sort | tr -d '\n'); if test -n \"\$out\"; echo \$out | tr -d '\n' | pbcopy; end"

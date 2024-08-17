@@ -1,0 +1,9 @@
+{
+	"dependencies": {
+		"@types/puppeteer": "^7.0.4",
+		"@types/puppeteer-core": "^7.0.4",
+		"mkdirp": "^3.0.1",
+		"puppeteer": "^22.13.1",
+		"puppeteer-core": "^22.13.1"
+	}
+}

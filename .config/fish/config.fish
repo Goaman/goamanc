@@ -23,6 +23,8 @@ source $HOME/.config/fish/alias/main.fish
 source $HOME/.config/fish/alias/odoo.fish
 
 set -x PATH $PATH $HOME/.fzf/bin/
+set -x FZF_DEFAULT_OPTS "--sort"
+# set -x FZF_DEFAULT_OPTS "--no-sort"
 
 ####################################################
 # Node: n / nvm
@@ -63,7 +65,8 @@ set -x PATH $PATH ~/.local/bin
 set -x PATH $PATH ~/bin
 # set -x PATH $PATH ~/projects/self/programming/js_scripts/bin/
 # set -x PATH $PATH ~/projects/self/programming/goa/goa-power/dist/bin
-set -x PATH $PATH ~/projects/self/programming/goa/goa-power-worktree/master-before-refactor/dist/bin
+set -x PATH $PATH ~/projects/self/programming/goa/goa-power/dist/bin
+# set -x PATH $PATH ~/projects/self/programming/goa/goa-power-worktree/master-before-refactor/dist/bin
 # set -x PATH $PATH "/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin"
 set -x PATH $PATH "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 # fish_add_path -aP "/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin"
@@ -97,8 +100,14 @@ set -x _JAVA_AWT_WM_NONREPARENTING 1
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 eval /Users/goaman/opt/miniconda3/bin/conda "shell.fish" "hook" $argv | source
-conda activate x2
+conda activate x3
 # <<< conda initialize <<<
+
+# iTerm2 shell integration
+# See https://iterm2.com/documentation-shell-integration.html
+# Requirement:
+# curl -L https://iterm2.com/shell_integration/fish -o ~/.iterm2_shell_integration.fish
+source ~/.iterm2_shell_integration.fish
 
 # pnpm
 set -gx PNPM_HOME "/Users/goaman/Library/pnpm"
