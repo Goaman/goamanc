@@ -126,6 +126,8 @@ layers:
       - [["@m10"], ["#navigation_and_general_mode"]]
       - [["@m11"], ["#numpad_left"]]
 
+      - [["backslash"], ["#window_management"]]
+      - [["equal_sign"], ["#window_management_move_window"]]
       # - [['@m12'], ['']]\
 
       - [["@o11"], ["#special_chars"]]
