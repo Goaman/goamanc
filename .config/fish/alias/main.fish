@@ -861,6 +861,8 @@ abbr gra 'git rebase --abort'
 abbr gri10 'git rebase -i HEAD~10'
 abbr gat 'git add .; git commit -m "temp" --no-verify'
 abbr gcp 'git cherry-pick'
+abbr gcpc 'git cherry-pick --continue'
+abbr gcpi 'git cherry-pick --ignore'
 abbr gcpd "git log --pretty=oneline --decorate=no master..master-debug-nby | fzf --bind 'enter:execute(git cherry-pick {1})'"
 
 abbr gatp 'git add .; git commit -m "temp"; git push origin HEAD -f;'
@@ -889,11 +891,17 @@ abbr yi 'yarn install'
 
 abbr gpf 'git push origin HEAD -f'
 abbr gpfo 'git push odoo-dev HEAD -f'
-abbr gpfo1 'git push odoo-dev HEAD:master-phoenix-1-nby -f'
-abbr gpfo2 'git push odoo-dev HEAD:master-phoenix-2-nby -f'
-abbr gpfo3 'git push odoo-dev HEAD:master-phoenix-3-nby -f'
-abbr gpfo4 'git push odoo-dev HEAD:master-phoenix-4-nby -f'
-abbr gpfo5 'git push odoo-dev HEAD:master-phoenix-5-nby -f'
+# abbr gpfo1 'git push odoo-dev HEAD:master-phoenix-1-nby -f'
+# abbr gpfo2 'git push odoo-dev HEAD:master-phoenix-2-nby -f'
+# abbr gpfo3 'git push odoo-dev HEAD:master-phoenix-3-nby -f'
+# abbr gpfo4 'git push odoo-dev HEAD:master-phoenix-4-nby -f'
+# abbr gpfo5 'git push odoo-dev HEAD:master-phoenix-5-nby -f'
+abbr gpfo1 'git push odoo-dev HEAD:master-mysterious-egg-1-nby -f'
+abbr gpfo2 'git push odoo-dev HEAD:master-mysterious-egg-2-nby -f'
+abbr gpfo3 'git push odoo-dev HEAD:master-mysterious-egg-3-nby -f'
+abbr gpfo4 'git push odoo-dev HEAD:master-mysterious-egg-4-nby -f'
+abbr gpfo5 'git push odoo-dev HEAD:master-mysterious-egg-5-nby -f'
+abbr grih 'git rebase -i master-mysterious-egg'
 
 function noh
   /usr/bin/nohup $argv >/dev/null 2>/dev/null

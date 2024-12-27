@@ -109,21 +109,24 @@ aliases:
 layers:
   main:
     keymap:
-      - [[grave_accent_and_tilde], [left_option]]
+      - [[grave_accent_and_tilde], [left_option], {unlessApp: ['^com\.atomixproductions\.virtualdj$']}]
+      - [["@m0"], [left_control], {unlessApp: ['^com\.atomixproductions\.virtualdj$']}]
 
-      - [["@m0"], [left_control]]
+      - [[grave_accent_and_tilde], [left_shift], {ifApp: ['^com\.atomixproductions\.virtualdj$']}]
+      - [["@m0"], [left_shift], {ifApp: ['^com\.atomixproductions\.virtualdj$']}]
+
       # - [['@m1'], [left_control]]
-      - [["@m1"], ["#edit"]]
-      - [["@m2"], [left_shift]]
+      - [["@m1"], ["#edit"], {unlessApp: ['^com\.atomixproductions\.virtualdj$']}]
+      - [["@m2"], [left_shift], {unlessApp: ['^com\.atomixproductions\.virtualdj$']}]
       # - [['@m3'], ['']]
       # - [['@m4'], ['']]
       # - [['@m5'], ['']]
       # - [['@m6'], ['']]
       # - [['@m7'], ['']]
 
-      - [["@m8"], ["right_shift"]]
-      - [["@m9"], ["left_option"]]
-      - [["@m10"], ["#navigation_and_general_mode"]]
+      - [["@m8"], ["right_shift"], {unlessApp: ['^com\.atomixproductions\.virtualdj$']}]
+      - [["@m9"], ["left_option"], {unlessApp: ['^com\.atomixproductions\.virtualdj$']}]
+      - [["@m10"], ["#navigation_and_general_mode"], {unlessApp: ['^com\.atomixproductions\.virtualdj$']}]
       - [["@m11"], ["#numpad_left"]]
 
       - [["backslash"], ["#window_management"]]
@@ -215,8 +218,9 @@ layers:
       - [["f10"], ["#window_management_move_window"]]
 
       - [["f11"], ["#window_management"]]
-      - [["f12"], [{ pointing_button: "button2" }]]
-      - [["f13"], [{ pointing_button: "button3" }]]
+      - [["f12"], [{ pointing_button: "button3" }]]
+      # - [["f13"], [{ pointing_button: "button3" }]]
+      - [["f13"], [{ pointing_button: "button2" }]]
       - [["f14"], [""]]
       - [["f15"], ["#left_as_right"]]
       # - [["f15"], [{ pointing_button: "button2" }]]
@@ -665,6 +669,7 @@ variables:
       country_code: 0
       indicate_sticky_modifier_keys_state: true
       mouse_key_xy_scale: 100
+      keyboard_type_v2: "ansi"
 
 karabiner_base_config:
   global:
