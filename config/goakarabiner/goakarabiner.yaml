@@ -15,6 +15,8 @@ profiles:
         layer_id: main
       - _extends: devices.naga_pro_keyboard
         layer_id: razer_mouse
+      - _extends: devices.naga_pro
+        layer_id: razer_mouse
   - name: Zombs
     base_config:
       _extends: variables.base_config
@@ -45,6 +47,11 @@ devices:
     name: Naga Pro Keyboard
     vendor_id: 5426
     product_id: 143
+  naga_pro:
+    name: Naga Pro
+    vendor_id: 5426
+    product_id: 146
+
 
 
 aliases:
@@ -275,6 +282,7 @@ layers:
             ">/usr/local/bin/node /Users/goaman/projects/self/programming/goa/goa-power/dist/ts/packages-goaman/module-prototype/src/commandExec.js window_focus_discord",
           ],
         ]
+      - [["@l21"], [">/opt/homebrew/bin/node /Users/goaman/projects/self/programming/goa/goa-power/dist/ts/packages-goaman/module-prototype/src/commandExec.js spotify_play_random"]]
       - [["@l24"], [">/Applications/CopyQ.app/Contents/MacOS/CopyQ toggle "]]
 
   f_keys:
