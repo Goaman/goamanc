@@ -34,6 +34,7 @@ function nvm
 end
 set -x PATH $HOME/.nvm/versions/node/v16.13.2/bin $PATH
 # nvm use default 1>/dev/null
+nvm use v22.8.0 1>/dev/null
 
 ####################################################
 # Conda

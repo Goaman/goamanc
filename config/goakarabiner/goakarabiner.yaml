@@ -232,6 +232,31 @@ layers:
       - [["f15"], ["#left_as_right"]]
       # - [["f15"], [{ pointing_button: "button2" }]]
 
+
+      - [["1"], ["left_control"]]
+      - [["2"], ["right_shift"]]
+      - [["3"], ["#navigation_and_general_mode"]]
+
+      - [["4"], ["#accents"]]
+      - [["5"], ["#numpad_left"]]
+      - [["6"], ["#special_chars"]]
+
+      - [["7"], ["#f_keys"]]
+      - [["8"], ["#window_management"]]
+      - [["9"], ["#app_util"]]
+
+      - [["0"], ["#window_management_move_window"]]
+
+      - [["hyphen"], ["#window_management"]]
+      - [["equal_sign"], [{ pointing_button: "button3" }]]
+      # - [["f13"], [{ pointing_button: "button3" }]]
+      - [["f13"], [{ pointing_button: "button2" }]]
+      - [["f14"], [""]]
+      - [["button2"], ["#left_as_right"]]
+      # - [["f15"], [{ pointing_button: "button2" }]]
+
+
+
   razer_mouse_game:
     keymap:
       - [["f1"], ["left_control"]]
@@ -257,7 +282,6 @@ layers:
 
   app_util:
     keymap:
-      # - [['@l23'], ['>/Applications/flameshot.app/Contents/MacOS/flameshot gui']]
       - [
           ["@l11"],
           [
@@ -284,6 +308,7 @@ layers:
         ]
       - [["@l21"], [">/opt/homebrew/bin/node /Users/goaman/projects/self/programming/goa/goa-power/dist/ts/packages-goaman/module-prototype/src/commandExec.js spotify_play_random"]]
       - [["@l24"], [">/Applications/CopyQ.app/Contents/MacOS/CopyQ toggle "]]
+      - [['@l31'], ['>/Applications/flameshot.app/Contents/MacOS/flameshot gui']]
 
   f_keys:
     keymap:
@@ -542,6 +567,8 @@ layers:
       - [["f14"], ["u"]]
       # - [["f15"], ["#left_as_right"]]
       - [["f15"], [{ pointing_button: "button2" }]]
+
+
 
 variables:
   base_config:
