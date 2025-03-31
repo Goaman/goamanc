@@ -363,9 +363,9 @@ abbr eod vim $HOME/projects/self/programming/odoo/odoo-click/odoo-click.py
 abbr odo 'goa odoo:'
 abbr owo 'goa odoo:workspace:open --branchName'
 
-abbr ofr odoo_worktree_fetch_reset
+abbr ofr 'goa odoo:worktree:fetch-reset'
 abbr ofr2 odo_fetch_reset
-abbr ofrd odoo_worktree_fetch_reset_dev
+abbr ofrd 'goa odoo:worktree:fetch-reset-dev'
 abbr ofrd2 odo_fetch_reset_dev
 
 function delete_invoices

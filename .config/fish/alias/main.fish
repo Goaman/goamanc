@@ -1393,7 +1393,7 @@ end
 
 function owod
   odir $argv[1]
-  owo $argv[1]
+  goa odoo:workspace:open --branchName $argv[1]
 end
 
 function maketemplate
