@@ -357,9 +357,11 @@ function pocpulle
 end
 
 abbr eod vim $HOME/projects/self/programming/odoo/odoo-click/odoo-click.py
-function odo
-  python $HOME/projects/self/programming/odoo/odoo-click/odoo-click.py $argv
-end
+# function odo
+#   python $HOME/projects/self/programming/odoo/odoo-click/odoo-click.py $argv
+# end
+abbr odo 'goa odoo:'
+abbr owo 'goa odoo:workspace:open --branchName'
 
 abbr ofr odoo_worktree_fetch_reset
 abbr ofr2 odo_fetch_reset
