@@ -69,7 +69,9 @@ set -x PATH $PATH ~/bin
 set -x PATH $PATH ~/projects/self/programming/goa/goa-power/dist/bin
 # set -x PATH $PATH ~/projects/self/programming/goa/goa-power-worktree/master-before-refactor/dist/bin
 # set -x PATH $PATH "/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin"
-set -x PATH $PATH "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+# set -x PATH $PATH "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+# set -x PATH $PATH "/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin"
+set -x PATH "/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin" $PATH
 # fish_add_path -aP "/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin"
 fish_add_path /opt/homebrew/opt/libxml2/bin
 set -gx LDFLAGS "-L/opt/homebrew/opt/libxml2/lib"
