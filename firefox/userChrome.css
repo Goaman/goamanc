@@ -13,58 +13,212 @@
   padding: 0 !important;
  }
 
- #tabbrowser-tabs, #tabbrowser-arrowscrollbox, #tabbrowser-tabs[positionpinnedtabs] > #tabbrowser-arrowscrollbox > .tabbrowser-tab[pinned] {
-  min-height: 10px !important;
-  --tab-min-height: 0px;
- }
-
- .tab-throbber-tabslist, .tab-throbber, .tab-icon-pending, .tab-icon-image, .tab-sharing-icon-overlay, .tab-icon-overlay {
-  height: 14px !important;
-  width:  14px !important;
+.tab-background {
+  margin: 0 !important;;
 }
 
-tabs {
-  height: 33px !important;
+--goa-tabs-height: 25px;
+
+#TabsToolbar-customization-target {
+  height: 25px !important;
 }
 
-toolbar {
-  /* min-width: 1px;
-  min-height: 16px;
-  appearance: auto;
-  -moz-default-appearance: toolbar; */
-  height: 30px !important;
+#tabbrowser-tabs {
+  min-height: 0 !important;
+  margin-inline-start: 0 !important;
+  margin: 0 !important;
 }
 
-#tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab[first-visible-unpinned-tab] {
-  margin-inline-start: 3px !important;
+#TabsToolbar-customization-target {
+  align-self: center;
 }
 
- /* Tab: selected colors */
-/* #tabbrowser-tabs .tabbrowser-tab[selected] .tab-content { background: linear-gradient(to bottom,#AAFFAA,#FFAAFF) !important; } */
-
-/* Tab: hovered colors */
-/* #tabbrowser-tabs .tabbrowser-tab:hover:not([selected]) .tab-content { background: linear-gradient(to bottom,#808080,#FFFFFF) !important; } */
 
 
 
+/* url bar */
 
-
-
-
-
-
-/**
- * Decrease size of the sidebar header
- */
-#sidebar-header {
-  font-size: 1.2em !important;
-  padding: 2px 6px 2px 3px !important;
+#urlbar {
+--urlbar-width: 854.00px;
+  --urlbar-height: 19px;
+  min-height: 0px !important;
 }
-#sidebar-header #sidebar-close {
+
+.toolbar-items {
+  height: 25px !important;
+}
+
+/* .tab-label-container{
+  height: 25px !important;;
+} */
+
+/* .tab-stack {
+  align-items: center;
+} */
+
+
+.menuitem-iconic, .bookmark-item {
+  height: 17px !important;
+  min-height: 0px !important;;
+}
+
+.menu-iconic-left {
+  margin-inline-end: 4px !important;
+}
+
+.menu-iconic-icon {
+  height: 13px !important;
+  width: 13px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+
+
+button,
+::file-selector-button,
+input:is([type=color], [type=reset], [type=button], [type=submit]) {
+  padding-inline: 0px !important;
+}
+
+.button-background {
+  border-radius: 0 !important;
+}
+
+
+.urlbar-icon,
+#identity-icon,
+#tracking-protection-icon,
+#tracking-protection-icon-box,
+#identity-box image,
+.urlbar-page-action {
+  height: 12px !important;
+  width:  12px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#urlbar-input {
+  font-size: 0.9em !important;;
+}
+
+toolbarbutton {
+  padding: 0 1px 0 0 !important;
+}
+
+.toolbarbutton-icon {
+  height: 17px !important;
+  width:  17px !important;
+  margin: 0 !important;;
+  margin-right: 0px !important;;
+  padding: 2px !important;;
+  
+}
+
+* {
+--urlbarView-favicon-width: 10px;
+}
+
+.urlbarView-row {
+  /*! height: 16px !important; */
+  min-height: 0 !important;
+  font-size: 0.8em !important;
+  line-height: 0.9em !important;
+/*   margin: 0 !important; */
+/*   background: red; */
+  border-radius: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+.urlbarView-type-icon{
+  width: 7.5px !important;;
+  height:  7.5px !important;;
+}
+
+.urlbarView-button {
+  height: 13px !important;;
+  width: 13px !important;;
+  min-height: 0 !important;
+  min-width: 0 !important;
+  background-size: 5px !important;;
+}
+
+.urlbarView-row-inner {
+  margin: 0 !important;
+  padding: 0 !important;;
+}
+
+#nav-bar {
+  height: 20px !important;
+}
+
+#sidebar-box {
+  padding: 0 !important;;
+  margin: 0 !important;;
+  border-right: none !important;;
+}
+
+#sidebar {
+  border-radius: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+
+.sidebar-panel {
+  border-radius: 0 !important;
   padding: 3px !important;
 }
-#sidebar-header #sidebar-close .toolbarbutton-icon {
-  width: 14px !important;
-  height: 14px !important;
-  opacity: 0.6 !important;
+
+.tab-icon-image {
+  width: 10px !important;
+  height: 10px !important;
 }
+
+.toolbarbutton-badge-stack {
+  padding: 1px !important;
+}
+
+
+fxview-tab-row-secondary-button,
+.button-background img{
+  width: 10px !important;
+  height: 10px !important;
+  min-height: 0px !important;
+  min-width: 0px !important;
+}
+/* * {
+  --button-size-icon: 13px;
+} */
+
+
+#fxview-tab-row-main {
+  padding: 0px 10px !important;
+}
+
+sidebar-tab-row {
+  border-radius: 0 !important;
+}
+
+#moz-card-details #content {
+  padding: 0 !important;
+}
+
+.moz-card summary, .fxview-tab-row-main {
+   margin: 0 !important;
+  padding: 0 !important;
+}
+sidebar-tab-row {
+  height: 20px !important;
+}
+
+.fxview-tab-row-favicon {
+  height: 10px !important;
+  width: 10px !important;
+  min-width: 0px !important;
+  min-height: 0px !important;
+}
+
+
+
