@@ -64,16 +64,11 @@ set -x SASS_LIBSASS_PATH "/usr/local/lib/libsass"
 set -x PATH $PATH ~/goamanc/bin/
 set -x PATH $PATH ~/.local/bin
 set -x PATH $PATH ~/bin
-# set -x PATH $PATH ~/projects/self/programming/js_scripts/bin/
-# set -x PATH $PATH ~/projects/self/programming/goa/goa-power/dist/bin
 set -x PATH $PATH ~/projects/self/programming/goa/goa-power/dist/bin
-# set -x PATH $PATH ~/projects/self/programming/goa/goa-power-worktree/master-before-refactor/dist/bin
-# set -x PATH $PATH "/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin"
-# set -x PATH $PATH "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-# set -x PATH $PATH "/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin"
-set -x PATH "/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin" $PATH
-# fish_add_path -aP "/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin"
-fish_add_path /opt/homebrew/opt/libxml2/bin
+# VSCode
+set -x PATH /Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/ $PATH
+# set -x PATH "/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin" $PATH
+
 set -gx LDFLAGS "-L/opt/homebrew/opt/libxml2/lib"
 set -gx CPPFLAGS "-I/opt/homebrew/opt/libxml2/include"
 

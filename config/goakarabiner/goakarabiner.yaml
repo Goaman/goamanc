@@ -248,10 +248,11 @@ layers:
       - [["0"], ["#window_management_move_window"]]
 
       - [["hyphen"], ["#window_management"]]
-      - [["equal_sign"], [{ pointing_button: "button3" }]]
+      # - [["equal_sign"], [{ pointing_button: "button2" }]]
+      - [["equal_sign"], ["#left_as_right"]]
       # - [["f13"], [{ pointing_button: "button3" }]]
       - [["f13"], [{ pointing_button: "button2" }]]
-      - [["f14"], [""]]
+      # - [["f14"], [""]]
       - [["button2"], ["#left_as_right"]]
       # - [["f15"], [{ pointing_button: "button2" }]]
 
