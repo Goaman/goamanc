@@ -361,6 +361,8 @@ abbr eod vim $HOME/projects/self/programming/odoo/odoo-click/odoo-click.py
 #   python $HOME/projects/self/programming/odoo/odoo-click/odoo-click.py $argv
 # end
 abbr odo 'goa odoo:'
+abbr ostart 'goa odoo:start'
+abbr oadd 'goa odoo:worktree:add'
 abbr owo 'goa odoo:workspace:open --branchName'
 
 abbr ofr 'goa odoo:worktree:fetch-reset'

@@ -859,7 +859,7 @@ end
 abbr gri 'git rebase -i (odooBranchVersion)'
 abbr gra 'git rebase --abort'
 abbr gri10 'git rebase -i HEAD~10'
-abbr gat 'git add .; git commit -m "temp" --no-verify'
+abbr gat 'git add .; git commit -m "[WIP] temp" --no-verify'
 abbr gcp 'git cherry-pick'
 abbr gcpc 'git cherry-pick --continue'
 abbr gcpi 'git cherry-pick --ignore'
@@ -1466,3 +1466,8 @@ abbr rb "git rebase master-phoenix-massmailing -i"
 # abbr rb "git rebase -i (odooBranchVersion)"
 abbr gcpn git checkout -b master-phoenix--nby
 abbr h "set out (history | fzf --no-sort | tr -d '\n'); if test -n \"\$out\"; echo \$out | tr -d '\n' | pbcopy; end"
+
+
+abbr rc "rsync -vzhPltgoDru --progress --info=progress2"
+
+abbr ci "python /Users/goaman/projects/self/programming/goa/goa-power/packages-goaman/goaman-main/clear_iterm2_buffers.py"

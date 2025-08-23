@@ -221,4 +221,19 @@ sidebar-tab-row {
 }
 
 
+.bookmark-item image[type="menu"] {
+  display: none !important;
+}
+
+/* Hide folder icons in the bookmarks toolbar */
+#PlacesToolbarItems .bookmark-item[container="true"] .toolbarbutton-icon {
+  display: none !important;
+}
+
+/* Hide folder icons in the bookmarks menu/sidebar (optional, but good for consistency) */
+#bookmarks-menu-button menuitem[container="true"] .menu-icon,
+#sidebar-places-tree .folder[container="true"] .icon {
+  display: none !important;
+}
+
 
