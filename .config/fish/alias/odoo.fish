@@ -362,6 +362,7 @@ abbr eod vim $HOME/projects/self/programming/odoo/odoo-click/odoo-click.py
 # end
 abbr odo 'goa odoo:'
 abbr ostart 'goa odoo:start'
+abbr os 'goa odoo:start'
 abbr oadd 'goa odoo:worktree:add'
 abbr owo 'goa odoo:workspace:open --branchName'
 

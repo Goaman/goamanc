@@ -41,6 +41,7 @@ nvm use v23.10.0 1>/dev/null
 ####################################################
 # set -x PATH $HOME/anaconda3/bin $PATH
 # set -x PATH $HOME/anaconda3/envs/py365/bin $PATH
+set -gx PATH $HOME/opt/miniconda3/envs/x3/bin $PATH
 
 ####################################################
 # Yarn

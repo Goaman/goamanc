@@ -181,6 +181,7 @@ abbr db "yarn run dev-browser"
 #}
 abbr got "cd ~/projects/self/programming/test"
 abbr gogit "cd ~/projects/external/git-repos"
+abbr goowl "cd ~/projects/external/git-repos/owl"
 # Touchpad Down
 abbr td "synclient TouchpadOff=1"
 # Touchpad Up
@@ -860,6 +861,8 @@ abbr gri 'git rebase -i (odooBranchVersion)'
 abbr gra 'git rebase --abort'
 abbr gri10 'git rebase -i HEAD~10'
 abbr gat 'git add .; git commit -m "[WIP] temp" --no-verify'
+abbr gad 'git add .; git commit -m  "Last Sync: "(date "+%Y-%m-%d %H:%M")" (Mac)"'
+abbr nsync 'git add .; git commit -m  "Last Sync: "(date "+%Y-%m-%d %H:%M")" (Mac)"; git pull --rebase; git push'
 abbr gcp 'git cherry-pick'
 abbr gcpc 'git cherry-pick --continue'
 abbr gcpi 'git cherry-pick --ignore'
@@ -1471,3 +1474,5 @@ abbr h "set out (history | fzf --no-sort | tr -d '\n'); if test -n \"\$out\"; ec
 abbr rc "rsync -vzhPltgoDru --progress --info=progress2"
 
 abbr ci "python /Users/goaman/projects/self/programming/goa/goa-power/packages-goaman/goaman-main/clear_iterm2_buffers.py"
+
+abbr ggrep /opt/homebrew/bin/ggrep
