@@ -1,5 +1,8 @@
 #!/bin/fish
 
+# Source goapower-specific aliases and functions
+source ~/.config/fish/alias/goapower.fish
+
 abbr esa "vim ~/.config/fish/alias/main.fish;source ~/.config/fish/alias/main.fish"
 # source fish alia
 abbr sf "source ~/.config/fish/alias/main.fish"
@@ -156,16 +159,9 @@ abbr gosp "cd ~/projects/self/programming"
 abbr gopr "cd ~/projects/self/programming"
 abbr gob "cd ~/projects/self/programming/big"
 abbr gosc "cd $HOME/goamanc/scripts"
-abbr pogo "cd ~/projects/self/programming/goa/goa-power"
-abbr pocgo "cd ~/projects/self/programming/goa/goa-power-worktree/master-cursor"
-abbr gopo "cd ~/projects/self/programming/goa/goa-power"
-abbr gopoc "cd ~/projects/self/programming/goa/goa-power-worktree/master-cursor"
-abbr gopot "cd ~/projects/self/programming/goa/goa-power-worktree/master-rush"
-abbr gopog "cd ~/projects/self/programming/goa/goapower-goaman"
 abbr goev "cd ~/projects/self/programming/nevdev"
 abbr gotouch "cd ~/projects/self/programming/goa/goa-touch"
 abbr gor "cd ~/projects/self/rust/testrust"
-abbr gopo2 "cd ~/projects/self/goapower-worktree/master2"
 abbr gostoi "cd ~/projects/self/goastorage/public/img/original"
 abbr gol "cd ~/projects/self/programming/odoo/odoo-power"
 abbr si 'sudo snap install'
@@ -401,7 +397,6 @@ abbr ce 'e projects/self/goa-tap/src/evdev/evdevServer.py'
 abbr f 'fzf'
 abbr ef 'vim (fzf)'
 abbr cf 'code (fzf)'
-abbr goap 'goapower'
 #alias logsplit='$HOME/Downloads/log_split/build/log_split'
 abbr logsplit '$HOME/Downloads/old/prev/log_split/build/log_split'
 
@@ -756,8 +751,6 @@ end
 
 abbr goner cd ~/goamanc/interbin/node
 abbr sshgoa ssh -t root@167.86.75.203
-abbr sshpower ssh -t root@167.86.75.203 'cd /root/goa-power; fish'
-abbr sp "ssh -t root@167.86.75.203 'cd /root/goa-power; fish'"
 
 abbr grepe grep -E
 abbr ins 'cd "$HOME/Downloads/Beachbody Insanity/"; xdg-open .'
@@ -818,29 +811,9 @@ abbr nd npm run dev
 
 
 abbr wa goa git:worktree-add
-abbr poa goa git-power:worktree-add
-abbr pol goa git-power:worktree-list
-abbr por goa git-power:worktree-remove
-abbr pocl goa git-power:worktree-list
-abbr pocr goa git-power:worktree-remove
-
-function po
-  echo "Goapower master aliases:"
-  echo "  pogo  - cd to goa-power"
-  echo "  poa  - worktree add <branch>"
-  echo "  pol   - worktree list"
-  echo "  por   - worktree remove <branch>"
-end
-
-function poc
-  echo "Goapower cursor aliases:"
-  echo "  pocgo - cd to master-cursor"
-  echo "  pocl  - worktree list"
-  echo "  pocr  - worktree remove <branch>"
-end
 
 function git-worktree-go
-  set path (goa git:worktree-go $argv[1] | tail -n1)
+  set path (goa git:worktree:getpath $argv[1] | tail -n1)
   if test -n "$path" && test -d "$path"
     cd $path
   end
@@ -965,7 +938,6 @@ function removeAllAg
 end
 
 abbr j "journalctl -o cat -f -u"
-abbr jpo "journalctl -o cat -f -u goapower"
 abbr ju "journalctl --user -o cat -f -u"
 function ggrep 
   git diff-index -U -G $argv HEAD
@@ -1428,48 +1400,12 @@ function head
 end
 
 
-function install_power_packages
-  set -l npm_packages assert buffer child_process cluster crypto dgram dns domain events fs http https net os path punycode querystring readline stream string_decoder timers tls tty url util v8 vm zlib
-  for package_path in /Users/goaman/projects/self/programming/goa/goa-power/packages/*
-    if test -d $package_path
-      echo == $package_path ==
-      cd $package_path
-      for lib in (ack '^import((?!\'\.).)*;' -h | grep -E "'[^']*';" -o | cut -c2- | rev | cut -c3- | rev | sort| uniq | grep -vE "^[^@].*/")
-        if not contains $lib $npm_packages
-          echo \$ rush add -p $lib
-          # rush add -p $lib
-        end
-      end
-
-      echo
-    end
-  end
-end
-
 # function movePackage
 #   set -l package_dir $argv[1]
 #   set -l package_name $argv[2]
 #   echo package_dir $package_dir
 #   echo package_name $package_name
 # end
-
-function foo
-  set -l goapower_dir /Users/goaman/projects/self/programming/goa/goa-power
-  for package_dir in packages packages-goaman
-    echo $package_dir:
-
-    set -l current_path $goapower_dir/$package_dir
-    for package_name in (ls $current_path)
-      set -l node_module_path $current_path/$package_name/node_modules
-      set -l to_path /Users/goaman/projects/self/programming/goa/goa-power/dist/ts/$package_dir/$package_name
-      if test -e $node_module_path && test -e $to_path
-        echo \$ ln -s $node_module_path $to_path/node_modules
-        # ln -s $node_module_path $to_path/node_modules
-      end
-    end
-    echo
-  end
-end
 
 abbr opf odoo_push_force
 
@@ -1487,6 +1423,5 @@ abbr h "set out (history | fzf --no-sort | tr -d '\n'); if test -n \"\$out\"; ec
 
 abbr rc "rsync -vzhPltgoDru --progress --info=progress2"
 
-abbr ci "python /Users/goaman/projects/self/programming/goa/goa-power/packages-goaman/goaman-main/clear_iterm2_buffers.py"
 
 abbr ggrep /opt/homebrew/bin/ggrep
