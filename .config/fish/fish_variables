@@ -290,7 +290,7 @@ SETUVAR fish_pager_color_selected_background:\x2d\x2dbackground\x3dbrblack
 SETUVAR fish_pager_color_selected_completion:\x1d
 SETUVAR fish_pager_color_selected_description:\x1d
 SETUVAR fish_pager_color_selected_prefix:\x1d
-SETUVAR fish_user_paths:/opt/homebrew/opt/postgresql\x4016/bin\x1e/opt/homebrew/opt/libxml2/bin\x1e/opt/homebrew/bin
+SETUVAR fish_user_paths:/Users/goaman/\x2eantigravity/antigravity/bin\x1e/opt/homebrew/opt/postgresql\x4016/bin\x1e/opt/homebrew/opt/libxml2/bin\x1e/opt/homebrew/bin
 SETUVAR fzf_fish_custom_keybindings:\x1d
 SETUVAR nvm_data:/home/goaman/\x2elocal/share/nvm
 SETUVAR nvm_mirror:https\x3a//nodejs\x2eorg/dist

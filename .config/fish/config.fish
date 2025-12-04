@@ -112,3 +112,6 @@ source ~/.iterm2_shell_integration.fish
 set -gx PNPM_HOME "/Users/goaman/Library/pnpm"
 set -gx PATH "$PNPM_HOME" $PATH
 # pnpm end
+
+# Added by Antigravity
+fish_add_path /Users/goaman/.antigravity/antigravity/bin

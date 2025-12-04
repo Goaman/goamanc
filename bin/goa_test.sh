@@ -8,7 +8,7 @@ peval () {
 
 server_ip="root@167.86.75.203"
 goapower_path="/Users/goaman/projects/self/programming/goa/goa-power"
-build_and_start_script="$goapower_path/packages-goaman/goapower-deployment/goapower_deploy.sh"
+build_and_start_script="$goapower_path/packages/goaman/goapower-deployment/goapower_deploy.sh"
 
 peval "rsync -vrazhP \
   --exclude node_modules/\

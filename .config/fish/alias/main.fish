@@ -157,6 +157,7 @@ abbr gopr "cd ~/projects/self/programming"
 abbr gob "cd ~/projects/self/programming/big"
 abbr gosc "cd $HOME/goamanc/scripts"
 abbr gopo "cd ~/projects/self/programming/goa/goa-power"
+abbr gopoc "cd ~/projects/self/programming/goa/goa-power-worktree/master-cursor"
 abbr gopot "cd ~/projects/self/programming/goa/goa-power-worktree/master-rush"
 abbr gopog "cd ~/projects/self/programming/goa/goapower-goaman"
 abbr goev "cd ~/projects/self/programming/nevdev"
@@ -214,7 +215,7 @@ function touchnow
 
   echo touch $folder/$date.md
   touch $folder/$date.md
-  code $folder/$date.md
+  cursor $folder/$date.md
 end
 abbr newday "touchnow ~/notes/days"
 abbr newtomorrow 'touchnow ~/notes/days/ --date="1 day"'
@@ -813,24 +814,19 @@ abbr sa 'ssh-add'
 
 abbr nd npm run dev
 
-function git-worktree-add
-  set branch $argv[1]
-  set worktree_dir (pwd)-worktree 
-  mkdirp worktree_dir
-  echo git worktree add $worktree_dir/$branch $branch
-  git worktree add $worktree_dir/$branch $branch
-end
-abbr gwa git-worktree-add
+
+abbr wa goa git:worktree-add
+abbr wapo goa git-power:worktree-add
+abbr wpl goa git-power:worktree-list
+abbr wpr goa git-power:worktree-remove
 
 function git-worktree-go
-  set git_dir (pwd | sed 's/-worktree.*//')
-  if test $argv[1]
-    cd $git_dir-worktree/$argv[1]
-  else
-    cd $git_dir
+  set path (goa git:worktree-go $argv[1] | tail -n1)
+  if test -n "$path" && test -d "$path"
+    cd $path
   end
 end
-abbr gwg git-worktree-go
+abbr wg git-worktree-go
 
 # function git-worktree-remove
 #   set branch $argv[1]

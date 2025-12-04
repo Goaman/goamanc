@@ -179,7 +179,7 @@ layers:
       - [
           ["@l21"],
           [
-            ">/usr/local/bin/node /Users/goaman/projects/self/programming/goa/goa-power/dist/ts/packages-goaman/module-prototype/src/commandExec.js yabai_switch_display",
+            ">/usr/local/bin/node /Users/goaman/projects/self/programming/goa/goa-power/dist/ts/packages/goaman/module-prototype/src/commandExec.js yabai_switch_display",
           ],
         ]
 
@@ -189,7 +189,7 @@ layers:
       - [
           ["@l31"],
           [
-            ">/usr/local/bin/node /Users/goaman/projects/self/programming/goa/goa-power/dist/ts/packages-goaman/module-prototype/src/commandExec.js new_terminal",
+            ">/usr/local/bin/node /Users/goaman/projects/self/programming/goa/goa-power/dist/ts/packages/goaman/module-prototype/src/commandExec.js new_terminal",
           ],
         ]
 
@@ -286,28 +286,28 @@ layers:
       - [
           ["@l11"],
           [
-            ">/usr/local/bin/node /Users/goaman/projects/self/programming/goa/goa-power/dist/ts/packages-goaman/module-prototype/src/commandExec.js new_terminal",
+            ">/usr/local/bin/node /Users/goaman/projects/self/programming/goa/goa-power/dist/ts/packages/goaman/module-prototype/src/commandExec.js new_terminal",
           ],
         ]
       - [
           ["@l12"],
           [
-            ">/usr/local/bin/node /Users/goaman/projects/self/programming/goa/goa-power/dist/ts/packages-goaman/module-prototype/src/commandExec.js new_firefox",
+            ">/usr/local/bin/node /Users/goaman/projects/self/programming/goa/goa-power/dist/ts/packages/goaman/module-prototype/src/commandExec.js new_firefox",
           ],
         ]
       - [
           ["@l13"],
           [
-            ">/usr/local/bin/node /Users/goaman/projects/self/programming/goa/goa-power/dist/ts/packages-goaman/module-prototype/src/commandExec.js new_chrome",
+            ">/usr/local/bin/node /Users/goaman/projects/self/programming/goa/goa-power/dist/ts/packages/goaman/module-prototype/src/commandExec.js new_chrome",
           ],
         ]
       - [
           ["@l14"],
           [
-            ">/usr/local/bin/node /Users/goaman/projects/self/programming/goa/goa-power/dist/ts/packages-goaman/module-prototype/src/commandExec.js window_focus_discord",
+            ">/usr/local/bin/node /Users/goaman/projects/self/programming/goa/goa-power/dist/ts/packages/goaman/module-prototype/src/commandExec.js window_focus_discord",
           ],
         ]
-      - [["@l21"], [">/opt/homebrew/bin/node /Users/goaman/projects/self/programming/goa/goa-power/dist/ts/packages-goaman/module-prototype/src/commandExec.js spotify_play_random"]]
+      - [["@l21"], [">/opt/homebrew/bin/node /Users/goaman/projects/self/programming/goa/goa-power/dist/ts/packages/goaman/module-prototype/src/commandExec.js spotify_play_random"]]
       - [["@l24"], [">/Applications/CopyQ.app/Contents/MacOS/CopyQ toggle "]]
       - [['@l31'], ['>/Applications/flameshot.app/Contents/MacOS/flameshot gui']]
 
