@@ -156,6 +156,8 @@ abbr gosp "cd ~/projects/self/programming"
 abbr gopr "cd ~/projects/self/programming"
 abbr gob "cd ~/projects/self/programming/big"
 abbr gosc "cd $HOME/goamanc/scripts"
+abbr pogo "cd ~/projects/self/programming/goa/goa-power"
+abbr pocgo "cd ~/projects/self/programming/goa/goa-power-worktree/master-cursor"
 abbr gopo "cd ~/projects/self/programming/goa/goa-power"
 abbr gopoc "cd ~/projects/self/programming/goa/goa-power-worktree/master-cursor"
 abbr gopot "cd ~/projects/self/programming/goa/goa-power-worktree/master-rush"
@@ -816,9 +818,26 @@ abbr nd npm run dev
 
 
 abbr wa goa git:worktree-add
-abbr wapo goa git-power:worktree-add
-abbr wpl goa git-power:worktree-list
-abbr wpr goa git-power:worktree-remove
+abbr poa goa git-power:worktree-add
+abbr pol goa git-power:worktree-list
+abbr por goa git-power:worktree-remove
+abbr pocl goa git-power:worktree-list
+abbr pocr goa git-power:worktree-remove
+
+function po
+  echo "Goapower master aliases:"
+  echo "  pogo  - cd to goa-power"
+  echo "  poa  - worktree add <branch>"
+  echo "  pol   - worktree list"
+  echo "  por   - worktree remove <branch>"
+end
+
+function poc
+  echo "Goapower cursor aliases:"
+  echo "  pocgo - cd to master-cursor"
+  echo "  pocl  - worktree list"
+  echo "  pocr  - worktree remove <branch>"
+end
 
 function git-worktree-go
   set path (goa git:worktree-go $argv[1] | tail -n1)
@@ -881,7 +900,6 @@ abbr gpu 'git push'
 
 abbr an "2>/dev/null"
 
-abbr pol polybar-git
 
 abbr ya 'yarn add'
 # Yarn add -D
