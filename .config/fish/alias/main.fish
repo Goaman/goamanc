@@ -1372,16 +1372,15 @@ abbr mime handlr
 abbr codeng code -n -g
 
 # odoo odoo dir
-function odir
-  if [ $argv[1] = 'master' ]
-    cd ~/odoo_root/main_repo/odoo
-  else
-    cd ~/odoo_root/workspaces/$argv[1]/odoo
+function ogo
+  set selected_path (goa odoo:worktree:select --branch $argv[1] 2>/dev/null | tail -n1)
+  if test -n "$selected_path" -a -d "$selected_path"
+    cd "$selected_path"
   end
 end
 
 function owod
-  odir $argv[1]
+  ogo $argv[1]
   goa odoo:workspace:open --branchName $argv[1]
 end
 

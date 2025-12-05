@@ -2,53 +2,24 @@
 
 # Goapower-specific aliases and functions
 
+# Shared helper function (if not already defined in main.fish)
+function _is_git_repo_dirty
+  set repo_path $argv[1]
+  if test -d "$repo_path"
+    set git_status (git -C "$repo_path" status --porcelain 2>/dev/null)
+    test -n "$git_status"
+  else
+    return 1
+  end
+end
+
 # Navigation aliases
 function pogo
-  if test (count $argv) -eq 0
-    # Find git root directory
-    set git_root (git -C ~/projects/self/programming/goa/goa-power rev-parse --show-toplevel 2>/dev/null)
-    if test -z "$git_root"
-      echo "Error: Not in a git repository"
-      return 1
-    end
-    
-    # Extract branch names from worktree list (handle [branch], (detached), or use basename)
-    set branches (git -C $git_root worktree list | while read -l line
-      set path (echo $line | cut -d' ' -f1)
-      if echo $line | grep -q '\['
-        echo $line | sed -E 's|.*\[([^]]+)\].*|\1|'
-      else if echo $line | grep -q '(detached'
-        echo $line | sed -E 's|.*\(detached HEAD at ([^)]+)\).*|\1|'
-      else
-        basename $path
-      end
-    end)
-    
-    set selected_branch (printf '%s\n' $branches | fzf --height=40% --border --exit-0)
-    
-    if test -n "$selected_branch"
-      # Find the path for the selected branch
-      set worktree_path (git -C $git_root worktree list | while read -l line
-        set path (echo $line | cut -d' ' -f1)
-        set branch ""
-        if echo $line | grep -q '\['
-          set branch (echo $line | sed -E 's|.*\[([^]]+)\].*|\1|')
-        else if echo $line | grep -q '(detached'
-          set branch (echo $line | sed -E 's|.*\(detached HEAD at ([^)]+)\).*|\1|')
-        else
-          set branch (basename $path)
-        end
-        if test "$branch" = "$selected_branch"
-          echo $path
-        end
-      end)
-      
-      if test -n "$worktree_path" && test -d "$worktree_path"
-        cd $worktree_path
-      end
-    end
-  else
-    # If arguments provided, just cd to the original location
+  set selected_path (goa git-power:worktree-select --branch $argv[1] 2>/dev/null | tail -n1)
+  if test -n "$selected_path" -a -d "$selected_path"
+    cd "$selected_path"
+  else if test (count $argv) -gt 0
+    # If arguments provided but path not found, cd to main repo
     cd ~/projects/self/programming/goa/goa-power
   end
 end
