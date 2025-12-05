@@ -3,7 +3,26 @@
 # Goapower-specific aliases and functions
 
 # Navigation aliases
-abbr pogo "cd ~/projects/self/programming/goa/goa-power"
+function pogo
+  if test (count $argv) -eq 0
+    # Find git root directory
+    set git_root (git -C ~/projects/self/programming/goa/goa-power rev-parse --show-toplevel 2>/dev/null)
+    if test -z "$git_root"
+      echo "Error: Not in a git repository"
+      return 1
+    end
+    
+    # Get worktree list, extract paths (first field), and use fzf to select
+    set selected (git -C $git_root worktree list | cut -d' ' -f1 | fzf --height=40% --border --exit-0)
+    
+    if test -n "$selected" && test -d "$selected"
+      cd $selected
+    end
+  else
+    # If arguments provided, just cd to the original location
+    cd ~/projects/self/programming/goa/goa-power
+  end
+end
 abbr pocgo "cd ~/projects/self/programming/goa/goa-power-worktree/master-cursor"
 abbr gopo "cd ~/projects/self/programming/goa/goa-power"
 abbr gopoc "cd ~/projects/self/programming/goa/goa-power-worktree/master-cursor"
