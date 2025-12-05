@@ -34,6 +34,11 @@ abbr pol goa git-power:worktree-list
 abbr por goa git-power:worktree-remove
 abbr poc goa git-power:worktree-open
 
+# Git power aliases
+abbr poreb goa git-power:rebase
+abbr pom goa git-power:merge
+abbr potemp goa git-power:temp-commit
+
 # Other goapower aliases
 abbr goap 'goapower'
 abbr sshpower ssh -t root@167.86.75.203 'cd /root/goa-power; fish'
@@ -49,4 +54,7 @@ function po
   echo "  pol   - worktree list"
   echo "  por   - worktree remove <branch>"
   echo "  poc   - worktree open <branch> (with cursor)"
+  echo "  poreb - rebase branch onto master"
+  echo "  pom - rebase then merge ff onto master"
+  echo "  potemp - temp commit for worktree(s)"
 end
