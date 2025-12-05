@@ -12,11 +12,40 @@ function pogo
       return 1
     end
     
-    # Get worktree list, extract paths (first field), and use fzf to select
-    set selected (git -C $git_root worktree list | cut -d' ' -f1 | fzf --height=40% --border --exit-0)
+    # Extract branch names from worktree list (handle [branch], (detached), or use basename)
+    set branches (git -C $git_root worktree list | while read -l line
+      set path (echo $line | cut -d' ' -f1)
+      if echo $line | grep -q '\['
+        echo $line | sed -E 's|.*\[([^]]+)\].*|\1|'
+      else if echo $line | grep -q '(detached'
+        echo $line | sed -E 's|.*\(detached HEAD at ([^)]+)\).*|\1|'
+      else
+        basename $path
+      end
+    end)
     
-    if test -n "$selected" && test -d "$selected"
-      cd $selected
+    set selected_branch (printf '%s\n' $branches | fzf --height=40% --border --exit-0)
+    
+    if test -n "$selected_branch"
+      # Find the path for the selected branch
+      set worktree_path (git -C $git_root worktree list | while read -l line
+        set path (echo $line | cut -d' ' -f1)
+        set branch ""
+        if echo $line | grep -q '\['
+          set branch (echo $line | sed -E 's|.*\[([^]]+)\].*|\1|')
+        else if echo $line | grep -q '(detached'
+          set branch (echo $line | sed -E 's|.*\(detached HEAD at ([^)]+)\).*|\1|')
+        else
+          set branch (basename $path)
+        end
+        if test "$branch" = "$selected_branch"
+          echo $path
+        end
+      end)
+      
+      if test -n "$worktree_path" && test -d "$worktree_path"
+        cd $worktree_path
+      end
     end
   else
     # If arguments provided, just cd to the original location
